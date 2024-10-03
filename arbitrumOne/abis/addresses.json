@@ -1,0 +1,143 @@
+{
+  "adminAddress": "0x9bC2D435bdCA131ec0F48C6589dD3F924AeBB9B8",
+  "guardianAddress": "0x133A79C943caA1Ead223Fd550d0C56ea98F14576",
+  "emergencyAdmins": [
+    "0xc6C104DB1b744Eb247940BDBBF91172F29CBD67f",
+    "0x6CCA53446A228053f6ce9B0233B92A80336221EE",
+    "0x591Ba6a8cc1071FB715DEd16153C8BDb4b86206C",
+    "0xbeB650aE23b83c4eE8FF96E25CA9C82A51f17571",
+    "0x3172516876170F3dbF6D1d133564Ad0835dC7F15",
+    "0x73FD3C3f97a8C09E02DEd1531E7Eb8C2fafCcce1",
+    "0xBe0Fa24F3F1aD7ca46b28BD13d5de22211630585",
+    "0x1F4eB13d269D8d6Ab78B43125D0d9174531066eb"
+  ],
+  "isETHNative": true,
+  "assets": {
+    "usdc.e": "0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8",
+    "usdc": "0xaf88d065e77c8cC2239327C5EDb3A432268e5831",
+    "usdt": "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9",
+    "weth": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+    "wbtc": "0x2f2a2543B76A4166549F7aaB2e75Bef0aefC5B0f",
+    "arb": "0x912CE59144191C1204E64559FE8253a0e49E6548",
+    "dai": "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1",
+    "link": "0xf97f4df75117a78c1A5a0DBb814Af92458539FB4",
+    "pendle": "0x0c880f6761F1af8d9Aa9C466984b80DAb9a8c9e8",
+    "gmx": "0xfc5A1A6EB076a2C7aD06eD22C90d7E710E35ad0a",
+    "gns": "0x18c11FD286C5EC11c3b683Caa813B77f5163A122",
+    "rdnt": "0x3082CC23568eA640225c2467653dB90e9250AaA0",
+    "magic": "0x539bdE0d7Dbd336b79148AA742883198BBF60342",
+    "joe": "0x371c7ec6D8039ff7933a2AA28EB827Ffe1F52f07",
+    "stg": "0x6694340fc020c5E6B96567843da2df01b2CE1eb6",
+    "ldo": "0x13Ad51ed4F1B7e9Dc168d8a00cB3f4dDD85EfA60",
+    "uni": "0xFa7F8980b0f1E64A2062791cc3b0871572f1F7f0",
+    "grt": "0x9623063377AD1B27544C965cCd7342f7EA7e88C7",
+    "crv": "0x11cDb42B0EB46D95f990BeDD4695A6e3fA034978",
+    "knc": "0xe4DDDfe67E7164b0FE14E218d80dC4C08eDC01cB",
+    "xai": "0x4cb9a7ae498cedcbb5eae9f25736ae7d428c9d66",
+    "fxs": "0x9d2F299715D94d8A7E6F5eaa8E654E8c74a988A7",
+    "tia.n": "0xD56734d7f9979dD94FAE3d67C7e928234e71cD4C",
+    "rpl": "0xB766039cc6DB368759C1E56B79AFfE831d0Cc507",
+    "aave": "0xba5DdD1f9d7F570dc94a51479a000E3BCE967196",
+    "wsteth": "0x5979D7b546E38E414F7E9822514be443A4800529",
+    "reth": "0xEC70Dcb4A1EFa46b8F2D97C310C9c4790ba5ffA8",
+    "weeth": "0x35751007a407ca6feffe80b3cb397736d2cf4dbe",
+    "ethfi": "0x7189fb5B6504bbfF6a852B13B7B82a3c118fDc27",
+    "ezeth": "0x2416092f143378750bb29b79eD961ab195CcEea5",
+    "rseth": "0x4186bfc76e2e237523cbc30fd220fe055156b41f",
+    "usde": "0x5d3a1Ff2b6BAb83b63cd9AD0787074081a52ef34",
+    "cbeth": "0x1debd73e752beaf79865fd6446b0c970eae7732f",
+    "usdy": "0x35e050d3C0eC2d29D269a8EcEa763a183bDF9A9D",
+    "tbtc": "0x6c84a8f1c29108f47a79964b5fe888d4f4d0de40",
+    "frax": "0x17fc002b466eec40dae837fc4be5c67993ddbd6f",
+    "frxeth": "0x178412e79c25968a32e89b11f63b33f733770c2a",
+    "sfrxeth": "0x95ab45875cffdba1e5f451b950bc2e42c0053f39"
+  },
+  "wrappedNativeToken": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+  "aave": "0x794a61358D6845594F94dc1DB02A252b5b4814aD",
+  "pyth": "0xff1a0f4744e8582DF1aE09D5611b887B6a12925C",
+  "supraPullOracle": "0x41AB2059bAA4b73E9A3f55D30Dff27179e0eA181",
+  "supraStorageOracle": "0x6562fB484C57d1Cba9E89A59C9Ad3F1b6fc79a65",
+  "dexes": {
+    "sushiswap": {
+      "router": "0x1b02dA8Cb0d097eB8D57A175b88c7D8b47997506",
+      "type": "1"
+    },
+    "sushiswapv3": {
+      "router": "0x8A21F6768C1f8075791D08546Dadf6daA0bE820c",
+      "type": "2",
+      "quoter": "0x0524E833cCD057e4d7A296e3aaAb9f7675964Ce1"
+    },
+    "uniswapv3": {
+      "router": "0xE592427A0AEce92De3Edee1F18E0157C05861564",
+      "type": "2",
+      "quoter": "0xb27308f9F90D607463bb33eA1BeBb41C27CE5AB6",
+      "factory": "0x1F98431c8aD98523631AE4a59f267346ea31F984"
+    },
+    "camelotv3": {
+      "router": "0x1F721E2E82F6676FCE4eA07A5958cF098D339e18",
+      "type": "5",
+      "quoter": "0x0Fc73040b26E9bC8514fA028D998E73A254Fa76E"
+    },
+    "ramsesv2": {
+      "router": "0xAA23611badAFB62D37E7295A682D21960ac85A90",
+      "type": "2",
+      "quoter": "0xAA2f0eb52db02650959463F9801442f5dF7D5CBe"
+    },
+    "pancakeswap": {
+      "router": "0x8cFe327CEc66d1C090Dd72bd0FF11d690C33a2Eb",
+      "type": "1"
+    },
+    "pancakeswapv3": {
+      "router": "0x1b81D678ffb9C0263b24A97847620C99d213eB14",
+      "type": "2",
+      "quoter": "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997"
+    },
+    "curve": {
+      "router": "0x4c2Af2Df2a7E567B5155879720619EA06C5BB15D",
+      "type": "3"
+    },
+    "balancer": {
+      "router": "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
+      "type": "4"
+    },
+    "paraswap": {
+      "router": "0xDEF171Fe48CF0115B1d80b88dc8eAB59176FEe57",
+      "type": "7"
+    },
+    "enso": {
+      "router": "0x80EbA3855878739F4710233A8a19d89Bdd2ffB8E",
+      "type": "8"
+    }
+  },
+  "pricefeeds": {
+    "selfDeployed": {
+      "epmx-usd": "0x053FB5b7c555FC0d9Bc49118023d6B6A4019168f"
+    },
+    "usdc.e-usd": "0x50834F3163758fcC1Df9973b6e91f0F0F0434aD3",
+    "usdc-usd": "0x50834F3163758fcC1Df9973b6e91f0F0F0434aD3",
+    "usdt-usd": "0x3f3f5dF88dC9F13eac63DF89EC16ef6e7E25DdE7",
+    "weth-usd": "0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612",
+    "wbtc-usd": "0xd0C7101eACbB49F3deCcCc166d238410D6D46d57",
+    "arb-usd": "0xb2A824043730FE05F3DA2efaFa1CBbe83fa548D6",
+    "dai-usd": "0xc5C8E77B397E531B8EC06BFb0048328B30E9eCfB",
+    "link-usd": "0x86E53CF1B870786351Da77A57575e79CB55812CB",
+    "pendle-usd": "0x66853E19d73c0F9301fe099c324A1E9726953433",
+    "gmx-usd": "0xDB98056FecFff59D032aB628337A4887110df3dB",
+    "gns-usd": "0xE89E98CE4E19071E59Ed4780E0598b541CE76486",
+    "rdnt-usd": "0x20d0Fcab0ECFD078B036b6CAf1FaC69A6453b352",
+    "magic-usd": "0x47E55cCec6582838E173f252D08Afd8116c2202d",
+    "joe-usd": "0x04180965a782E487d0632013ABa488A472243542",
+    "stg-usd": "0xe74d69E233faB0d8F48921f2D93aDfDe44cEb3B7",
+    "native-usd": "0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612",
+    "ldo-usd": "0xA43A34030088E6510FecCFb77E88ee5e7ed0fE64",
+    "uni-usd": "0x9C917083fDb403ab5ADbEC26Ee294f6EcAda2720",
+    "grt-usd": "0x0F38D86FceF4955B705F35c9e41d1A16e0637c73",
+    "crv-usd": "0xaebDA2c976cfd1eE1977Eac079B4382acb849325",
+    "knc-usd": "0xbF539d4c2106dd4D9AB6D56aed3d9023529Db145",
+    "xai-usd": "0x806c532D543352e7C344ba6C7F3F00Bfbd309Af1",
+    "fxs-usd": "0x36a121448D74Fa81450c992A1a44B9b7377CD3a5",
+    "tia.n-usd": "0x4096b9bfB4c34497B7a3939D4f629cf65EBf5634",
+    "rpl-usd": "0xF0b7159BbFc341Cc41E7Cb182216F62c6d40533D",
+    "aave-usd": "0xaD1d5344AaDE45F43E596773Bcc4c423EAbdD034"
+  }
+}
