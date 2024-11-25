@@ -50,7 +50,10 @@
     "frax": "0x853d955acef822db058eb8505911ed77f175b99e",
     "fxs": "0x3432b6a60d23ca0dfca7761b7ab56459d9c964d0",
     "frxeth": "0x5e8422345238f34275888049021821e8e08caa1f",
-    "sfrxeth": "0xac3e018457b222d93114458476f3e3416abbe38f"
+    "sfrxeth": "0xac3e018457b222d93114458476f3e3416abbe38f",
+    "iotx": "0x6fb3e0a217407efff7ca062d46c26e5d60a14d69",
+    "elon": "0x761d38e5ddf6ccf6cf7c55759d5210750b5d60f3",
+    "axl": "0x467719ad09025fcc6cf6f8311755809d45a5e5f3"
   },
   "aave": "0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2",
   "pyth": "0x4305FB66699C3B2702D4d05CF36551390A4c69C6",
@@ -117,7 +120,7 @@
   },
   "pricefeeds": {
     "selfDeployed": {
-      "epmx-usd": "0xF146a76F3Aa82D4cEa3eaB44932b7eE75737E11a"
+      "epmx-usd": "0x4A0Bb087F62Cf599118C2A048a72648FeBE46Ec5"
     },
     "native-usd": "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
     "weth-usd": "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
