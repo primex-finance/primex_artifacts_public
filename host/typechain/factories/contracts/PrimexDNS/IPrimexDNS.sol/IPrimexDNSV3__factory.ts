@@ -280,6 +280,12 @@ const _abi = [
       {
         indexed: true,
         internalType: "uint256",
+        name: "tier",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
         name: "feeRate",
         type: "uint256",
       },
@@ -356,6 +362,19 @@ const _abi = [
       },
     ],
     name: "PMXchanged",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "address",
+        name: "tiersManager",
+        type: "address",
+      },
+    ],
+    name: "TiersManagerchanged",
     type: "event",
   },
   {
@@ -825,13 +844,7 @@ const _abi = [
     type: "function",
   },
   {
-    inputs: [
-      {
-        internalType: "enum IPrimexDNSStorageV3.FeeRateType",
-        name: "_feeRateType",
-        type: "uint8",
-      },
-    ],
+    inputs: [],
     name: "getPrimexDNSParams",
     outputs: [
       {
@@ -845,9 +858,9 @@ const _abi = [
         type: "address",
       },
       {
-        internalType: "uint256",
+        internalType: "address",
         name: "",
-        type: "uint256",
+        type: "address",
       },
       {
         internalType: "uint256",
@@ -858,6 +871,54 @@ const _abi = [
         internalType: "uint256",
         name: "",
         type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "enum IPrimexDNSStorageV3.FeeRateType",
+        name: "_feeRateType",
+        type: "uint8",
+      },
+      {
+        internalType: "uint256",
+        name: "_tier",
+        type: "uint256",
+      },
+    ],
+    name: "getProtocolFeeRateByTier",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "enum IPrimexDNSStorageV3.FeeRateType",
+        name: "_feeRateType",
+        type: "uint8",
+      },
+      {
+        internalType: "uint256[]",
+        name: "_tiers",
+        type: "uint256[]",
+      },
+    ],
+    name: "getProtocolFeeRatesByTier",
+    outputs: [
+      {
+        internalType: "uint256[]",
+        name: "",
+        type: "uint256[]",
       },
     ],
     stateMutability: "view",
@@ -898,6 +959,11 @@ const _abi = [
                 internalType: "enum IPrimexDNSStorageV3.FeeRateType",
                 name: "feeRateType",
                 type: "uint8",
+              },
+              {
+                internalType: "uint256",
+                name: "tier",
+                type: "uint256",
               },
               {
                 internalType: "uint256",
@@ -1083,6 +1149,30 @@ const _abi = [
       },
     ],
     name: "protocolFeeRates",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "enum IPrimexDNSStorageV3.FeeRateType",
+        name: "_feeRateType",
+        type: "uint8",
+      },
+      {
+        internalType: "uint256",
+        name: "_tier",
+        type: "uint256",
+      },
+    ],
+    name: "protocolFeeRatesByTier",
     outputs: [
       {
         internalType: "uint256",
@@ -1320,18 +1410,49 @@ const _abi = [
           },
           {
             internalType: "uint256",
+            name: "tier",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
             name: "feeRate",
             type: "uint256",
           },
         ],
-        internalType: "struct IPrimexDNSV3.FeeRateParams",
+        internalType: "struct IPrimexDNSV3.FeeRateParams[]",
         name: "_feeRateType",
-        type: "tuple",
+        type: "tuple[]",
       },
     ],
     name: "setProtocolFeeRate",
     outputs: [],
     stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "_tiersManager",
+        type: "address",
+      },
+    ],
+    name: "setTiersManager",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "tiersManager",
+    outputs: [
+      {
+        internalType: "contract ITiersManager",
+        name: "",
+        type: "address",
+      },
+    ],
+    stateMutability: "view",
     type: "function",
   },
   {

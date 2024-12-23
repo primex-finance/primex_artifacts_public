@@ -4,3 +4,4 @@
 export { PrimexDNSStorage__factory } from "./PrimexDNSStorage__factory";
 export { PrimexDNSStorageV2__factory } from "./PrimexDNSStorageV2__factory";
 export { PrimexDNSStorageV3__factory } from "./PrimexDNSStorageV3__factory";
+export { PrimexDNSStorageV4__factory } from "./PrimexDNSStorageV4__factory";

@@ -1,0 +1,152 @@
+{
+  "address": "0xD89909Ee2ABDf4aFf3b6Ff3669b691F20cc8892E",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "decimals",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "description",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint80",
+          "name": "",
+          "type": "uint80"
+        }
+      ],
+      "name": "getRoundData",
+      "outputs": [
+        {
+          "internalType": "uint80",
+          "name": "",
+          "type": "uint80"
+        },
+        {
+          "internalType": "int256",
+          "name": "",
+          "type": "int256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint80",
+          "name": "",
+          "type": "uint80"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "latestRoundData",
+      "outputs": [
+        {
+          "internalType": "uint80",
+          "name": "roundId",
+          "type": "uint80"
+        },
+        {
+          "internalType": "int256",
+          "name": "answer",
+          "type": "int256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "startedAt",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "updatedAt",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint80",
+          "name": "answeredInRound",
+          "type": "uint80"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "version",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x4fab13cb82113a1abc67700b0981016c3ba4a1777fe64d4490cd0d7fe21e54be",
+  "receipt": {
+    "to": null,
+    "from": "0xC110b6e93a51ACF1f3DEd19c754789E7A2304F07",
+    "contractAddress": "0xD89909Ee2ABDf4aFf3b6Ff3669b691F20cc8892E",
+    "transactionIndex": 95,
+    "gasUsed": "201856",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xbc2f1af4eb8e5a768ae1d8e565be78abade020d36b3ac873f88891a3cc99f497",
+    "transactionHash": "0x4fab13cb82113a1abc67700b0981016c3ba4a1777fe64d4490cd0d7fe21e54be",
+    "logs": [],
+    "blockNumber": 23351983,
+    "cumulativeGasUsed": "20824704",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "d3fdc0212b557b60d8931ff12ea439d3",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.26+commit.8a97fa7a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"decimals\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"description\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint80\",\"name\":\"\",\"type\":\"uint80\"}],\"name\":\"getRoundData\",\"outputs\":[{\"internalType\":\"uint80\",\"name\":\"\",\"type\":\"uint80\"},{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint80\",\"name\":\"\",\"type\":\"uint80\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"latestRoundData\",\"outputs\":[{\"internalType\":\"uint80\",\"name\":\"roundId\",\"type\":\"uint80\"},{\"internalType\":\"int256\",\"name\":\"answer\",\"type\":\"int256\"},{\"internalType\":\"uint256\",\"name\":\"startedAt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"updatedAt\",\"type\":\"uint256\"},{\"internalType\":\"uint80\",\"name\":\"answeredInRound\",\"type\":\"uint80\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"version\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/GasPriceOracleOptimism.sol\":\"GasPriceOracleOptimism\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[],\"viaIR\":true},\"sources\":{\"@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.0;\\n\\ninterface AggregatorV3Interface {\\n  function decimals() external view returns (uint8);\\n\\n  function description() external view returns (string memory);\\n\\n  function version() external view returns (uint256);\\n\\n  function getRoundData(uint80 _roundId)\\n    external\\n    view\\n    returns (\\n      uint80 roundId,\\n      int256 answer,\\n      uint256 startedAt,\\n      uint256 updatedAt,\\n      uint80 answeredInRound\\n    );\\n\\n  function latestRoundData()\\n    external\\n    view\\n    returns (\\n      uint80 roundId,\\n      int256 answer,\\n      uint256 startedAt,\\n      uint256 updatedAt,\\n      uint80 answeredInRound\\n    );\\n}\\n\",\"keccak256\":\"0x6e6e4b0835904509406b070ee173b5bc8f677c19421b76be38aea3b1b3d30846\",\"license\":\"MIT\"},\"contracts/Constants.sol\":{\"content\":\"// (c) 2024 Primex.finance\\n// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.26;\\nimport {IArbGasInfo} from \\\"./interfaces/IArbGasInfo.sol\\\";\\nimport {IOVM_GasPriceOracle} from \\\"./interfaces/IOVM_GasPriceOracle.sol\\\";\\n\\n// admin roles\\nbytes32 constant BIG_TIMELOCK_ADMIN = 0x00; // It's primary admin.\\nbytes32 constant MEDIUM_TIMELOCK_ADMIN = keccak256(\\\"MEDIUM_TIMELOCK_ADMIN\\\");\\nbytes32 constant SMALL_TIMELOCK_ADMIN = keccak256(\\\"SMALL_TIMELOCK_ADMIN\\\");\\nbytes32 constant EMERGENCY_ADMIN = keccak256(\\\"EMERGENCY_ADMIN\\\");\\nbytes32 constant GUARDIAN_ADMIN = keccak256(\\\"GUARDIAN_ADMIN\\\");\\nbytes32 constant NFT_MINTER = keccak256(\\\"NFT_MINTER\\\");\\nbytes32 constant TRUSTED_TOLERABLE_LIMIT_ROLE = keccak256(\\\"TRUSTED_TOLERABLE_LIMIT_ROLE\\\");\\n\\n// inter-contract interactions roles\\nbytes32 constant NO_FEE_ROLE = keccak256(\\\"NO_FEE_ROLE\\\");\\nbytes32 constant VAULT_ACCESS_ROLE = keccak256(\\\"VAULT_ACCESS_ROLE\\\");\\nbytes32 constant PM_ROLE = keccak256(\\\"PM_ROLE\\\");\\nbytes32 constant LOM_ROLE = keccak256(\\\"LOM_ROLE\\\");\\nbytes32 constant BATCH_MANAGER_ROLE = keccak256(\\\"BATCH_MANAGER_ROLE\\\");\\nbytes32 constant FLASH_LOAN_MANAGER_ROLE = keccak256(\\\"FLASH_LOAN_MANAGER_ROLE\\\");\\nbytes32 constant FLASH_LOAN_FREE_BORROWER_ROLE = keccak256(\\\"FLASH_LOAN_FREE_BORROWER_ROLE\\\");\\n\\n// token constants\\naddress constant NATIVE_CURRENCY = address(uint160(bytes20(keccak256(\\\"NATIVE_CURRENCY\\\"))));\\naddress constant USD = 0x0000000000000000000000000000000000000348;\\naddress constant NATIVE_CURRENCY_CURVE = 0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE;\\nuint256 constant USD_MULTIPLIER = 10 ** (18 - 8); // usd decimals in chainlink is 8\\nuint8 constant MAX_ASSET_DECIMALS = 18;\\n\\n// time constants\\nuint256 constant SECONDS_PER_YEAR = 365 days;\\nuint256 constant SECONDS_PER_DAY = 1 days;\\nuint256 constant HOUR = 1 hours;\\nuint256 constant TEN_WAD = 10 ether;\\n\\n// constants for Arbitrum payment model\\nIArbGasInfo constant ARB_NITRO_ORACLE = IArbGasInfo(0x000000000000000000000000000000000000006C);\\nuint256 constant TRANSACTION_METADATA_BYTES = 140;\\n\\nIOVM_GasPriceOracle constant OVM_GASPRICEORACLE = IOVM_GasPriceOracle(0x420000000000000000000000000000000000000F);\\n\\nuint256 constant GAS_FOR_BYTE = 16;\\n\",\"keccak256\":\"0x877c0b0df911dc5658c824d17ca011aa9480696630e326a4f1a046d2db4f2ea1\",\"license\":\"BUSL-1.1\"},\"contracts/GasPriceOracleOptimism.sol\":{\"content\":\"// (c) 2024 Primex.finance\\n// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.26;\\n\\nimport {AggregatorV3Interface} from \\\"@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol\\\";\\nimport {OVM_GASPRICEORACLE} from \\\"./Constants.sol\\\";\\n\\ncontract GasPriceOracleOptimism is AggregatorV3Interface {\\n    function decimals() external pure override returns (uint8) {\\n        return 18;\\n    }\\n\\n    function description() external pure override returns (string memory) {\\n        return \\\"OP-Stack Gas Price Oracle\\\";\\n    }\\n\\n    function version() external pure override returns (uint256) {\\n        return 1;\\n    }\\n\\n    function getRoundData(\\n        uint80 /*_roundId */\\n    )\\n        external\\n        pure\\n        override\\n        returns (\\n            uint80 /*roundId*/,\\n            int256 /*answer*/,\\n            uint256 /*startedAt*/,\\n            uint256 /*updatedAt*/,\\n            uint80 /*answeredInRound*/\\n        )\\n    {\\n        revert(\\\"Not implemented\\\");\\n    }\\n\\n    function latestRoundData()\\n        external\\n        view\\n        override\\n        returns (uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound)\\n    {\\n        return (0, int256(OVM_GASPRICEORACLE.gasPrice()), block.timestamp, block.timestamp, 0);\\n    }\\n}\\n\",\"keccak256\":\"0xaf1c6808fab4e6e7b61d9b00aca01ac3b720c63ed15f67c68746e5580dbe8827\",\"license\":\"BUSL-1.1\"},\"contracts/interfaces/IArbGasInfo.sol\":{\"content\":\"pragma solidity ^0.8.18;\\n\\n/// Precompiled contract that exists in every Arbitrum Nitro chain at 0x000000000000000000000000000000000000006c.\\ninterface IArbGasInfo {\\n    // get ArbOS's estimate of the L1 gas price in wei\\n    function getL1BaseFeeEstimate() external view returns (uint256);\\n\\n    /// @notice Get gas prices. Uses the caller's preferred aggregator, or the default if the caller doesn't have a preferred one.\\n    /// @return return gas prices in wei\\n    ///        (\\n    ///            per L2 tx,\\n    ///            per L1 calldata byte\\n    ///            per storage allocation,\\n    ///            per ArbGas base,\\n    ///            per ArbGas congestion,\\n    ///            per ArbGas total\\n    ///        )\\n    function getPricesInWei() external view returns (uint256, uint256, uint256, uint256, uint256, uint256);\\n}\\n\",\"keccak256\":\"0xec7f78ef81a1aee6f7cf835a6dd75313e8f02fc2ef4e4044871bf1ee8fe02080\"},\"contracts/interfaces/IOVM_GasPriceOracle.sol\":{\"content\":\"pragma solidity ^0.8.18;\\n\\n/// Precompiled contract that exist on opBNB chain at 0x420000000000000000000000000000000000000F.\\ninterface IOVM_GasPriceOracle {\\n    /// @notice returns an upper bound for the L1 fee for a given transaction size.\\n    /// It is provided for callers who wish to estimate L1 transaction costs in the\\n    /// write path, and is much more gas efficient than `getL1Fee`.\\n    /// It assumes the worst case of fastlz upper-bound which covers %99.99 txs.\\n    /// @param _unsignedTxSize Unsigned fully RLP-encoded transaction size to get the L1 fee for.\\n    /// @return L1 estimated upper-bound fee that should be paid for the tx\\n    function getL1FeeUpperBound(uint256 _unsignedTxSize) external view returns (uint256);\\n\\n    /// @notice Retrieves the current gas price (base fee).\\n    /// @return Current L2 gas price (base fee).\\n    function gasPrice() external view returns (uint256);\\n}\\n\",\"keccak256\":\"0x1fc2611c6c185d738d5370fb217f04ecc60b07c299abbc0b04130eb2b085ccce\"}},\"version\":1}",
+  "bytecode": "0x608080604052346015576102b0908161001b8239f35b600080fdfe608080604052600436101561001357600080fd5b60003560e01c908163313ce567146102605750806354fd4d50146102445780637284e416146101875780639a6fc8f51461012a5763feaf968c1461005657600080fd5b346101255760003660031901126101255760405163fe173b9760e01b8152602081600481600f602160991b015afa908115610119576000916100b8575b60a0826040519060008252602082015242604082015242606082015260006080820152f35b60203d602011610112575b601f8101601f1916820167ffffffffffffffff8111838210176100fe576020918391604052810103126100fa5751905060a0610093565b5080fd5b634e487b7160e01b84526041600452602484fd5b503d6100c3565b6040513d6000823e3d90fd5b600080fd5b346101255760203660031901126101255760043569ffffffffffffffffffff8116036101255760405162461bcd60e51b815260206004820152600f60248201526e139bdd081a5b5c1b195b595b9d1959608a1b6044820152606490fd5b34610125576000366003190112610125576040516040810181811067ffffffffffffffff82111761022e57604052601981527f4f502d537461636b20476173205072696365204f7261636c6500000000000000602082015260405190602082528181519182602083015260005b8381106102165750508160006040809484010152601f80199101168101030190f35b602082820181015160408784010152859350016101f4565b634e487b7160e01b600052604160045260246000fd5b3461012557600036600319011261012557602060405160018152f35b346101255760003660031901126101255780601260209252f3fea2646970667358221220a5b6a39e33729564b73a0b698167150048ef62731b6e2bc1b573d2b821b7a1f064736f6c634300081a0033",
+  "deployedBytecode": "0x608080604052600436101561001357600080fd5b60003560e01c908163313ce567146102605750806354fd4d50146102445780637284e416146101875780639a6fc8f51461012a5763feaf968c1461005657600080fd5b346101255760003660031901126101255760405163fe173b9760e01b8152602081600481600f602160991b015afa908115610119576000916100b8575b60a0826040519060008252602082015242604082015242606082015260006080820152f35b60203d602011610112575b601f8101601f1916820167ffffffffffffffff8111838210176100fe576020918391604052810103126100fa5751905060a0610093565b5080fd5b634e487b7160e01b84526041600452602484fd5b503d6100c3565b6040513d6000823e3d90fd5b600080fd5b346101255760203660031901126101255760043569ffffffffffffffffffff8116036101255760405162461bcd60e51b815260206004820152600f60248201526e139bdd081a5b5c1b195b595b9d1959608a1b6044820152606490fd5b34610125576000366003190112610125576040516040810181811067ffffffffffffffff82111761022e57604052601981527f4f502d537461636b20476173205072696365204f7261636c6500000000000000602082015260405190602082528181519182602083015260005b8381106102165750508160006040809484010152601f80199101168101030190f35b602082820181015160408784010152859350016101f4565b634e487b7160e01b600052604160045260246000fd5b3461012557600036600319011261012557602060405160018152f35b346101255760003660031901126101255780601260209252f3fea2646970667358221220a5b6a39e33729564b73a0b698167150048ef62731b6e2bc1b573d2b821b7a1f064736f6c634300081a0033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

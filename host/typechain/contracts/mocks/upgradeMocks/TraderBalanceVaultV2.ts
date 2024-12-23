@@ -81,6 +81,7 @@ export interface TraderBalanceVaultV2Interface extends Interface {
       | "balances"
       | "batchTopUpAvailableBalance"
       | "deposit"
+      | "getBalancesForAddresses"
       | "increaseLockedBalance"
       | "initialize"
       | "pause"
@@ -118,6 +119,10 @@ export interface TraderBalanceVaultV2Interface extends Interface {
   encodeFunctionData(
     functionFragment: "deposit",
     values: [AddressLike, BigNumberish]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "getBalancesForAddresses",
+    values: [AddressLike[], AddressLike]
   ): string;
   encodeFunctionData(
     functionFragment: "increaseLockedBalance",
@@ -171,6 +176,10 @@ export interface TraderBalanceVaultV2Interface extends Interface {
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "deposit", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "getBalancesForAddresses",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(
     functionFragment: "increaseLockedBalance",
     data: BytesLike
@@ -342,6 +351,12 @@ export interface TraderBalanceVaultV2 extends BaseContract {
     "payable"
   >;
 
+  getBalancesForAddresses: TypedContractMethod<
+    [_traders: AddressLike[], _asset: AddressLike],
+    [[bigint[], bigint[]]],
+    "view"
+  >;
+
   increaseLockedBalance: TypedContractMethod<
     [_trader: AddressLike, _asset: AddressLike, _amount: BigNumberish],
     [void],
@@ -434,6 +449,13 @@ export interface TraderBalanceVaultV2 extends BaseContract {
     [_asset: AddressLike, _amount: BigNumberish],
     [void],
     "payable"
+  >;
+  getFunction(
+    nameOrSignature: "getBalancesForAddresses"
+  ): TypedContractMethod<
+    [_traders: AddressLike[], _asset: AddressLike],
+    [[bigint[], bigint[]]],
+    "view"
   >;
   getFunction(
     nameOrSignature: "increaseLockedBalance"

@@ -16,8 +16,14 @@ import type {
 
 const _abi = [
   {
-    inputs: [],
-    name: "l1BaseFee",
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_unsignedTxSize",
+        type: "uint256",
+      },
+    ],
+    name: "getL1FeeUpperBound",
     outputs: [
       {
         internalType: "uint256",
@@ -25,39 +31,13 @@ const _abi = [
         type: "uint256",
       },
     ],
-    stateMutability: "pure",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "overhead",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "pure",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "scalar",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "pure",
+    stateMutability: "view",
     type: "function",
   },
 ] as const;
 
 const _bytecode =
-  "0x608080604052346100155760cc908161001b8239f35b600080fdfe6080806040526004361015601257600080fd5b600090813560e01c9081630c18c16214607957508063519b4bd314605c5763f45e65d814603e57600080fd5b34605957806003193601126059576020604051620a6fe08152f35b80fd5b503460595780600319360112605957602060405163b2d05e008152f35b905034609257816003193601126092578060bc60209252f35b5080fdfea2646970667358221220a57f230a86fd16c744400f725cfeceb0fed4c25584d019a290801fa9bc2bb15e64736f6c63430008120033";
+  "0x6080806040523460135760a9908160198239f35b600080fdfe6080806040526004361015601257600080fd5b60003560e01c63f1c7a58b14602657600080fd5b34606e576020366003190112606e5760043590631dcd6500820291808304631dcd650014901517156058576020918152f35b634e487b7160e01b600052601160045260246000fd5b600080fdfea264697066735822122096218604b27520efee4d71883f6c5cf9e718f966cfea389ebf9d6708fbbac38b64736f6c634300081a0033";
 
 type OVM_GasPriceOracleMockConstructorParams =
   | [signer?: Signer]

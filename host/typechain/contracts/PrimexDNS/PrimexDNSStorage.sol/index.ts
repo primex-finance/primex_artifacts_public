@@ -4,3 +4,4 @@
 export type { PrimexDNSStorage } from "./PrimexDNSStorage";
 export type { PrimexDNSStorageV2 } from "./PrimexDNSStorageV2";
 export type { PrimexDNSStorageV3 } from "./PrimexDNSStorageV3";
+export type { PrimexDNSStorageV4 } from "./PrimexDNSStorageV4";

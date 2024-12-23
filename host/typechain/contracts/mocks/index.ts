@@ -3,6 +3,8 @@
 /* eslint-disable */
 import type * as nonStandardErc20Sol from "./NonStandardERC20.sol";
 export type { nonStandardErc20Sol };
+import type * as orallyMockSol from "./OrallyMock.sol";
+export type { orallyMockSol };
 import type * as mocksInterfaces from "./mocksInterfaces";
 export type { mocksInterfaces };
 import type * as upgradeMocks from "./upgradeMocks";
@@ -14,6 +16,7 @@ export type { ERC20Mock } from "./ERC20Mock";
 export type { MaliciousDexMock } from "./MaliciousDexMock";
 export type { MockFlashLoanReceiver } from "./MockFlashLoanReceiver";
 export type { MockNearestSearch } from "./MockNearestSearch";
+export type { MockStork } from "./MockStork";
 export type { OVM_GasPriceOracleMock } from "./OVM_GasPriceOracleMock";
 export type { ParaswapMock } from "./ParaswapMock";
 export type { PrimexPricingLibraryMock } from "./PrimexPricingLibraryMock";

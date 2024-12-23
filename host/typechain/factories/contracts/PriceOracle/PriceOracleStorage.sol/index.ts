@@ -4,3 +4,4 @@
 export { PriceOracleStorage__factory } from "./PriceOracleStorage__factory";
 export { PriceOracleStorageV2__factory } from "./PriceOracleStorageV2__factory";
 export { PriceOracleStorageV3__factory } from "./PriceOracleStorageV3__factory";
+export { PriceOracleStorageV4__factory } from "./PriceOracleStorageV4__factory";

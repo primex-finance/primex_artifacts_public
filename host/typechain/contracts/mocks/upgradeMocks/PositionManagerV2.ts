@@ -399,6 +399,7 @@ export interface PositionManagerV2Interface extends Interface {
       | "MaintenanceBufferChanged"
       | "OpenPosition"
       | "OracleTolerableLimitMultiplierChanged"
+      | "PaidProtocolFee"
       | "PartialClosePosition"
       | "Paused"
       | "SecurityBufferChanged"
@@ -927,6 +928,37 @@ export namespace OracleTolerableLimitMultiplierChangedEvent {
   export type OutputTuple = [newMultiplier: bigint];
   export interface OutputObject {
     newMultiplier: bigint;
+  }
+  export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
+  export type Filter = TypedDeferredTopicFilter<Event>;
+  export type Log = TypedEventLog<Event>;
+  export type LogDescription = TypedLogDescription<Event>;
+}
+
+export namespace PaidProtocolFeeEvent {
+  export type InputTuple = [
+    positionId: BigNumberish,
+    trader: AddressLike,
+    paymentAsset: AddressLike,
+    feeRateType: BigNumberish,
+    feeInPaymentAsset: BigNumberish,
+    feeInPmx: BigNumberish
+  ];
+  export type OutputTuple = [
+    positionId: bigint,
+    trader: string,
+    paymentAsset: string,
+    feeRateType: bigint,
+    feeInPaymentAsset: bigint,
+    feeInPmx: bigint
+  ];
+  export interface OutputObject {
+    positionId: bigint;
+    trader: string;
+    paymentAsset: string;
+    feeRateType: bigint;
+    feeInPaymentAsset: bigint;
+    feeInPmx: bigint;
   }
   export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
   export type Filter = TypedDeferredTopicFilter<Event>;
@@ -1721,6 +1753,13 @@ export interface PositionManagerV2 extends BaseContract {
     OracleTolerableLimitMultiplierChangedEvent.OutputObject
   >;
   getEvent(
+    key: "PaidProtocolFee"
+  ): TypedContractEvent<
+    PaidProtocolFeeEvent.InputTuple,
+    PaidProtocolFeeEvent.OutputTuple,
+    PaidProtocolFeeEvent.OutputObject
+  >;
+  getEvent(
     key: "PartialClosePosition"
   ): TypedContractEvent<
     PartialClosePositionEvent.InputTuple,
@@ -1864,6 +1903,17 @@ export interface PositionManagerV2 extends BaseContract {
       OracleTolerableLimitMultiplierChangedEvent.InputTuple,
       OracleTolerableLimitMultiplierChangedEvent.OutputTuple,
       OracleTolerableLimitMultiplierChangedEvent.OutputObject
+    >;
+
+    "PaidProtocolFee(uint256,address,address,uint8,uint256,uint256)": TypedContractEvent<
+      PaidProtocolFeeEvent.InputTuple,
+      PaidProtocolFeeEvent.OutputTuple,
+      PaidProtocolFeeEvent.OutputObject
+    >;
+    PaidProtocolFee: TypedContractEvent<
+      PaidProtocolFeeEvent.InputTuple,
+      PaidProtocolFeeEvent.OutputTuple,
+      PaidProtocolFeeEvent.OutputObject
     >;
 
     "PartialClosePosition(uint256,address,address,address,address,uint256,uint256,uint256,int256,uint256,uint256)": TypedContractEvent<

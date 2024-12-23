@@ -2,9 +2,11 @@
 /* tslint:disable */
 /* eslint-disable */
 export * as activityRewardDistributor from "./ActivityRewardDistributor";
+export * as algebraPriceFeed from "./AlgebraPriceFeed";
 export * as batchManager from "./BatchManager";
 export * as bonusExecutor from "./BonusExecutor";
 export * as bucket from "./Bucket";
+export * as curvePriceFeeds from "./CurvePriceFeeds";
 export * as debtToken from "./DebtToken";
 export * as depositManager from "./DepositManager";
 export * as flashLoanManager from "./FlashLoanManager";
@@ -16,15 +18,18 @@ export * as pToken from "./PToken";
 export * as positionManager from "./PositionManager";
 export * as priceOracle from "./PriceOracle";
 export * as primexDns from "./PrimexDNS";
+export * as primexNft from "./PrimexNFT";
 export * as referralProgram from "./ReferralProgram";
 export * as reserve from "./Reserve";
 export * as spotTradingRewardDistributor from "./SpotTradingRewardDistributor";
 export * as swapManager from "./SwapManager";
 export * as testnetServices from "./TestnetServices";
+export * as tiersManager from "./TiersManager";
 export * as traderBalanceVault from "./TraderBalanceVault";
 export * as treasury from "./Treasury";
 export * as uniswap from "./Uniswap";
 export * as uniswapPriceFeed from "./UniswapPriceFeed";
+export * as uniswapV2LpOracle from "./UniswapV2LPOracle";
 export * as whiteBlackList from "./WhiteBlackList";
 export * as conditionalManagers from "./conditionalManagers";
 export * as interfaces from "./interfaces";
@@ -35,6 +40,7 @@ export { DexAdapter__factory } from "./DexAdapter__factory";
 export { EPMXPriceFeed__factory } from "./EPMXPriceFeed__factory";
 export { EPMXToken__factory } from "./EPMXToken__factory";
 export { GasPriceOracleArbitrumOne__factory } from "./GasPriceOracleArbitrumOne__factory";
+export { GasPriceOracleOptimism__factory } from "./GasPriceOracleOptimism__factory";
 export { InterestRateStrategy__factory } from "./InterestRateStrategy__factory";
 export { PMXToken__factory } from "./PMXToken__factory";
 export { PrimexProxyAdmin__factory } from "./PrimexProxyAdmin__factory";

@@ -3,3 +3,4 @@
 /* eslint-disable */
 export type { IPriceOracle } from "./IPriceOracle";
 export type { IPriceOracleV2 } from "./IPriceOracleV2";
+export type { IPriceOracleV3 } from "./IPriceOracleV3";

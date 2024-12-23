@@ -4,3 +4,4 @@
 export { IPrimexDNSStorage__factory } from "./IPrimexDNSStorage__factory";
 export { IPrimexDNSStorageV2__factory } from "./IPrimexDNSStorageV2__factory";
 export { IPrimexDNSStorageV3__factory } from "./IPrimexDNSStorageV3__factory";
+export { IPrimexDNSStorageV4__factory } from "./IPrimexDNSStorageV4__factory";

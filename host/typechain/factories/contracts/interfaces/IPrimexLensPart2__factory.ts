@@ -28,6 +28,82 @@ const _abi = [
     stateMutability: "view",
     type: "function",
   },
+  {
+    inputs: [
+      {
+        components: [
+          {
+            internalType: "address",
+            name: "bucket",
+            type: "address",
+          },
+          {
+            internalType: "uint256",
+            name: "amount",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "duration",
+            type: "uint256",
+          },
+          {
+            internalType: "address",
+            name: "rewardToken",
+            type: "address",
+          },
+          {
+            internalType: "bytes[][]",
+            name: "pullOracleData",
+            type: "bytes[][]",
+          },
+          {
+            internalType: "uint256[]",
+            name: "pullOracleTypes",
+            type: "uint256[]",
+          },
+          {
+            internalType: "bytes",
+            name: "borrowedRewardAssetOracleData",
+            type: "bytes",
+          },
+        ],
+        internalType: "struct IPrimexLensPart2.CheckRewardParams",
+        name: "_params",
+        type: "tuple",
+      },
+      {
+        internalType: "contract IDepositManager",
+        name: "_depositManager",
+        type: "address",
+      },
+      {
+        internalType: "address",
+        name: "priceOracle",
+        type: "address",
+      },
+    ],
+    name: "hasEnoughRewardsInDepositManager",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "isEnough",
+        type: "bool",
+      },
+      {
+        internalType: "uint256",
+        name: "remainingReward",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "maxDepositAmount",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "payable",
+    type: "function",
+  },
 ] as const;
 
 export class IPrimexLensPart2__factory {

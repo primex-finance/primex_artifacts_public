@@ -136,8 +136,11 @@ export interface DepositManagerInterface extends Interface {
       | "priceOracle"
       | "primexDNS"
       | "registry"
+      | "setMagicTierCoefficient"
       | "setRewardParameters"
+      | "setTiersManager"
       | "supportsInterface"
+      | "tierManager"
       | "unlock"
       | "unpause"
       | "whiteBlackList"
@@ -234,12 +237,24 @@ export interface DepositManagerInterface extends Interface {
   encodeFunctionData(functionFragment: "primexDNS", values?: undefined): string;
   encodeFunctionData(functionFragment: "registry", values?: undefined): string;
   encodeFunctionData(
+    functionFragment: "setMagicTierCoefficient",
+    values: [BigNumberish]
+  ): string;
+  encodeFunctionData(
     functionFragment: "setRewardParameters",
     values: [IDepositManager.RewardParametersStruct[]]
   ): string;
   encodeFunctionData(
+    functionFragment: "setTiersManager",
+    values: [AddressLike]
+  ): string;
+  encodeFunctionData(
     functionFragment: "supportsInterface",
     values: [BytesLike]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "tierManager",
+    values?: undefined
   ): string;
   encodeFunctionData(
     functionFragment: "unlock",
@@ -326,11 +341,23 @@ export interface DepositManagerInterface extends Interface {
   decodeFunctionResult(functionFragment: "primexDNS", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "registry", data: BytesLike): Result;
   decodeFunctionResult(
+    functionFragment: "setMagicTierCoefficient",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
     functionFragment: "setRewardParameters",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
+    functionFragment: "setTiersManager",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
     functionFragment: "supportsInterface",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "tierManager",
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "unlock", data: BytesLike): Result;
@@ -673,8 +700,20 @@ export interface DepositManager extends BaseContract {
 
   registry: TypedContractMethod<[], [string], "view">;
 
+  setMagicTierCoefficient: TypedContractMethod<
+    [_magicTierCoefficient: BigNumberish],
+    [void],
+    "nonpayable"
+  >;
+
   setRewardParameters: TypedContractMethod<
     [params: IDepositManager.RewardParametersStruct[]],
+    [void],
+    "nonpayable"
+  >;
+
+  setTiersManager: TypedContractMethod<
+    [_tierManager: AddressLike],
     [void],
     "nonpayable"
   >;
@@ -684,6 +723,8 @@ export interface DepositManager extends BaseContract {
     [boolean],
     "view"
   >;
+
+  tierManager: TypedContractMethod<[], [string], "view">;
 
   unlock: TypedContractMethod<
     [
@@ -840,6 +881,13 @@ export interface DepositManager extends BaseContract {
     nameOrSignature: "registry"
   ): TypedContractMethod<[], [string], "view">;
   getFunction(
+    nameOrSignature: "setMagicTierCoefficient"
+  ): TypedContractMethod<
+    [_magicTierCoefficient: BigNumberish],
+    [void],
+    "nonpayable"
+  >;
+  getFunction(
     nameOrSignature: "setRewardParameters"
   ): TypedContractMethod<
     [params: IDepositManager.RewardParametersStruct[]],
@@ -847,8 +895,14 @@ export interface DepositManager extends BaseContract {
     "nonpayable"
   >;
   getFunction(
+    nameOrSignature: "setTiersManager"
+  ): TypedContractMethod<[_tierManager: AddressLike], [void], "nonpayable">;
+  getFunction(
     nameOrSignature: "supportsInterface"
   ): TypedContractMethod<[_interfaceId: BytesLike], [boolean], "view">;
+  getFunction(
+    nameOrSignature: "tierManager"
+  ): TypedContractMethod<[], [string], "view">;
   getFunction(
     nameOrSignature: "unlock"
   ): TypedContractMethod<

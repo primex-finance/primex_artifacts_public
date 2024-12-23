@@ -4,3 +4,4 @@
 export type { IPrimexDNSStorage } from "./IPrimexDNSStorage";
 export type { IPrimexDNSStorageV2 } from "./IPrimexDNSStorageV2";
 export type { IPrimexDNSStorageV3 } from "./IPrimexDNSStorageV3";
+export type { IPrimexDNSStorageV4 } from "./IPrimexDNSStorageV4";
