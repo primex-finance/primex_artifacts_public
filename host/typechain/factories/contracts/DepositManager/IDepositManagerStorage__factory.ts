@@ -111,6 +111,19 @@ const _abi = [
   },
   {
     inputs: [],
+    name: "tierManager",
+    outputs: [
+      {
+        internalType: "contract ITiersManager",
+        name: "",
+        type: "address",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
     name: "whiteBlackList",
     outputs: [
       {

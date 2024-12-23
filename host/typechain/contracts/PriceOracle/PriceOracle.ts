@@ -23,6 +23,28 @@ import type {
   TypedContractMethod,
 } from "../../common";
 
+export declare namespace IPriceOracleV3 {
+  export type UpdateOrallySymbolsParamsStruct = {
+    symbol: string;
+    tokens: [AddressLike, AddressLike];
+  };
+
+  export type UpdateOrallySymbolsParamsStructOutput = [
+    symbol: string,
+    tokens: [string, string]
+  ] & { symbol: string; tokens: [string, string] };
+
+  export type UpdateStorkPairIdsParamsStruct = {
+    pair: string;
+    tokens: [AddressLike, AddressLike];
+  };
+
+  export type UpdateStorkPairIdsParamsStructOutput = [
+    pair: string,
+    tokens: [string, string]
+  ] & { pair: string; tokens: [string, string] };
+}
+
 export declare namespace IPriceOracleV2 {
   export type UpdatePriceDropFeedsParamsStruct = {
     assetA: AddressLike;
@@ -84,7 +106,10 @@ export declare namespace IPriceOracleStorageV3 {
 export interface PriceOracleInterface extends Interface {
   getFunction(
     nameOrSignature:
+      | "addUniswapV2LPTokens"
       | "chainlinkPriceFeedsUsd"
+      | "curveTypeOracles"
+      | "eip4626TokenToUnderlyingAsset"
       | "eth"
       | "gasPriceFeed"
       | "getExchangeRate"
@@ -94,31 +119,49 @@ export interface PriceOracleInterface extends Interface {
       | "getPairPriceDrop"
       | "increasePairPriceDrop"
       | "initialize"
+      | "isUniswapV2LP"
+      | "orallyOracle"
+      | "orallySymbol"
+      | "orallyTimeTolerance"
       | "pairPriceDrops"
       | "pyth"
       | "pythPairIds"
       | "registry"
+      | "removeUniswapV2LPTokens"
       | "setGasPriceFeed"
+      | "setOrallyOracle"
+      | "setOrallyTimeTolerance"
       | "setPairPriceDrop"
       | "setPyth"
+      | "setStorkPublicKey"
+      | "setStorkVerify"
       | "setSupraPullOracle"
       | "setSupraStorageOracle"
       | "setTimeTolerance"
       | "setTreasury"
       | "setUSDT"
+      | "setUniswapV2LPOracle"
+      | "storkAssetPairId"
+      | "storkPublicKey"
+      | "storkVerify"
       | "supportsInterface"
       | "supraDataFeedID"
       | "supraPullOracle"
       | "supraStorageOracle"
       | "timeTolerance"
       | "treasury"
+      | "uniswapV2LPOracle"
       | "univ3TrustedPairs"
       | "univ3TypeOracles"
       | "updateChainlinkPriceFeedsUsd"
+      | "updateCurveTypeOracle"
+      | "updateEIP4626TokenToUnderlyingAsset"
+      | "updateOrallySymbols"
       | "updatePriceDropFeed"
       | "updatePriceDropFeeds"
       | "updatePullOracle"
       | "updatePythPairId"
+      | "updateStorkPairIds"
       | "updateSupraDataFeed"
       | "updateUniv3TrustedPair"
       | "updateUniv3TypeOracle"
@@ -127,13 +170,20 @@ export interface PriceOracleInterface extends Interface {
 
   getEvent(
     nameOrSignatureOrTopic:
+      | "AddUniswapV2LPToken"
       | "ChainlinkPriceFeedUpdated"
+      | "CurveOracleUpdated"
+      | "EIP4626TokenToUnderlyingAssetUpdated"
       | "GasPriceFeedChanged"
       | "Initialized"
+      | "OrallySymbolUpdated"
+      | "OrallyTimeToleranceUpdated"
       | "PairPriceDropChanged"
       | "PriceDropFeedUpdated"
       | "PriceFeedUpdated"
       | "PythPairIdUpdated"
+      | "RemoveUniswapV2LPToken"
+      | "StorkPairIdUpdated"
       | "SupraDataFeedUpdated"
       | "TimeToleranceUpdated"
       | "Univ3OracleUpdated"
@@ -141,7 +191,19 @@ export interface PriceOracleInterface extends Interface {
   ): EventFragment;
 
   encodeFunctionData(
+    functionFragment: "addUniswapV2LPTokens",
+    values: [AddressLike[]]
+  ): string;
+  encodeFunctionData(
     functionFragment: "chainlinkPriceFeedsUsd",
+    values: [AddressLike]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "curveTypeOracles",
+    values: [BigNumberish]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "eip4626TokenToUnderlyingAsset",
     values: [AddressLike]
   ): string;
   encodeFunctionData(functionFragment: "eth", values?: undefined): string;
@@ -178,6 +240,22 @@ export interface PriceOracleInterface extends Interface {
     values: [AddressLike, AddressLike, AddressLike, AddressLike]
   ): string;
   encodeFunctionData(
+    functionFragment: "isUniswapV2LP",
+    values: [AddressLike]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "orallyOracle",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "orallySymbol",
+    values: [AddressLike, AddressLike]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "orallyTimeTolerance",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
     functionFragment: "pairPriceDrops",
     values: [AddressLike, AddressLike]
   ): string;
@@ -188,8 +266,20 @@ export interface PriceOracleInterface extends Interface {
   ): string;
   encodeFunctionData(functionFragment: "registry", values?: undefined): string;
   encodeFunctionData(
+    functionFragment: "removeUniswapV2LPTokens",
+    values: [AddressLike[]]
+  ): string;
+  encodeFunctionData(
     functionFragment: "setGasPriceFeed",
     values: [AddressLike]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "setOrallyOracle",
+    values: [AddressLike]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "setOrallyTimeTolerance",
+    values: [BigNumberish]
   ): string;
   encodeFunctionData(
     functionFragment: "setPairPriceDrop",
@@ -197,6 +287,14 @@ export interface PriceOracleInterface extends Interface {
   ): string;
   encodeFunctionData(
     functionFragment: "setPyth",
+    values: [AddressLike]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "setStorkPublicKey",
+    values: [AddressLike]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "setStorkVerify",
     values: [AddressLike]
   ): string;
   encodeFunctionData(
@@ -220,6 +318,22 @@ export interface PriceOracleInterface extends Interface {
     values: [AddressLike]
   ): string;
   encodeFunctionData(
+    functionFragment: "setUniswapV2LPOracle",
+    values: [AddressLike]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "storkAssetPairId",
+    values: [AddressLike, AddressLike]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "storkPublicKey",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "storkVerify",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
     functionFragment: "supportsInterface",
     values: [BytesLike]
   ): string;
@@ -241,6 +355,10 @@ export interface PriceOracleInterface extends Interface {
   ): string;
   encodeFunctionData(functionFragment: "treasury", values?: undefined): string;
   encodeFunctionData(
+    functionFragment: "uniswapV2LPOracle",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
     functionFragment: "univ3TrustedPairs",
     values: [BigNumberish, AddressLike, AddressLike]
   ): string;
@@ -251,6 +369,18 @@ export interface PriceOracleInterface extends Interface {
   encodeFunctionData(
     functionFragment: "updateChainlinkPriceFeedsUsd",
     values: [AddressLike[], AddressLike[]]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "updateCurveTypeOracle",
+    values: [BigNumberish[], AddressLike[]]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "updateEIP4626TokenToUnderlyingAsset",
+    values: [AddressLike[], AddressLike[]]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "updateOrallySymbols",
+    values: [IPriceOracleV3.UpdateOrallySymbolsParamsStruct[]]
   ): string;
   encodeFunctionData(
     functionFragment: "updatePriceDropFeed",
@@ -269,6 +399,10 @@ export interface PriceOracleInterface extends Interface {
     values: [AddressLike[], BytesLike[]]
   ): string;
   encodeFunctionData(
+    functionFragment: "updateStorkPairIds",
+    values: [IPriceOracleV3.UpdateStorkPairIdsParamsStruct[]]
+  ): string;
+  encodeFunctionData(
     functionFragment: "updateSupraDataFeed",
     values: [IPriceOracleV2.UpdateSupraDataFeedParamsStruct[]]
   ): string;
@@ -283,7 +417,19 @@ export interface PriceOracleInterface extends Interface {
   encodeFunctionData(functionFragment: "usdt", values?: undefined): string;
 
   decodeFunctionResult(
+    functionFragment: "addUniswapV2LPTokens",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
     functionFragment: "chainlinkPriceFeedsUsd",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "curveTypeOracles",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "eip4626TokenToUnderlyingAsset",
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "eth", data: BytesLike): Result;
@@ -317,6 +463,22 @@ export interface PriceOracleInterface extends Interface {
   ): Result;
   decodeFunctionResult(functionFragment: "initialize", data: BytesLike): Result;
   decodeFunctionResult(
+    functionFragment: "isUniswapV2LP",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "orallyOracle",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "orallySymbol",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "orallyTimeTolerance",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
     functionFragment: "pairPriceDrops",
     data: BytesLike
   ): Result;
@@ -327,7 +489,19 @@ export interface PriceOracleInterface extends Interface {
   ): Result;
   decodeFunctionResult(functionFragment: "registry", data: BytesLike): Result;
   decodeFunctionResult(
+    functionFragment: "removeUniswapV2LPTokens",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
     functionFragment: "setGasPriceFeed",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "setOrallyOracle",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "setOrallyTimeTolerance",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
@@ -335,6 +509,14 @@ export interface PriceOracleInterface extends Interface {
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "setPyth", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "setStorkPublicKey",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "setStorkVerify",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(
     functionFragment: "setSupraPullOracle",
     data: BytesLike
@@ -352,6 +534,22 @@ export interface PriceOracleInterface extends Interface {
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "setUSDT", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "setUniswapV2LPOracle",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "storkAssetPairId",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "storkPublicKey",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "storkVerify",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(
     functionFragment: "supportsInterface",
     data: BytesLike
@@ -374,6 +572,10 @@ export interface PriceOracleInterface extends Interface {
   ): Result;
   decodeFunctionResult(functionFragment: "treasury", data: BytesLike): Result;
   decodeFunctionResult(
+    functionFragment: "uniswapV2LPOracle",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
     functionFragment: "univ3TrustedPairs",
     data: BytesLike
   ): Result;
@@ -383,6 +585,18 @@ export interface PriceOracleInterface extends Interface {
   ): Result;
   decodeFunctionResult(
     functionFragment: "updateChainlinkPriceFeedsUsd",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "updateCurveTypeOracle",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "updateEIP4626TokenToUnderlyingAsset",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "updateOrallySymbols",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
@@ -402,6 +616,10 @@ export interface PriceOracleInterface extends Interface {
     data: BytesLike
   ): Result;
   decodeFunctionResult(
+    functionFragment: "updateStorkPairIds",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
     functionFragment: "updateSupraDataFeed",
     data: BytesLike
   ): Result;
@@ -416,12 +634,50 @@ export interface PriceOracleInterface extends Interface {
   decodeFunctionResult(functionFragment: "usdt", data: BytesLike): Result;
 }
 
+export namespace AddUniswapV2LPTokenEvent {
+  export type InputTuple = [uniswapV2Token: AddressLike];
+  export type OutputTuple = [uniswapV2Token: string];
+  export interface OutputObject {
+    uniswapV2Token: string;
+  }
+  export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
+  export type Filter = TypedDeferredTopicFilter<Event>;
+  export type Log = TypedEventLog<Event>;
+  export type LogDescription = TypedLogDescription<Event>;
+}
+
 export namespace ChainlinkPriceFeedUpdatedEvent {
   export type InputTuple = [token: AddressLike, priceFeed: AddressLike];
   export type OutputTuple = [token: string, priceFeed: string];
   export interface OutputObject {
     token: string;
     priceFeed: string;
+  }
+  export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
+  export type Filter = TypedDeferredTopicFilter<Event>;
+  export type Log = TypedEventLog<Event>;
+  export type LogDescription = TypedLogDescription<Event>;
+}
+
+export namespace CurveOracleUpdatedEvent {
+  export type InputTuple = [oracleType: BigNumberish, oracle: AddressLike];
+  export type OutputTuple = [oracleType: bigint, oracle: string];
+  export interface OutputObject {
+    oracleType: bigint;
+    oracle: string;
+  }
+  export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
+  export type Filter = TypedDeferredTopicFilter<Event>;
+  export type Log = TypedEventLog<Event>;
+  export type LogDescription = TypedLogDescription<Event>;
+}
+
+export namespace EIP4626TokenToUnderlyingAssetUpdatedEvent {
+  export type InputTuple = [token: AddressLike, underlyingAsset: AddressLike];
+  export type OutputTuple = [token: string, underlyingAsset: string];
+  export interface OutputObject {
+    token: string;
+    underlyingAsset: string;
   }
   export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
   export type Filter = TypedDeferredTopicFilter<Event>;
@@ -446,6 +702,36 @@ export namespace InitializedEvent {
   export type OutputTuple = [version: bigint];
   export interface OutputObject {
     version: bigint;
+  }
+  export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
+  export type Filter = TypedDeferredTopicFilter<Event>;
+  export type Log = TypedEventLog<Event>;
+  export type LogDescription = TypedLogDescription<Event>;
+}
+
+export namespace OrallySymbolUpdatedEvent {
+  export type InputTuple = [
+    tokenA: AddressLike,
+    tokenB: AddressLike,
+    symbol: string
+  ];
+  export type OutputTuple = [tokenA: string, tokenB: string, symbol: string];
+  export interface OutputObject {
+    tokenA: string;
+    tokenB: string;
+    symbol: string;
+  }
+  export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
+  export type Filter = TypedDeferredTopicFilter<Event>;
+  export type Log = TypedEventLog<Event>;
+  export type LogDescription = TypedLogDescription<Event>;
+}
+
+export namespace OrallyTimeToleranceUpdatedEvent {
+  export type InputTuple = [timeTolerance: BigNumberish];
+  export type OutputTuple = [timeTolerance: bigint];
+  export interface OutputObject {
+    timeTolerance: bigint;
   }
   export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
   export type Filter = TypedDeferredTopicFilter<Event>;
@@ -521,6 +807,36 @@ export namespace PythPairIdUpdatedEvent {
   export interface OutputObject {
     token: string;
     priceFeedId: string;
+  }
+  export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
+  export type Filter = TypedDeferredTopicFilter<Event>;
+  export type Log = TypedEventLog<Event>;
+  export type LogDescription = TypedLogDescription<Event>;
+}
+
+export namespace RemoveUniswapV2LPTokenEvent {
+  export type InputTuple = [uniswapV2Token: AddressLike];
+  export type OutputTuple = [uniswapV2Token: string];
+  export interface OutputObject {
+    uniswapV2Token: string;
+  }
+  export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
+  export type Filter = TypedDeferredTopicFilter<Event>;
+  export type Log = TypedEventLog<Event>;
+  export type LogDescription = TypedLogDescription<Event>;
+}
+
+export namespace StorkPairIdUpdatedEvent {
+  export type InputTuple = [
+    tokenA: AddressLike,
+    tokenB: AddressLike,
+    pairId: string
+  ];
+  export type OutputTuple = [tokenA: string, tokenB: string, pairId: string];
+  export interface OutputObject {
+    tokenA: string;
+    tokenB: string;
+    pairId: string;
   }
   export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
   export type Filter = TypedDeferredTopicFilter<Event>;
@@ -639,7 +955,21 @@ export interface PriceOracle extends BaseContract {
     event?: TCEvent
   ): Promise<this>;
 
+  addUniswapV2LPTokens: TypedContractMethod<
+    [_lpTokens: AddressLike[]],
+    [void],
+    "nonpayable"
+  >;
+
   chainlinkPriceFeedsUsd: TypedContractMethod<
+    [arg0: AddressLike],
+    [string],
+    "view"
+  >;
+
+  curveTypeOracles: TypedContractMethod<[arg0: BigNumberish], [string], "view">;
+
+  eip4626TokenToUnderlyingAsset: TypedContractMethod<
     [arg0: AddressLike],
     [string],
     "view"
@@ -692,6 +1022,18 @@ export interface PriceOracle extends BaseContract {
     "nonpayable"
   >;
 
+  isUniswapV2LP: TypedContractMethod<[arg0: AddressLike], [boolean], "view">;
+
+  orallyOracle: TypedContractMethod<[], [string], "view">;
+
+  orallySymbol: TypedContractMethod<
+    [arg0: AddressLike, arg1: AddressLike],
+    [string],
+    "view"
+  >;
+
+  orallyTimeTolerance: TypedContractMethod<[], [bigint], "view">;
+
   pairPriceDrops: TypedContractMethod<
     [arg0: AddressLike, arg1: AddressLike],
     [bigint],
@@ -704,8 +1046,26 @@ export interface PriceOracle extends BaseContract {
 
   registry: TypedContractMethod<[], [string], "view">;
 
+  removeUniswapV2LPTokens: TypedContractMethod<
+    [_lpTokens: AddressLike[]],
+    [void],
+    "nonpayable"
+  >;
+
   setGasPriceFeed: TypedContractMethod<
     [priceFeed: AddressLike],
+    [void],
+    "nonpayable"
+  >;
+
+  setOrallyOracle: TypedContractMethod<
+    [_orally: AddressLike],
+    [void],
+    "nonpayable"
+  >;
+
+  setOrallyTimeTolerance: TypedContractMethod<
+    [_orallyTimeTolerance: BigNumberish],
     [void],
     "nonpayable"
   >;
@@ -717,6 +1077,18 @@ export interface PriceOracle extends BaseContract {
   >;
 
   setPyth: TypedContractMethod<[_pyth: AddressLike], [void], "nonpayable">;
+
+  setStorkPublicKey: TypedContractMethod<
+    [_storkPublicKey: AddressLike],
+    [void],
+    "nonpayable"
+  >;
+
+  setStorkVerify: TypedContractMethod<
+    [_storkVerify: AddressLike],
+    [void],
+    "nonpayable"
+  >;
 
   setSupraPullOracle: TypedContractMethod<
     [_supraPullOracle: AddressLike],
@@ -744,6 +1116,22 @@ export interface PriceOracle extends BaseContract {
 
   setUSDT: TypedContractMethod<[_usdt: AddressLike], [void], "nonpayable">;
 
+  setUniswapV2LPOracle: TypedContractMethod<
+    [_uniswapV2LPOracle: AddressLike],
+    [void],
+    "nonpayable"
+  >;
+
+  storkAssetPairId: TypedContractMethod<
+    [arg0: AddressLike, arg1: AddressLike],
+    [string],
+    "view"
+  >;
+
+  storkPublicKey: TypedContractMethod<[], [string], "view">;
+
+  storkVerify: TypedContractMethod<[], [string], "view">;
+
   supportsInterface: TypedContractMethod<
     [_interfaceId: BytesLike],
     [boolean],
@@ -764,6 +1152,8 @@ export interface PriceOracle extends BaseContract {
 
   treasury: TypedContractMethod<[], [string], "view">;
 
+  uniswapV2LPOracle: TypedContractMethod<[], [string], "view">;
+
   univ3TrustedPairs: TypedContractMethod<
     [arg0: BigNumberish, arg1: AddressLike, arg2: AddressLike],
     [boolean],
@@ -774,6 +1164,24 @@ export interface PriceOracle extends BaseContract {
 
   updateChainlinkPriceFeedsUsd: TypedContractMethod<
     [_tokens: AddressLike[], _feeds: AddressLike[]],
+    [void],
+    "nonpayable"
+  >;
+
+  updateCurveTypeOracle: TypedContractMethod<
+    [_oracleTypes: BigNumberish[], _oracles: AddressLike[]],
+    [void],
+    "nonpayable"
+  >;
+
+  updateEIP4626TokenToUnderlyingAsset: TypedContractMethod<
+    [_rebaseTokens: AddressLike[], _underlyingAssets: AddressLike[]],
+    [void],
+    "nonpayable"
+  >;
+
+  updateOrallySymbols: TypedContractMethod<
+    [params: IPriceOracleV3.UpdateOrallySymbolsParamsStruct[]],
     [void],
     "nonpayable"
   >;
@@ -798,6 +1206,12 @@ export interface PriceOracle extends BaseContract {
 
   updatePythPairId: TypedContractMethod<
     [_tokens: AddressLike[], _priceFeedIds: BytesLike[]],
+    [void],
+    "nonpayable"
+  >;
+
+  updateStorkPairIds: TypedContractMethod<
+    [params: IPriceOracleV3.UpdateStorkPairIdsParamsStruct[]],
     [void],
     "nonpayable"
   >;
@@ -827,7 +1241,16 @@ export interface PriceOracle extends BaseContract {
   ): T;
 
   getFunction(
+    nameOrSignature: "addUniswapV2LPTokens"
+  ): TypedContractMethod<[_lpTokens: AddressLike[]], [void], "nonpayable">;
+  getFunction(
     nameOrSignature: "chainlinkPriceFeedsUsd"
+  ): TypedContractMethod<[arg0: AddressLike], [string], "view">;
+  getFunction(
+    nameOrSignature: "curveTypeOracles"
+  ): TypedContractMethod<[arg0: BigNumberish], [string], "view">;
+  getFunction(
+    nameOrSignature: "eip4626TokenToUnderlyingAsset"
   ): TypedContractMethod<[arg0: AddressLike], [string], "view">;
   getFunction(
     nameOrSignature: "eth"
@@ -886,6 +1309,22 @@ export interface PriceOracle extends BaseContract {
     "nonpayable"
   >;
   getFunction(
+    nameOrSignature: "isUniswapV2LP"
+  ): TypedContractMethod<[arg0: AddressLike], [boolean], "view">;
+  getFunction(
+    nameOrSignature: "orallyOracle"
+  ): TypedContractMethod<[], [string], "view">;
+  getFunction(
+    nameOrSignature: "orallySymbol"
+  ): TypedContractMethod<
+    [arg0: AddressLike, arg1: AddressLike],
+    [string],
+    "view"
+  >;
+  getFunction(
+    nameOrSignature: "orallyTimeTolerance"
+  ): TypedContractMethod<[], [bigint], "view">;
+  getFunction(
     nameOrSignature: "pairPriceDrops"
   ): TypedContractMethod<
     [arg0: AddressLike, arg1: AddressLike],
@@ -902,8 +1341,21 @@ export interface PriceOracle extends BaseContract {
     nameOrSignature: "registry"
   ): TypedContractMethod<[], [string], "view">;
   getFunction(
+    nameOrSignature: "removeUniswapV2LPTokens"
+  ): TypedContractMethod<[_lpTokens: AddressLike[]], [void], "nonpayable">;
+  getFunction(
     nameOrSignature: "setGasPriceFeed"
   ): TypedContractMethod<[priceFeed: AddressLike], [void], "nonpayable">;
+  getFunction(
+    nameOrSignature: "setOrallyOracle"
+  ): TypedContractMethod<[_orally: AddressLike], [void], "nonpayable">;
+  getFunction(
+    nameOrSignature: "setOrallyTimeTolerance"
+  ): TypedContractMethod<
+    [_orallyTimeTolerance: BigNumberish],
+    [void],
+    "nonpayable"
+  >;
   getFunction(
     nameOrSignature: "setPairPriceDrop"
   ): TypedContractMethod<
@@ -914,6 +1366,12 @@ export interface PriceOracle extends BaseContract {
   getFunction(
     nameOrSignature: "setPyth"
   ): TypedContractMethod<[_pyth: AddressLike], [void], "nonpayable">;
+  getFunction(
+    nameOrSignature: "setStorkPublicKey"
+  ): TypedContractMethod<[_storkPublicKey: AddressLike], [void], "nonpayable">;
+  getFunction(
+    nameOrSignature: "setStorkVerify"
+  ): TypedContractMethod<[_storkVerify: AddressLike], [void], "nonpayable">;
   getFunction(
     nameOrSignature: "setSupraPullOracle"
   ): TypedContractMethod<[_supraPullOracle: AddressLike], [void], "nonpayable">;
@@ -933,6 +1391,26 @@ export interface PriceOracle extends BaseContract {
   getFunction(
     nameOrSignature: "setUSDT"
   ): TypedContractMethod<[_usdt: AddressLike], [void], "nonpayable">;
+  getFunction(
+    nameOrSignature: "setUniswapV2LPOracle"
+  ): TypedContractMethod<
+    [_uniswapV2LPOracle: AddressLike],
+    [void],
+    "nonpayable"
+  >;
+  getFunction(
+    nameOrSignature: "storkAssetPairId"
+  ): TypedContractMethod<
+    [arg0: AddressLike, arg1: AddressLike],
+    [string],
+    "view"
+  >;
+  getFunction(
+    nameOrSignature: "storkPublicKey"
+  ): TypedContractMethod<[], [string], "view">;
+  getFunction(
+    nameOrSignature: "storkVerify"
+  ): TypedContractMethod<[], [string], "view">;
   getFunction(
     nameOrSignature: "supportsInterface"
   ): TypedContractMethod<[_interfaceId: BytesLike], [boolean], "view">;
@@ -956,6 +1434,9 @@ export interface PriceOracle extends BaseContract {
     nameOrSignature: "treasury"
   ): TypedContractMethod<[], [string], "view">;
   getFunction(
+    nameOrSignature: "uniswapV2LPOracle"
+  ): TypedContractMethod<[], [string], "view">;
+  getFunction(
     nameOrSignature: "univ3TrustedPairs"
   ): TypedContractMethod<
     [arg0: BigNumberish, arg1: AddressLike, arg2: AddressLike],
@@ -969,6 +1450,27 @@ export interface PriceOracle extends BaseContract {
     nameOrSignature: "updateChainlinkPriceFeedsUsd"
   ): TypedContractMethod<
     [_tokens: AddressLike[], _feeds: AddressLike[]],
+    [void],
+    "nonpayable"
+  >;
+  getFunction(
+    nameOrSignature: "updateCurveTypeOracle"
+  ): TypedContractMethod<
+    [_oracleTypes: BigNumberish[], _oracles: AddressLike[]],
+    [void],
+    "nonpayable"
+  >;
+  getFunction(
+    nameOrSignature: "updateEIP4626TokenToUnderlyingAsset"
+  ): TypedContractMethod<
+    [_rebaseTokens: AddressLike[], _underlyingAssets: AddressLike[]],
+    [void],
+    "nonpayable"
+  >;
+  getFunction(
+    nameOrSignature: "updateOrallySymbols"
+  ): TypedContractMethod<
+    [params: IPriceOracleV3.UpdateOrallySymbolsParamsStruct[]],
     [void],
     "nonpayable"
   >;
@@ -1001,6 +1503,13 @@ export interface PriceOracle extends BaseContract {
     "nonpayable"
   >;
   getFunction(
+    nameOrSignature: "updateStorkPairIds"
+  ): TypedContractMethod<
+    [params: IPriceOracleV3.UpdateStorkPairIdsParamsStruct[]],
+    [void],
+    "nonpayable"
+  >;
+  getFunction(
     nameOrSignature: "updateSupraDataFeed"
   ): TypedContractMethod<
     [_params: IPriceOracleV2.UpdateSupraDataFeedParamsStruct[]],
@@ -1026,11 +1535,32 @@ export interface PriceOracle extends BaseContract {
   ): TypedContractMethod<[], [string], "view">;
 
   getEvent(
+    key: "AddUniswapV2LPToken"
+  ): TypedContractEvent<
+    AddUniswapV2LPTokenEvent.InputTuple,
+    AddUniswapV2LPTokenEvent.OutputTuple,
+    AddUniswapV2LPTokenEvent.OutputObject
+  >;
+  getEvent(
     key: "ChainlinkPriceFeedUpdated"
   ): TypedContractEvent<
     ChainlinkPriceFeedUpdatedEvent.InputTuple,
     ChainlinkPriceFeedUpdatedEvent.OutputTuple,
     ChainlinkPriceFeedUpdatedEvent.OutputObject
+  >;
+  getEvent(
+    key: "CurveOracleUpdated"
+  ): TypedContractEvent<
+    CurveOracleUpdatedEvent.InputTuple,
+    CurveOracleUpdatedEvent.OutputTuple,
+    CurveOracleUpdatedEvent.OutputObject
+  >;
+  getEvent(
+    key: "EIP4626TokenToUnderlyingAssetUpdated"
+  ): TypedContractEvent<
+    EIP4626TokenToUnderlyingAssetUpdatedEvent.InputTuple,
+    EIP4626TokenToUnderlyingAssetUpdatedEvent.OutputTuple,
+    EIP4626TokenToUnderlyingAssetUpdatedEvent.OutputObject
   >;
   getEvent(
     key: "GasPriceFeedChanged"
@@ -1045,6 +1575,20 @@ export interface PriceOracle extends BaseContract {
     InitializedEvent.InputTuple,
     InitializedEvent.OutputTuple,
     InitializedEvent.OutputObject
+  >;
+  getEvent(
+    key: "OrallySymbolUpdated"
+  ): TypedContractEvent<
+    OrallySymbolUpdatedEvent.InputTuple,
+    OrallySymbolUpdatedEvent.OutputTuple,
+    OrallySymbolUpdatedEvent.OutputObject
+  >;
+  getEvent(
+    key: "OrallyTimeToleranceUpdated"
+  ): TypedContractEvent<
+    OrallyTimeToleranceUpdatedEvent.InputTuple,
+    OrallyTimeToleranceUpdatedEvent.OutputTuple,
+    OrallyTimeToleranceUpdatedEvent.OutputObject
   >;
   getEvent(
     key: "PairPriceDropChanged"
@@ -1073,6 +1617,20 @@ export interface PriceOracle extends BaseContract {
     PythPairIdUpdatedEvent.InputTuple,
     PythPairIdUpdatedEvent.OutputTuple,
     PythPairIdUpdatedEvent.OutputObject
+  >;
+  getEvent(
+    key: "RemoveUniswapV2LPToken"
+  ): TypedContractEvent<
+    RemoveUniswapV2LPTokenEvent.InputTuple,
+    RemoveUniswapV2LPTokenEvent.OutputTuple,
+    RemoveUniswapV2LPTokenEvent.OutputObject
+  >;
+  getEvent(
+    key: "StorkPairIdUpdated"
+  ): TypedContractEvent<
+    StorkPairIdUpdatedEvent.InputTuple,
+    StorkPairIdUpdatedEvent.OutputTuple,
+    StorkPairIdUpdatedEvent.OutputObject
   >;
   getEvent(
     key: "SupraDataFeedUpdated"
@@ -1104,6 +1662,17 @@ export interface PriceOracle extends BaseContract {
   >;
 
   filters: {
+    "AddUniswapV2LPToken(address)": TypedContractEvent<
+      AddUniswapV2LPTokenEvent.InputTuple,
+      AddUniswapV2LPTokenEvent.OutputTuple,
+      AddUniswapV2LPTokenEvent.OutputObject
+    >;
+    AddUniswapV2LPToken: TypedContractEvent<
+      AddUniswapV2LPTokenEvent.InputTuple,
+      AddUniswapV2LPTokenEvent.OutputTuple,
+      AddUniswapV2LPTokenEvent.OutputObject
+    >;
+
     "ChainlinkPriceFeedUpdated(address,address)": TypedContractEvent<
       ChainlinkPriceFeedUpdatedEvent.InputTuple,
       ChainlinkPriceFeedUpdatedEvent.OutputTuple,
@@ -1113,6 +1682,28 @@ export interface PriceOracle extends BaseContract {
       ChainlinkPriceFeedUpdatedEvent.InputTuple,
       ChainlinkPriceFeedUpdatedEvent.OutputTuple,
       ChainlinkPriceFeedUpdatedEvent.OutputObject
+    >;
+
+    "CurveOracleUpdated(uint8,address)": TypedContractEvent<
+      CurveOracleUpdatedEvent.InputTuple,
+      CurveOracleUpdatedEvent.OutputTuple,
+      CurveOracleUpdatedEvent.OutputObject
+    >;
+    CurveOracleUpdated: TypedContractEvent<
+      CurveOracleUpdatedEvent.InputTuple,
+      CurveOracleUpdatedEvent.OutputTuple,
+      CurveOracleUpdatedEvent.OutputObject
+    >;
+
+    "EIP4626TokenToUnderlyingAssetUpdated(address,address)": TypedContractEvent<
+      EIP4626TokenToUnderlyingAssetUpdatedEvent.InputTuple,
+      EIP4626TokenToUnderlyingAssetUpdatedEvent.OutputTuple,
+      EIP4626TokenToUnderlyingAssetUpdatedEvent.OutputObject
+    >;
+    EIP4626TokenToUnderlyingAssetUpdated: TypedContractEvent<
+      EIP4626TokenToUnderlyingAssetUpdatedEvent.InputTuple,
+      EIP4626TokenToUnderlyingAssetUpdatedEvent.OutputTuple,
+      EIP4626TokenToUnderlyingAssetUpdatedEvent.OutputObject
     >;
 
     "GasPriceFeedChanged(address)": TypedContractEvent<
@@ -1135,6 +1726,28 @@ export interface PriceOracle extends BaseContract {
       InitializedEvent.InputTuple,
       InitializedEvent.OutputTuple,
       InitializedEvent.OutputObject
+    >;
+
+    "OrallySymbolUpdated(address,address,string)": TypedContractEvent<
+      OrallySymbolUpdatedEvent.InputTuple,
+      OrallySymbolUpdatedEvent.OutputTuple,
+      OrallySymbolUpdatedEvent.OutputObject
+    >;
+    OrallySymbolUpdated: TypedContractEvent<
+      OrallySymbolUpdatedEvent.InputTuple,
+      OrallySymbolUpdatedEvent.OutputTuple,
+      OrallySymbolUpdatedEvent.OutputObject
+    >;
+
+    "OrallyTimeToleranceUpdated(uint256)": TypedContractEvent<
+      OrallyTimeToleranceUpdatedEvent.InputTuple,
+      OrallyTimeToleranceUpdatedEvent.OutputTuple,
+      OrallyTimeToleranceUpdatedEvent.OutputObject
+    >;
+    OrallyTimeToleranceUpdated: TypedContractEvent<
+      OrallyTimeToleranceUpdatedEvent.InputTuple,
+      OrallyTimeToleranceUpdatedEvent.OutputTuple,
+      OrallyTimeToleranceUpdatedEvent.OutputObject
     >;
 
     "PairPriceDropChanged(address,address,uint256)": TypedContractEvent<
@@ -1179,6 +1792,28 @@ export interface PriceOracle extends BaseContract {
       PythPairIdUpdatedEvent.InputTuple,
       PythPairIdUpdatedEvent.OutputTuple,
       PythPairIdUpdatedEvent.OutputObject
+    >;
+
+    "RemoveUniswapV2LPToken(address)": TypedContractEvent<
+      RemoveUniswapV2LPTokenEvent.InputTuple,
+      RemoveUniswapV2LPTokenEvent.OutputTuple,
+      RemoveUniswapV2LPTokenEvent.OutputObject
+    >;
+    RemoveUniswapV2LPToken: TypedContractEvent<
+      RemoveUniswapV2LPTokenEvent.InputTuple,
+      RemoveUniswapV2LPTokenEvent.OutputTuple,
+      RemoveUniswapV2LPTokenEvent.OutputObject
+    >;
+
+    "StorkPairIdUpdated(address,address,string)": TypedContractEvent<
+      StorkPairIdUpdatedEvent.InputTuple,
+      StorkPairIdUpdatedEvent.OutputTuple,
+      StorkPairIdUpdatedEvent.OutputObject
+    >;
+    StorkPairIdUpdated: TypedContractEvent<
+      StorkPairIdUpdatedEvent.InputTuple,
+      StorkPairIdUpdatedEvent.OutputTuple,
+      StorkPairIdUpdatedEvent.OutputObject
     >;
 
     "SupraDataFeedUpdated(address,address,uint256)": TypedContractEvent<

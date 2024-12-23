@@ -3,6 +3,7 @@
 /* eslint-disable */
 import type {
   BaseContract,
+  BigNumberish,
   BytesLike,
   FunctionFragment,
   Result,
@@ -20,17 +21,17 @@ import type {
 } from "../../common";
 
 export interface OVM_GasPriceOracleMockInterface extends Interface {
-  getFunction(
-    nameOrSignature: "l1BaseFee" | "overhead" | "scalar"
-  ): FunctionFragment;
+  getFunction(nameOrSignature: "getL1FeeUpperBound"): FunctionFragment;
 
-  encodeFunctionData(functionFragment: "l1BaseFee", values?: undefined): string;
-  encodeFunctionData(functionFragment: "overhead", values?: undefined): string;
-  encodeFunctionData(functionFragment: "scalar", values?: undefined): string;
+  encodeFunctionData(
+    functionFragment: "getL1FeeUpperBound",
+    values: [BigNumberish]
+  ): string;
 
-  decodeFunctionResult(functionFragment: "l1BaseFee", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "overhead", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "scalar", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "getL1FeeUpperBound",
+    data: BytesLike
+  ): Result;
 }
 
 export interface OVM_GasPriceOracleMock extends BaseContract {
@@ -76,25 +77,19 @@ export interface OVM_GasPriceOracleMock extends BaseContract {
     event?: TCEvent
   ): Promise<this>;
 
-  l1BaseFee: TypedContractMethod<[], [bigint], "view">;
-
-  overhead: TypedContractMethod<[], [bigint], "view">;
-
-  scalar: TypedContractMethod<[], [bigint], "view">;
+  getL1FeeUpperBound: TypedContractMethod<
+    [_unsignedTxSize: BigNumberish],
+    [bigint],
+    "view"
+  >;
 
   getFunction<T extends ContractMethod = ContractMethod>(
     key: string | FunctionFragment
   ): T;
 
   getFunction(
-    nameOrSignature: "l1BaseFee"
-  ): TypedContractMethod<[], [bigint], "view">;
-  getFunction(
-    nameOrSignature: "overhead"
-  ): TypedContractMethod<[], [bigint], "view">;
-  getFunction(
-    nameOrSignature: "scalar"
-  ): TypedContractMethod<[], [bigint], "view">;
+    nameOrSignature: "getL1FeeUpperBound"
+  ): TypedContractMethod<[_unsignedTxSize: BigNumberish], [bigint], "view">;
 
   filters: {};
 }

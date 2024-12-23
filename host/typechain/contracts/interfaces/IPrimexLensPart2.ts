@@ -3,6 +3,7 @@
 /* eslint-disable */
 import type {
   BaseContract,
+  BigNumberish,
   BytesLike,
   FunctionFragment,
   Result,
@@ -20,18 +21,58 @@ import type {
   TypedContractMethod,
 } from "../../common";
 
+export declare namespace IPrimexLensPart2 {
+  export type CheckRewardParamsStruct = {
+    bucket: AddressLike;
+    amount: BigNumberish;
+    duration: BigNumberish;
+    rewardToken: AddressLike;
+    pullOracleData: BytesLike[][];
+    pullOracleTypes: BigNumberish[];
+    borrowedRewardAssetOracleData: BytesLike;
+  };
+
+  export type CheckRewardParamsStructOutput = [
+    bucket: string,
+    amount: bigint,
+    duration: bigint,
+    rewardToken: string,
+    pullOracleData: string[][],
+    pullOracleTypes: bigint[],
+    borrowedRewardAssetOracleData: string
+  ] & {
+    bucket: string;
+    amount: bigint;
+    duration: bigint;
+    rewardToken: string;
+    pullOracleData: string[][];
+    pullOracleTypes: bigint[];
+    borrowedRewardAssetOracleData: string;
+  };
+}
+
 export interface IPrimexLensPart2Interface extends Interface {
   getFunction(
-    nameOrSignature: "getEstimatedMinProtocolFeeLiquidation"
+    nameOrSignature:
+      | "getEstimatedMinProtocolFeeLiquidation"
+      | "hasEnoughRewardsInDepositManager"
   ): FunctionFragment;
 
   encodeFunctionData(
     functionFragment: "getEstimatedMinProtocolFeeLiquidation",
     values: [AddressLike]
   ): string;
+  encodeFunctionData(
+    functionFragment: "hasEnoughRewardsInDepositManager",
+    values: [IPrimexLensPart2.CheckRewardParamsStruct, AddressLike, AddressLike]
+  ): string;
 
   decodeFunctionResult(
     functionFragment: "getEstimatedMinProtocolFeeLiquidation",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "hasEnoughRewardsInDepositManager",
     data: BytesLike
   ): Result;
 }
@@ -85,6 +126,22 @@ export interface IPrimexLensPart2 extends BaseContract {
     "view"
   >;
 
+  hasEnoughRewardsInDepositManager: TypedContractMethod<
+    [
+      _params: IPrimexLensPart2.CheckRewardParamsStruct,
+      _depositManager: AddressLike,
+      priceOracle: AddressLike
+    ],
+    [
+      [boolean, bigint, bigint] & {
+        isEnough: boolean;
+        remainingReward: bigint;
+        maxDepositAmount: bigint;
+      }
+    ],
+    "payable"
+  >;
+
   getFunction<T extends ContractMethod = ContractMethod>(
     key: string | FunctionFragment
   ): T;
@@ -92,6 +149,23 @@ export interface IPrimexLensPart2 extends BaseContract {
   getFunction(
     nameOrSignature: "getEstimatedMinProtocolFeeLiquidation"
   ): TypedContractMethod<[_pm: AddressLike], [bigint], "view">;
+  getFunction(
+    nameOrSignature: "hasEnoughRewardsInDepositManager"
+  ): TypedContractMethod<
+    [
+      _params: IPrimexLensPart2.CheckRewardParamsStruct,
+      _depositManager: AddressLike,
+      priceOracle: AddressLike
+    ],
+    [
+      [boolean, bigint, bigint] & {
+        isEnough: boolean;
+        remainingReward: bigint;
+        maxDepositAmount: bigint;
+      }
+    ],
+    "payable"
+  >;
 
   filters: {};
 }

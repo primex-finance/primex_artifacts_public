@@ -91,6 +91,7 @@ export interface PTokenInterface extends Interface {
       | "Burn"
       | "Initialized"
       | "LockDeposit"
+      | "Log"
       | "Mint"
       | "Transfer"
       | "UnlockDeposit"
@@ -369,6 +370,18 @@ export namespace LockDepositEvent {
     id: bigint;
     deadline: bigint;
     amount: bigint;
+  }
+  export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
+  export type Filter = TypedDeferredTopicFilter<Event>;
+  export type Log = TypedEventLog<Event>;
+  export type LogDescription = TypedLogDescription<Event>;
+}
+
+export namespace LogEvent {
+  export type InputTuple = [error: BytesLike];
+  export type OutputTuple = [error: string];
+  export interface OutputObject {
+    error: string;
   }
   export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
   export type Filter = TypedDeferredTopicFilter<Event>;
@@ -787,6 +800,13 @@ export interface PToken extends BaseContract {
     LockDepositEvent.OutputObject
   >;
   getEvent(
+    key: "Log"
+  ): TypedContractEvent<
+    LogEvent.InputTuple,
+    LogEvent.OutputTuple,
+    LogEvent.OutputObject
+  >;
+  getEvent(
     key: "Mint"
   ): TypedContractEvent<
     MintEvent.InputTuple,
@@ -862,6 +882,17 @@ export interface PToken extends BaseContract {
       LockDepositEvent.InputTuple,
       LockDepositEvent.OutputTuple,
       LockDepositEvent.OutputObject
+    >;
+
+    "Log(bytes4)": TypedContractEvent<
+      LogEvent.InputTuple,
+      LogEvent.OutputTuple,
+      LogEvent.OutputObject
+    >;
+    Log: TypedContractEvent<
+      LogEvent.InputTuple,
+      LogEvent.OutputTuple,
+      LogEvent.OutputObject
     >;
 
     "Mint(address,uint256)": TypedContractEvent<

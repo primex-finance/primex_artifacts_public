@@ -4,3 +4,4 @@
 export type { IPriceOracleStorage } from "./IPriceOracleStorage";
 export type { IPriceOracleStorageV2 } from "./IPriceOracleStorageV2";
 export type { IPriceOracleStorageV3 } from "./IPriceOracleStorageV3";
+export type { IPriceOracleStorageV4 } from "./IPriceOracleStorageV4";

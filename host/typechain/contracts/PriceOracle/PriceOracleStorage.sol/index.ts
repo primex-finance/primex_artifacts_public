@@ -4,3 +4,4 @@
 export type { PriceOracleStorage } from "./PriceOracleStorage";
 export type { PriceOracleStorageV2 } from "./PriceOracleStorageV2";
 export type { PriceOracleStorageV3 } from "./PriceOracleStorageV3";
+export type { PriceOracleStorageV4 } from "./PriceOracleStorageV4";

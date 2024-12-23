@@ -3,5 +3,6 @@
 /* eslint-disable */
 export * as callback from "./callback";
 export * as pool from "./pool";
+export { IAlgebraFactory__factory } from "./IAlgebraFactory__factory";
 export { IAlgebraPool__factory } from "./IAlgebraPool__factory";
 export { IDataStorageOperator__factory } from "./IDataStorageOperator__factory";

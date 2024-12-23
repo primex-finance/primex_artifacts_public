@@ -81,7 +81,9 @@ export interface BatchManagerInterface extends Interface {
     nameOrSignatureOrTopic:
       | "ChangeGasPerBatch"
       | "ChangeGasPerPosition"
+      | "ClosePosition"
       | "Initialized"
+      | "PaidProtocolFee"
       | "Paused"
       | "Unpaused"
   ): EventFragment;
@@ -221,11 +223,88 @@ export namespace ChangeGasPerPositionEvent {
   export type LogDescription = TypedLogDescription<Event>;
 }
 
+export namespace ClosePositionEvent {
+  export type InputTuple = [
+    positionId: BigNumberish,
+    trader: AddressLike,
+    closedBy: AddressLike,
+    bucketAddress: AddressLike,
+    soldAsset: AddressLike,
+    positionAsset: AddressLike,
+    decreasePositionAmount: BigNumberish,
+    profit: BigNumberish,
+    positionDebt: BigNumberish,
+    amountOut: BigNumberish,
+    reason: BigNumberish
+  ];
+  export type OutputTuple = [
+    positionId: bigint,
+    trader: string,
+    closedBy: string,
+    bucketAddress: string,
+    soldAsset: string,
+    positionAsset: string,
+    decreasePositionAmount: bigint,
+    profit: bigint,
+    positionDebt: bigint,
+    amountOut: bigint,
+    reason: bigint
+  ];
+  export interface OutputObject {
+    positionId: bigint;
+    trader: string;
+    closedBy: string;
+    bucketAddress: string;
+    soldAsset: string;
+    positionAsset: string;
+    decreasePositionAmount: bigint;
+    profit: bigint;
+    positionDebt: bigint;
+    amountOut: bigint;
+    reason: bigint;
+  }
+  export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
+  export type Filter = TypedDeferredTopicFilter<Event>;
+  export type Log = TypedEventLog<Event>;
+  export type LogDescription = TypedLogDescription<Event>;
+}
+
 export namespace InitializedEvent {
   export type InputTuple = [version: BigNumberish];
   export type OutputTuple = [version: bigint];
   export interface OutputObject {
     version: bigint;
+  }
+  export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
+  export type Filter = TypedDeferredTopicFilter<Event>;
+  export type Log = TypedEventLog<Event>;
+  export type LogDescription = TypedLogDescription<Event>;
+}
+
+export namespace PaidProtocolFeeEvent {
+  export type InputTuple = [
+    positionId: BigNumberish,
+    trader: AddressLike,
+    paymentAsset: AddressLike,
+    feeRateType: BigNumberish,
+    feeInPaymentAsset: BigNumberish,
+    feeInPmx: BigNumberish
+  ];
+  export type OutputTuple = [
+    positionId: bigint,
+    trader: string,
+    paymentAsset: string,
+    feeRateType: bigint,
+    feeInPaymentAsset: bigint,
+    feeInPmx: bigint
+  ];
+  export interface OutputObject {
+    positionId: bigint;
+    trader: string;
+    paymentAsset: string;
+    feeRateType: bigint;
+    feeInPaymentAsset: bigint;
+    feeInPmx: bigint;
   }
   export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
   export type Filter = TypedDeferredTopicFilter<Event>;
@@ -473,11 +552,25 @@ export interface BatchManager extends BaseContract {
     ChangeGasPerPositionEvent.OutputObject
   >;
   getEvent(
+    key: "ClosePosition"
+  ): TypedContractEvent<
+    ClosePositionEvent.InputTuple,
+    ClosePositionEvent.OutputTuple,
+    ClosePositionEvent.OutputObject
+  >;
+  getEvent(
     key: "Initialized"
   ): TypedContractEvent<
     InitializedEvent.InputTuple,
     InitializedEvent.OutputTuple,
     InitializedEvent.OutputObject
+  >;
+  getEvent(
+    key: "PaidProtocolFee"
+  ): TypedContractEvent<
+    PaidProtocolFeeEvent.InputTuple,
+    PaidProtocolFeeEvent.OutputTuple,
+    PaidProtocolFeeEvent.OutputObject
   >;
   getEvent(
     key: "Paused"
@@ -517,6 +610,17 @@ export interface BatchManager extends BaseContract {
       ChangeGasPerPositionEvent.OutputObject
     >;
 
+    "ClosePosition(uint256,address,address,address,address,address,uint256,int256,uint256,uint256,uint8)": TypedContractEvent<
+      ClosePositionEvent.InputTuple,
+      ClosePositionEvent.OutputTuple,
+      ClosePositionEvent.OutputObject
+    >;
+    ClosePosition: TypedContractEvent<
+      ClosePositionEvent.InputTuple,
+      ClosePositionEvent.OutputTuple,
+      ClosePositionEvent.OutputObject
+    >;
+
     "Initialized(uint8)": TypedContractEvent<
       InitializedEvent.InputTuple,
       InitializedEvent.OutputTuple,
@@ -526,6 +630,17 @@ export interface BatchManager extends BaseContract {
       InitializedEvent.InputTuple,
       InitializedEvent.OutputTuple,
       InitializedEvent.OutputObject
+    >;
+
+    "PaidProtocolFee(uint256,address,address,uint8,uint256,uint256)": TypedContractEvent<
+      PaidProtocolFeeEvent.InputTuple,
+      PaidProtocolFeeEvent.OutputTuple,
+      PaidProtocolFeeEvent.OutputObject
+    >;
+    PaidProtocolFee: TypedContractEvent<
+      PaidProtocolFeeEvent.InputTuple,
+      PaidProtocolFeeEvent.OutputTuple,
+      PaidProtocolFeeEvent.OutputObject
     >;
 
     "Paused(address)": TypedContractEvent<

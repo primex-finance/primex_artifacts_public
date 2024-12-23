@@ -30,6 +30,7 @@ export interface IDepositManagerStorageInterface extends Interface {
       | "priceOracle"
       | "primexDNS"
       | "registry"
+      | "tierManager"
       | "whiteBlackList"
   ): FunctionFragment;
 
@@ -51,6 +52,10 @@ export interface IDepositManagerStorageInterface extends Interface {
   ): string;
   encodeFunctionData(functionFragment: "primexDNS", values?: undefined): string;
   encodeFunctionData(functionFragment: "registry", values?: undefined): string;
+  encodeFunctionData(
+    functionFragment: "tierManager",
+    values?: undefined
+  ): string;
   encodeFunctionData(
     functionFragment: "whiteBlackList",
     values?: undefined
@@ -74,6 +79,10 @@ export interface IDepositManagerStorageInterface extends Interface {
   ): Result;
   decodeFunctionResult(functionFragment: "primexDNS", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "registry", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "tierManager",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(
     functionFragment: "whiteBlackList",
     data: BytesLike
@@ -139,6 +148,8 @@ export interface IDepositManagerStorage extends BaseContract {
 
   registry: TypedContractMethod<[], [string], "view">;
 
+  tierManager: TypedContractMethod<[], [string], "view">;
+
   whiteBlackList: TypedContractMethod<[], [string], "view">;
 
   getFunction<T extends ContractMethod = ContractMethod>(
@@ -166,6 +177,9 @@ export interface IDepositManagerStorage extends BaseContract {
   ): TypedContractMethod<[], [string], "view">;
   getFunction(
     nameOrSignature: "registry"
+  ): TypedContractMethod<[], [string], "view">;
+  getFunction(
+    nameOrSignature: "tierManager"
   ): TypedContractMethod<[], [string], "view">;
   getFunction(
     nameOrSignature: "whiteBlackList"

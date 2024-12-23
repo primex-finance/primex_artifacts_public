@@ -99,6 +99,7 @@ export interface IPriceOracleV2Interface extends Interface {
       | "pythPairIds"
       | "registry"
       | "setGasPriceFeed"
+      | "setOrallyOracle"
       | "setPairPriceDrop"
       | "setPyth"
       | "setSupraPullOracle"
@@ -187,6 +188,10 @@ export interface IPriceOracleV2Interface extends Interface {
   encodeFunctionData(functionFragment: "registry", values?: undefined): string;
   encodeFunctionData(
     functionFragment: "setGasPriceFeed",
+    values: [AddressLike]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "setOrallyOracle",
     values: [AddressLike]
   ): string;
   encodeFunctionData(
@@ -322,6 +327,10 @@ export interface IPriceOracleV2Interface extends Interface {
   decodeFunctionResult(functionFragment: "registry", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "setGasPriceFeed",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "setOrallyOracle",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
@@ -688,6 +697,12 @@ export interface IPriceOracleV2 extends BaseContract {
     "nonpayable"
   >;
 
+  setOrallyOracle: TypedContractMethod<
+    [_orally: AddressLike],
+    [void],
+    "nonpayable"
+  >;
+
   setPairPriceDrop: TypedContractMethod<
     [_assetA: AddressLike, _assetB: AddressLike, _pairPriceDrop: BigNumberish],
     [void],
@@ -876,6 +891,9 @@ export interface IPriceOracleV2 extends BaseContract {
   getFunction(
     nameOrSignature: "setGasPriceFeed"
   ): TypedContractMethod<[priceFeed: AddressLike], [void], "nonpayable">;
+  getFunction(
+    nameOrSignature: "setOrallyOracle"
+  ): TypedContractMethod<[_orally: AddressLike], [void], "nonpayable">;
   getFunction(
     nameOrSignature: "setPairPriceDrop"
   ): TypedContractMethod<

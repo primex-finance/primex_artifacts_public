@@ -3,3 +3,4 @@
 /* eslint-disable */
 export { IPriceOracle__factory } from "./IPriceOracle__factory";
 export { IPriceOracleV2__factory } from "./IPriceOracleV2__factory";
+export { IPriceOracleV3__factory } from "./IPriceOracleV3__factory";

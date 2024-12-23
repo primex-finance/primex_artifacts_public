@@ -5,5 +5,6 @@ import type * as callback from "./callback";
 export type { callback };
 import type * as pool from "./pool";
 export type { pool };
+export type { IAlgebraFactory } from "./IAlgebraFactory";
 export type { IAlgebraPool } from "./IAlgebraPool";
 export type { IDataStorageOperator } from "./IDataStorageOperator";

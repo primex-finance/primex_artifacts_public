@@ -718,6 +718,19 @@ const _abi = [
   {
     inputs: [
       {
+        internalType: "uint256",
+        name: "_magicTierCoefficient",
+        type: "uint256",
+      },
+    ],
+    name: "setMagicTierCoefficient",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
         components: [
           {
             internalType: "address",
@@ -753,6 +766,32 @@ const _abi = [
     name: "setRewardParameters",
     outputs: [],
     stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "_tierManager",
+        type: "address",
+      },
+    ],
+    name: "setTiersManager",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "tierManager",
+    outputs: [
+      {
+        internalType: "contract ITiersManager",
+        name: "",
+        type: "address",
+      },
+    ],
+    stateMutability: "view",
     type: "function",
   },
   {

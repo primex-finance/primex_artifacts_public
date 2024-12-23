@@ -37,6 +37,11 @@ const _abi = [
   },
   {
     inputs: [],
+    name: "ADDRESS_IS_NOT_UNISWAPV2LP_TOKEN",
+    type: "error",
+  },
+  {
+    inputs: [],
     name: "ADDRESS_IS_WHITELISTED",
     type: "error",
   },
@@ -507,7 +512,17 @@ const _abi = [
   },
   {
     inputs: [],
+    name: "INCORRECT_CURVELP_ROUTE",
+    type: "error",
+  },
+  {
+    inputs: [],
     name: "INCORRECT_DEADLINE",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "INCORRECT_EIP4626_ROUTE",
     type: "error",
   },
   {
@@ -527,6 +542,11 @@ const _abi = [
   },
   {
     inputs: [],
+    name: "INCORRECT_LIMITS",
+    type: "error",
+  },
+  {
+    inputs: [],
     name: "INCORRECT_LIQUIDITY_MINING_PARAMS",
     type: "error",
   },
@@ -538,6 +558,16 @@ const _abi = [
   {
     inputs: [],
     name: "INCORRECT_OPTIMISM_GAS_COEFFICIENT",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "INCORRECT_ORACLE_DATA",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "INCORRECT_ORALLY_PRICE",
     type: "error",
   },
   {
@@ -572,12 +602,27 @@ const _abi = [
   },
   {
     inputs: [],
+    name: "INCORRECT_TIER",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "INCORRECT_TIERS_ORDER",
+    type: "error",
+  },
+  {
+    inputs: [],
     name: "INCORRECT_TOKEN_TO",
     type: "error",
   },
   {
     inputs: [],
     name: "INCORRECT_TRANSFER_RESTRICTIONS",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "INCORRECT_UNISWAPV2LP_ROUTE",
     type: "error",
   },
   {
@@ -658,6 +703,16 @@ const _abi = [
   {
     inputs: [],
     name: "INVALID_PERCENT_NUMBER",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "INVALID_PRICES",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "INVALID_RESERVES",
     type: "error",
   },
   {
@@ -807,6 +862,21 @@ const _abi = [
   },
   {
     inputs: [],
+    name: "NO_TOKEN_PAIR_FOUND",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "NO_TOKEN_SYMBOL_FOUND",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "NO_UNDERLYING_TOKEN_FOUND",
+    type: "error",
+  },
+  {
+    inputs: [],
     name: "NUMBER_IS_0",
     type: "error",
   },
@@ -818,6 +888,16 @@ const _abi = [
   {
     inputs: [],
     name: "OPERATION_NOT_SUPPORTED",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "ORACLE_DATA_AND_TOKENS_LENGTH_MISMATCH",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "ORACLE_NOT_SUPPORT_LP",
     type: "error",
   },
   {
@@ -917,6 +997,11 @@ const _abi = [
   },
   {
     inputs: [],
+    name: "REENTRANCY_RISK",
+    type: "error",
+  },
+  {
+    inputs: [],
     name: "RESERVE_RATE_SHOULD_BE_LESS_THAN_1",
     type: "error",
   },
@@ -928,6 +1013,11 @@ const _abi = [
   {
     inputs: [],
     name: "REWARD_AMOUNT_IS_ZERO",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "REWARD_PERCENT_SHOULD_BE_GREATER_THAN_ZERO",
     type: "error",
   },
   {
@@ -1022,6 +1112,11 @@ const _abi = [
   },
   {
     inputs: [],
+    name: "STORK_VERIFY_FAILED",
+    type: "error",
+  },
+  {
+    inputs: [],
     name: "SUM_OF_SHARES_SHOULD_BE_GREATER_THAN_ZERO",
     type: "error",
   },
@@ -1063,6 +1158,11 @@ const _abi = [
   {
     inputs: [],
     name: "TOKEN_APPROVE_FAILED",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "TOKEN_CANNOT_BE_P_TOKEN",
     type: "error",
   },
   {
@@ -1142,6 +1242,11 @@ const _abi = [
   },
   {
     inputs: [],
+    name: "VALUE_OUT_OF_RANGE",
+    type: "error",
+  },
+  {
+    inputs: [],
     name: "WITHDRAWAL_NOT_ALLOWED",
     type: "error",
   },
@@ -1167,6 +1272,11 @@ const _abi = [
   },
   {
     inputs: [],
+    name: "WRONG_DEADLINE",
+    type: "error",
+  },
+  {
+    inputs: [],
     name: "WRONG_LENGTH",
     type: "error",
   },
@@ -1188,6 +1298,11 @@ const _abi = [
   {
     inputs: [],
     name: "WRONG_URIS_LENGTH",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "ZERO_ADDRESS",
     type: "error",
   },
   {
@@ -1236,7 +1351,7 @@ const _abi = [
 ] as const;
 
 const _bytecode =
-  "0x60808060405234601757603a9081601d823930815050f35b600080fdfe600080fdfea26469706673582212202eaf423211a1db70963d76621a9f16ddb4bf04ceb9a4c97ed3221a240a204d7564736f6c63430008120033";
+  "0x60808060405234601757603a9081601d823930815050f35b600080fdfe600080fdfea26469706673582212203db6d06f726d6bc5f0a39ec0ab39e6eed076f8f6dd949c8679232391411116ab64736f6c634300081a0033";
 
 type ErrorsConstructorParams =
   | [signer?: Signer]

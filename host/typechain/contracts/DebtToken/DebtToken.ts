@@ -57,6 +57,7 @@ export interface DebtTokenInterface extends Interface {
       | "Approval"
       | "Burn"
       | "Initialized"
+      | "Log"
       | "Mint"
       | "Transfer"
   ): EventFragment;
@@ -241,6 +242,18 @@ export namespace InitializedEvent {
   export type OutputTuple = [version: bigint];
   export interface OutputObject {
     version: bigint;
+  }
+  export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
+  export type Filter = TypedDeferredTopicFilter<Event>;
+  export type Log = TypedEventLog<Event>;
+  export type LogDescription = TypedLogDescription<Event>;
+}
+
+export namespace LogEvent {
+  export type InputTuple = [error: BytesLike];
+  export type OutputTuple = [error: string];
+  export interface OutputObject {
+    error: string;
   }
   export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
   export type Filter = TypedDeferredTopicFilter<Event>;
@@ -585,6 +598,13 @@ export interface DebtToken extends BaseContract {
     InitializedEvent.OutputObject
   >;
   getEvent(
+    key: "Log"
+  ): TypedContractEvent<
+    LogEvent.InputTuple,
+    LogEvent.OutputTuple,
+    LogEvent.OutputObject
+  >;
+  getEvent(
     key: "Mint"
   ): TypedContractEvent<
     MintEvent.InputTuple,
@@ -631,6 +651,17 @@ export interface DebtToken extends BaseContract {
       InitializedEvent.InputTuple,
       InitializedEvent.OutputTuple,
       InitializedEvent.OutputObject
+    >;
+
+    "Log(bytes4)": TypedContractEvent<
+      LogEvent.InputTuple,
+      LogEvent.OutputTuple,
+      LogEvent.OutputObject
+    >;
+    Log: TypedContractEvent<
+      LogEvent.InputTuple,
+      LogEvent.OutputTuple,
+      LogEvent.OutputObject
     >;
 
     "Mint(address,uint256)": TypedContractEvent<

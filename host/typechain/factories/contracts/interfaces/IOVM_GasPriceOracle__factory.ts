@@ -11,7 +11,7 @@ import type {
 const _abi = [
   {
     inputs: [],
-    name: "l1BaseFee",
+    name: "gasPrice",
     outputs: [
       {
         internalType: "uint256",
@@ -23,21 +23,14 @@ const _abi = [
     type: "function",
   },
   {
-    inputs: [],
-    name: "overhead",
-    outputs: [
+    inputs: [
       {
         internalType: "uint256",
-        name: "",
+        name: "_unsignedTxSize",
         type: "uint256",
       },
     ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "scalar",
+    name: "getL1FeeUpperBound",
     outputs: [
       {
         internalType: "uint256",

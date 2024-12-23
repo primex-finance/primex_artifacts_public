@@ -66,13 +66,15 @@ export declare namespace IPrimexDNSStorageV3 {
 export declare namespace IPrimexDNSV3 {
   export type FeeRateParamsStruct = {
     feeRateType: BigNumberish;
+    tier: BigNumberish;
     feeRate: BigNumberish;
   };
 
   export type FeeRateParamsStructOutput = [
     feeRateType: bigint,
+    tier: bigint,
     feeRate: bigint
-  ] & { feeRateType: bigint; feeRate: bigint };
+  ] & { feeRateType: bigint; tier: bigint; feeRate: bigint };
 
   export type AverageGasPerActionParamsStruct = {
     tradingOrderType: BigNumberish;
@@ -163,6 +165,8 @@ export interface IPrimexDNSV3Interface extends Interface {
       | "getParamsForMinPositionSize"
       | "getParamsForMinProtocolFee"
       | "getPrimexDNSParams"
+      | "getProtocolFeeRateByTier"
+      | "getProtocolFeeRatesByTier"
       | "initialize"
       | "leverageTolerance"
       | "liquidationGasAmount"
@@ -172,6 +176,7 @@ export interface IPrimexDNSV3Interface extends Interface {
       | "pmxDiscountMultiplier"
       | "protocolFeeCoefficient"
       | "protocolFeeRates"
+      | "protocolFeeRatesByTier"
       | "registry"
       | "setAavePool"
       | "setAdditionalGasSpent"
@@ -187,6 +192,8 @@ export interface IPrimexDNSV3Interface extends Interface {
       | "setPmxDiscountMultiplier"
       | "setProtocolFeeCoefficient"
       | "setProtocolFeeRate"
+      | "setTiersManager"
+      | "tiersManager"
       | "treasury"
   ): FunctionFragment;
 
@@ -213,6 +220,7 @@ export interface IPrimexDNSV3Interface extends Interface {
       | "DexAdapterChanged"
       | "DexFrozen"
       | "PMXchanged"
+      | "TiersManagerchanged"
   ): EventFragment;
 
   encodeFunctionData(functionFragment: "aavePool", values?: undefined): string;
@@ -302,7 +310,15 @@ export interface IPrimexDNSV3Interface extends Interface {
   ): string;
   encodeFunctionData(
     functionFragment: "getPrimexDNSParams",
-    values: [BigNumberish]
+    values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "getProtocolFeeRateByTier",
+    values: [BigNumberish, BigNumberish]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "getProtocolFeeRatesByTier",
+    values: [BigNumberish, BigNumberish[]]
   ): string;
   encodeFunctionData(
     functionFragment: "initialize",
@@ -336,6 +352,10 @@ export interface IPrimexDNSV3Interface extends Interface {
   encodeFunctionData(
     functionFragment: "protocolFeeRates",
     values: [BigNumberish]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "protocolFeeRatesByTier",
+    values: [BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(functionFragment: "registry", values?: undefined): string;
   encodeFunctionData(
@@ -389,7 +409,15 @@ export interface IPrimexDNSV3Interface extends Interface {
   ): string;
   encodeFunctionData(
     functionFragment: "setProtocolFeeRate",
-    values: [IPrimexDNSV3.FeeRateParamsStruct]
+    values: [IPrimexDNSV3.FeeRateParamsStruct[]]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "setTiersManager",
+    values: [AddressLike]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "tiersManager",
+    values?: undefined
   ): string;
   encodeFunctionData(functionFragment: "treasury", values?: undefined): string;
 
@@ -473,6 +501,14 @@ export interface IPrimexDNSV3Interface extends Interface {
     functionFragment: "getPrimexDNSParams",
     data: BytesLike
   ): Result;
+  decodeFunctionResult(
+    functionFragment: "getProtocolFeeRateByTier",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "getProtocolFeeRatesByTier",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(functionFragment: "initialize", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "leverageTolerance",
@@ -501,6 +537,10 @@ export interface IPrimexDNSV3Interface extends Interface {
   ): Result;
   decodeFunctionResult(
     functionFragment: "protocolFeeRates",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "protocolFeeRatesByTier",
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "registry", data: BytesLike): Result;
@@ -555,6 +595,14 @@ export interface IPrimexDNSV3Interface extends Interface {
   ): Result;
   decodeFunctionResult(
     functionFragment: "setProtocolFeeRate",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "setTiersManager",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "tiersManager",
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "treasury", data: BytesLike): Result;
@@ -761,10 +809,19 @@ export namespace ChangeProtocolFeeCoefficientEvent {
 }
 
 export namespace ChangeProtocolFeeRateEvent {
-  export type InputTuple = [feeRateType: BigNumberish, feeRate: BigNumberish];
-  export type OutputTuple = [feeRateType: bigint, feeRate: bigint];
+  export type InputTuple = [
+    feeRateType: BigNumberish,
+    tier: BigNumberish,
+    feeRate: BigNumberish
+  ];
+  export type OutputTuple = [
+    feeRateType: bigint,
+    tier: bigint,
+    feeRate: bigint
+  ];
   export interface OutputObject {
     feeRateType: bigint;
+    tier: bigint;
     feeRate: bigint;
   }
   export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
@@ -827,6 +884,18 @@ export namespace PMXchangedEvent {
   export type OutputTuple = [pmx: string];
   export interface OutputObject {
     pmx: string;
+  }
+  export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
+  export type Filter = TypedDeferredTopicFilter<Event>;
+  export type Log = TypedEventLog<Event>;
+  export type LogDescription = TypedLogDescription<Event>;
+}
+
+export namespace TiersManagerchangedEvent {
+  export type InputTuple = [tiersManager: AddressLike];
+  export type OutputTuple = [tiersManager: string];
+  export interface OutputObject {
+    tiersManager: string;
   }
   export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
   export type Filter = TypedDeferredTopicFilter<Event>;
@@ -968,8 +1037,20 @@ export interface IPrimexDNSV3 extends BaseContract {
   >;
 
   getPrimexDNSParams: TypedContractMethod<
-    [_feeRateType: BigNumberish],
-    [[string, string, bigint, bigint, bigint]],
+    [],
+    [[string, string, string, bigint, bigint]],
+    "view"
+  >;
+
+  getProtocolFeeRateByTier: TypedContractMethod<
+    [_feeRateType: BigNumberish, _tier: BigNumberish],
+    [bigint],
+    "view"
+  >;
+
+  getProtocolFeeRatesByTier: TypedContractMethod<
+    [_feeRateType: BigNumberish, _tiers: BigNumberish[]],
+    [bigint[]],
     "view"
   >;
 
@@ -999,6 +1080,12 @@ export interface IPrimexDNSV3 extends BaseContract {
 
   protocolFeeRates: TypedContractMethod<
     [_feeRateType: BigNumberish],
+    [bigint],
+    "view"
+  >;
+
+  protocolFeeRatesByTier: TypedContractMethod<
+    [_feeRateType: BigNumberish, _tier: BigNumberish],
     [bigint],
     "view"
   >;
@@ -1083,10 +1170,18 @@ export interface IPrimexDNSV3 extends BaseContract {
   >;
 
   setProtocolFeeRate: TypedContractMethod<
-    [_feeRateType: IPrimexDNSV3.FeeRateParamsStruct],
+    [_feeRateType: IPrimexDNSV3.FeeRateParamsStruct[]],
     [void],
     "nonpayable"
   >;
+
+  setTiersManager: TypedContractMethod<
+    [_tiersManager: AddressLike],
+    [void],
+    "nonpayable"
+  >;
+
+  tiersManager: TypedContractMethod<[], [string], "view">;
 
   treasury: TypedContractMethod<[], [string], "view">;
 
@@ -1200,8 +1295,22 @@ export interface IPrimexDNSV3 extends BaseContract {
   getFunction(
     nameOrSignature: "getPrimexDNSParams"
   ): TypedContractMethod<
-    [_feeRateType: BigNumberish],
-    [[string, string, bigint, bigint, bigint]],
+    [],
+    [[string, string, string, bigint, bigint]],
+    "view"
+  >;
+  getFunction(
+    nameOrSignature: "getProtocolFeeRateByTier"
+  ): TypedContractMethod<
+    [_feeRateType: BigNumberish, _tier: BigNumberish],
+    [bigint],
+    "view"
+  >;
+  getFunction(
+    nameOrSignature: "getProtocolFeeRatesByTier"
+  ): TypedContractMethod<
+    [_feeRateType: BigNumberish, _tiers: BigNumberish[]],
+    [bigint[]],
     "view"
   >;
   getFunction(
@@ -1239,6 +1348,13 @@ export interface IPrimexDNSV3 extends BaseContract {
   getFunction(
     nameOrSignature: "protocolFeeRates"
   ): TypedContractMethod<[_feeRateType: BigNumberish], [bigint], "view">;
+  getFunction(
+    nameOrSignature: "protocolFeeRatesByTier"
+  ): TypedContractMethod<
+    [_feeRateType: BigNumberish, _tier: BigNumberish],
+    [bigint],
+    "view"
+  >;
   getFunction(
     nameOrSignature: "registry"
   ): TypedContractMethod<[], [string], "view">;
@@ -1315,10 +1431,16 @@ export interface IPrimexDNSV3 extends BaseContract {
   getFunction(
     nameOrSignature: "setProtocolFeeRate"
   ): TypedContractMethod<
-    [_feeRateType: IPrimexDNSV3.FeeRateParamsStruct],
+    [_feeRateType: IPrimexDNSV3.FeeRateParamsStruct[]],
     [void],
     "nonpayable"
   >;
+  getFunction(
+    nameOrSignature: "setTiersManager"
+  ): TypedContractMethod<[_tiersManager: AddressLike], [void], "nonpayable">;
+  getFunction(
+    nameOrSignature: "tiersManager"
+  ): TypedContractMethod<[], [string], "view">;
   getFunction(
     nameOrSignature: "treasury"
   ): TypedContractMethod<[], [string], "view">;
@@ -1469,6 +1591,13 @@ export interface IPrimexDNSV3 extends BaseContract {
     PMXchangedEvent.InputTuple,
     PMXchangedEvent.OutputTuple,
     PMXchangedEvent.OutputObject
+  >;
+  getEvent(
+    key: "TiersManagerchanged"
+  ): TypedContractEvent<
+    TiersManagerchangedEvent.InputTuple,
+    TiersManagerchangedEvent.OutputTuple,
+    TiersManagerchangedEvent.OutputObject
   >;
 
   filters: {
@@ -1637,7 +1766,7 @@ export interface IPrimexDNSV3 extends BaseContract {
       ChangeProtocolFeeCoefficientEvent.OutputObject
     >;
 
-    "ChangeProtocolFeeRate(uint8,uint256)": TypedContractEvent<
+    "ChangeProtocolFeeRate(uint8,uint256,uint256)": TypedContractEvent<
       ChangeProtocolFeeRateEvent.InputTuple,
       ChangeProtocolFeeRateEvent.OutputTuple,
       ChangeProtocolFeeRateEvent.OutputObject
@@ -1701,6 +1830,17 @@ export interface IPrimexDNSV3 extends BaseContract {
       PMXchangedEvent.InputTuple,
       PMXchangedEvent.OutputTuple,
       PMXchangedEvent.OutputObject
+    >;
+
+    "TiersManagerchanged(address)": TypedContractEvent<
+      TiersManagerchangedEvent.InputTuple,
+      TiersManagerchangedEvent.OutputTuple,
+      TiersManagerchangedEvent.OutputObject
+    >;
+    TiersManagerchanged: TypedContractEvent<
+      TiersManagerchangedEvent.InputTuple,
+      TiersManagerchangedEvent.OutputTuple,
+      TiersManagerchangedEvent.OutputObject
     >;
   };
 }
