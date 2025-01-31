@@ -652,6 +652,11 @@ const _abi = [
   },
   {
     inputs: [],
+    name: "INSUFFICIENT_REWARD_TOKEN_BALANCE",
+    type: "error",
+  },
+  {
+    inputs: [],
     name: "INSUFFICIENT_TOKEN_BALANCE",
     type: "error",
   },
@@ -1247,6 +1252,11 @@ const _abi = [
   },
   {
     inputs: [],
+    name: "VESTED_AMOUNT_IS_ZERO",
+    type: "error",
+  },
+  {
+    inputs: [],
     name: "WITHDRAWAL_NOT_ALLOWED",
     type: "error",
   },
@@ -1351,7 +1361,7 @@ const _abi = [
 ] as const;
 
 const _bytecode =
-  "0x60808060405234601757603a9081601d823930815050f35b600080fdfe600080fdfea26469706673582212203db6d06f726d6bc5f0a39ec0ab39e6eed076f8f6dd949c8679232391411116ab64736f6c634300081a0033";
+  "0x60808060405234601757603a9081601d823930815050f35b600080fdfe600080fdfea264697066735822122000eeeac62f9f7e0bcda65946b4fb7f259349e494a3966d0ebd1ad14ffe708f4764736f6c634300081a0033";
 
 type ErrorsConstructorParams =
   | [signer?: Signer]

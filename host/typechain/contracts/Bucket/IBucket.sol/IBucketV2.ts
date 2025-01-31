@@ -987,7 +987,7 @@ export interface IBucketV2 extends BaseContract {
 
   lar: TypedContractMethod<[], [bigint], "view">;
 
-  liquidityIndex: TypedContractMethod<[], [bigint], "nonpayable">;
+  liquidityIndex: TypedContractMethod<[], [bigint], "view">;
 
   maxAssetLeverage: TypedContractMethod<
     [_asset: AddressLike],
@@ -1235,7 +1235,7 @@ export interface IBucketV2 extends BaseContract {
   ): TypedContractMethod<[], [bigint], "view">;
   getFunction(
     nameOrSignature: "liquidityIndex"
-  ): TypedContractMethod<[], [bigint], "nonpayable">;
+  ): TypedContractMethod<[], [bigint], "view">;
   getFunction(
     nameOrSignature: "maxAssetLeverage"
   ): TypedContractMethod<[_asset: AddressLike], [bigint], "view">;

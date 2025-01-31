@@ -111,7 +111,8 @@
   },
   "pricefeeds": {
     "selfDeployed": {
-      "epmx-usd": "0xEE3E2f0738A0991DCD66D8AA2e6D60e5dfe2be43"
+      "epmx-usd": "0xEE3E2f0738A0991DCD66D8AA2e6D60e5dfe2be43",
+      "pmx-usd": "0xeF2CdFFe40B5883F6ACd3bd3ef6E6F87a26C4Cc0"
     },
     "usdc.e-usd": "0x50834F3163758fcC1Df9973b6e91f0F0F0434aD3",
     "usdc-usd": "0x50834F3163758fcC1Df9973b6e91f0F0F0434aD3",

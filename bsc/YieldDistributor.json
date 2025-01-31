@@ -1,0 +1,2307 @@
+{
+    "address": "0x83b73dAba10cB096681194db49c623E179045D2B",
+    "abi": [
+        {
+            "type": "constructor",
+            "inputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "acceptOwnership",
+            "inputs": [],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "bulkCheckpointOtherUsers",
+            "inputs": [
+                {
+                    "name": "_accounts",
+                    "type": "address[]",
+                    "internalType": "address[]"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "checkpoint",
+            "inputs": [],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "checkpointOtherUser",
+            "inputs": [
+                {
+                    "name": "_account",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "earned",
+            "inputs": [
+                {
+                    "name": "_account",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "_earned",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "eligibleCurrentVePMX",
+            "inputs": [
+                {
+                    "name": "_user",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "_eligibleVepmxBal",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "_storedEndingTimestamp",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "emittedToken",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "contract ERC20"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "emittedTokenAddress",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "fractionParticipating",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "_fraction",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getYield",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "_yield0",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "getYieldForDuration",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "_yield",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getYieldThirdParty",
+            "inputs": [
+                {
+                    "name": "_staker",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "_yield0",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "greylist",
+            "inputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "bool",
+                    "internalType": "bool"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "greylistAddress",
+            "inputs": [
+                {
+                    "name": "_address",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "initialize",
+            "inputs": [
+                {
+                    "name": "_owner",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "_timelockAddress",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "_emittedToken",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "_vePMXAggregator",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "lastTimeYieldApplicable",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "_ts",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "lastUpdateTime",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "nominateNewOwner",
+            "inputs": [
+                {
+                    "name": "_owner",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "nominatedOwner",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "notifyRewardAmount",
+            "inputs": [
+                {
+                    "name": "_amount",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "owner",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "periodFinish",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "recoverERC20",
+            "inputs": [
+                {
+                    "name": "_tokenAddress",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "_tokenAmount",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "rewardNotifiers",
+            "inputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "bool",
+                    "internalType": "bool"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "setPauses",
+            "inputs": [
+                {
+                    "name": "_yieldCollectionPaused",
+                    "type": "bool",
+                    "internalType": "bool"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "setThirdPartyClaimer",
+            "inputs": [
+                {
+                    "name": "_staker",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "_claimer",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "setTimelock",
+            "inputs": [
+                {
+                    "name": "_newTimelock",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "setVePMXAggregator",
+            "inputs": [
+                {
+                    "name": "_vePMXAggregator",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "setYieldDuration",
+            "inputs": [
+                {
+                    "name": "_yieldDuration",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "setYieldRate",
+            "inputs": [
+                {
+                    "name": "_newRate",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "_syncToo",
+                    "type": "bool",
+                    "internalType": "bool"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "sync",
+            "inputs": [],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "thirdPartyClaimers",
+            "inputs": [
+                {
+                    "name": "staker",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "claimer",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "timelockAddress",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "toggleRewardNotifier",
+            "inputs": [
+                {
+                    "name": "_notifierAddr",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "totalComboVePMXSupplyStored",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "totalVePMXParticipating",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "userIsInitialized",
+            "inputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "bool",
+                    "internalType": "bool"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "userVePMXCheckpointed",
+            "inputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "userVePMXEndpointCheckpointed",
+            "inputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "userYieldPerTokenPaid",
+            "inputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "vePMXAggregator",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "contract VePMXAggregator"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "yieldCollectionPaused",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "bool",
+                    "internalType": "bool"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "yieldDuration",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "yieldPerVePMX",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "_yield",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "yieldPerVePMXStored",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "yieldRate",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "yields",
+            "inputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "event",
+            "name": "DefaultInitialization",
+            "inputs": [],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "OwnerChanged",
+            "inputs": [
+                {
+                    "name": "oldOwner",
+                    "type": "address",
+                    "indexed": false,
+                    "internalType": "address"
+                },
+                {
+                    "name": "newOwner",
+                    "type": "address",
+                    "indexed": false,
+                    "internalType": "address"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "OwnerNominated",
+            "inputs": [
+                {
+                    "name": "newOwner",
+                    "type": "address",
+                    "indexed": false,
+                    "internalType": "address"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "RecoveredERC20",
+            "inputs": [
+                {
+                    "name": "token",
+                    "type": "address",
+                    "indexed": false,
+                    "internalType": "address"
+                },
+                {
+                    "name": "amount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "RewardAdded",
+            "inputs": [
+                {
+                    "name": "reward",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "yieldRate",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "TimelockChanged",
+            "inputs": [
+                {
+                    "name": "timelock_address",
+                    "type": "address",
+                    "indexed": false,
+                    "internalType": "address"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "YieldCollected",
+            "inputs": [
+                {
+                    "name": "staker",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "recipient",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "yield",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "tokenAddress",
+                    "type": "address",
+                    "indexed": false,
+                    "internalType": "address"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "YieldDurationUpdated",
+            "inputs": [
+                {
+                    "name": "newDuration",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "error",
+            "name": "AddressGreylisted",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "InitializeFailed",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "InvalidOwnershipAcceptance",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "NotOwnerOrTimelock",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "OnlyOwner",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "OwnerCannotBeZero",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "SenderNotAuthorizedClaimer",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "SenderNotRewarder",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "TransferHelperTransferFailed",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "YieldCollectionPaused",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "YieldPeriodMustCompleteBeforeChangingToNewPeriod",
+            "inputs": []
+        }
+    ],
+    "bytecode": {
+        "object": "0x60806040526017805460ff191690553480156018575f80fd5b505f80546001600160a01b0319163390811782556040805192835260208301919091527fb532073b38c83145e3e5135377a08bf9aab55bc0fd7c1179cd4fb995d2a5159c910160405180910390a160016002556017805461ff001916610100179055612826806100875f395ff3fe608060405234801561000f575f80fd5b5060043610610303575f3560e01c80638c329f661161019d578063c2c4c5c1116100e8578063ebe2b12b11610093578063f8c8765e1161006e578063f8c8765e146106e8578063fc939bb1146106fb578063fff6cae914610703575f80fd5b8063ebe2b12b146106ac578063f3b0fb45146106b5578063f43ae1c7146106c8575f80fd5b8063d8ae7014116100c3578063d8ae70141461065b578063e172cf2114610683578063e9218ff61461068c575f80fd5b8063c2c4c5c114610628578063c8f33c9114610630578063d15166ff14610639575f80fd5b80639f8a835a11610148578063b04b91ad11610123578063b04b91ad146105c1578063b1dd0ce9146105e0578063bdacb30314610615575f80fd5b80639f8a835a14610582578063a875f47214610595578063ad1148cb146105b4575f80fd5b8063941d9f6511610178578063941d9f6514610553578063948e25a2146105665780639513fdf814610579575f80fd5b80638c329f661461050e5780638da5cb5b1461052157806391519bda14610540575f80fd5b806350fe98ac1161025d57806374ea0b981161020857806385a74fde116101e357806385a74fde146104c85780638980f11f146104db5780638b80f480146104ee575f80fd5b806374ea0b98146104a557806379ba5097146104b85780637c262871146104c0575f80fd5b80635de9fae3116102385780635de9fae31461048b5780635e450ad5146104945780636999ac931461049c575f80fd5b806350fe98ac1461044457806353a47bb71461046357806356d9fff314610483575f80fd5b806331ca208c116102bd57806349a9b8481161029857806349a9b848146103cd5780634bc66f32146103ec5780634c5de82314610431575f80fd5b806331ca208c146103855780633c6b16ab146103a757806342c92f6e146103ba575f80fd5b806314b30537116102ed57806314b30537146103365780631627540c1461036857806319aec6d21461037d575f80fd5b80628cc2621461030757806312ab50c41461032d575b5f80fd5b61031a6103153660046122cb565b61070b565b6040519081526020015b60405180910390f35b61031a600f5481565b6103586103443660046122cb565b60116020525f908152604090205460ff1681565b6040519015158152602001610324565b61037b6103763660046122cb565b610904565b005b61031a6109ce565b6103586103933660046122cb565b60156020525f908152604090205460ff1681565b61037b6103b53660046122e6565b6109e4565b61037b6103c83660046122cb565b610b9b565b61031a6103db3660046122cb565b60136020525f908152604090205481565b60065461040c9073ffffffffffffffffffffffffffffffffffffffff1681565b60405173ffffffffffffffffffffffffffffffffffffffff9091168152602001610324565b61037b61043f3660046123c5565b610c64565b61031a6104523660046122cb565b600e6020525f908152604090205481565b60015461040c9073ffffffffffffffffffffffffffffffffffffffff1681565b61031a610ca6565b61031a60105481565b61031a610cbc565b61031a60095481565b61037b6104b33660046122e6565b610d1b565b61037b610e10565b61031a610f03565b61037b6104d63660046122cb565b610f0e565b61037b6104e9366004612464565b610fcb565b60035461040c9073ffffffffffffffffffffffffffffffffffffffff1681565b61037b61051c36600461248e565b6110b8565b5f5461040c9073ffffffffffffffffffffffffffffffffffffffff1681565b61037b61054e3660046124d2565b611180565b61037b6105613660046122cb565b611209565b61037b6105743660046124f5565b6112d2565b61031a600c5481565b61037b6105903660046122cb565b611379565b61031a6105a33660046122cb565b600d6020525f908152604090205481565b6017546103589060ff1681565b61031a6105cf3660046122cb565b60126020525f908152604090205481565b61040c6105ee3660046122cb565b60166020525f908152604090205473ffffffffffffffffffffffffffffffffffffffff1681565b61037b6106233660046122cb565b611387565b61037b611470565b61031a60085481565b6103586106473660046122cb565b600b6020525f908152604090205460ff1681565b61066e6106693660046122cb565b61147d565b60408051928352602083019190915201610324565b61031a600a5481565b60045461040c9073ffffffffffffffffffffffffffffffffffffffff1681565b61031a60075481565b61031a6106c33660046122cb565b611557565b60055461040c9073ffffffffffffffffffffffffffffffffffffffff1681565b61037b6106f6366004612510565b6115c8565b61031a611737565b61037b611764565b73ffffffffffffffffffffffffffffffffffffffff81165f9081526011602052604081205460ff1661073e57505f919050565b5f806107498461147d565b9092509050620f42405f8390036108105773ffffffffffffffffffffffffffffffffffffffff85165f90815260146020526040902054821161078f57505f949350505050565b73ffffffffffffffffffffffffffffffffffffffff85165f908152601460205260408120546107be9084612596565b73ffffffffffffffffffffffffffffffffffffffff87165f90815260146020526040812054919250906107f19042612596565b90508061080183620f42406125a9565b61080b91906125c0565b925050505b73ffffffffffffffffffffffffffffffffffffffff85165f90815260126020526040812054808511156108455780915061085e565b600261085182876125f8565b61085b91906125c0565b91505b73ffffffffffffffffffffffffffffffffffffffff87165f908152600e6020526040902054610898620f4240670de0b6b3a76400006125a9565b73ffffffffffffffffffffffffffffffffffffffff89165f908152600d602052604090205485906108c7610cbc565b6108d19190612596565b6108db90866125a9565b6108e591906125a9565b6108ef91906125c0565b6108f991906125f8565b979650505050505050565b5f5473ffffffffffffffffffffffffffffffffffffffff163314610954576040517f5fc483c500000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b600180547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff83169081179091556040519081527f906a1c6bd7e3091ea86693dd029a831c19049ce77f1dce2ce0bab1cacbabce22906020015b60405180910390a150565b5f600a546009546109df91906125a9565b905090565b335f908152600b602052604090205460ff16610a2c576040517fae582d4300000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b600454610a519073ffffffffffffffffffffffffffffffffffffffff16333084611811565b610a59611764565b6007544210610a7757600a54610a6f90826125c0565b600955610ab7565b5f42600754610a869190612596565b90505f60095482610a9791906125a9565b600a54909150610aa782856125f8565b610ab191906125c0565b60095550505b426008819055600a54610ac9916125f8565b600755600354604080517fc906fbb9000000000000000000000000000000000000000000000000000000008152905173ffffffffffffffffffffffffffffffffffffffff9092169163c906fbb9916004808201926020929091908290030181865afa158015610b3a573d5f803e3d5ffd5b505050506040513d601f19601f82011682018060405250810190610b5e919061260b565b6010556009546040805183815260208101929092527f6c07ee05dcf262f13abf9d87b846ee789d2f90fe991d495acd7d7fc109ee1f5591016109c3565b5f5473ffffffffffffffffffffffffffffffffffffffff163314801590610bda575060065473ffffffffffffffffffffffffffffffffffffffff163314155b15610c11576040517ffee4291a00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b73ffffffffffffffffffffffffffffffffffffffff165f908152600b6020526040902080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00811660ff90911615179055565b5f5b8151811015610ca257610c77611764565b610c9a828281518110610c8c57610c8c612622565b60200260200101515f6118ac565b600101610c66565b5050565b5f6007544210610cb7575060075490565b504290565b5f6010545f03610ccd5750600c5490565b601054600954600854610cde610ca6565b610ce89190612596565b610cf291906125a9565b610d0490670de0b6b3a76400006125a9565b610d0e91906125c0565b600c546109df91906125f8565b5f5473ffffffffffffffffffffffffffffffffffffffff163314801590610d5a575060065473ffffffffffffffffffffffffffffffffffffffff163314155b15610d91576040517ffee4291a00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b60075415801590610da457506007544211155b15610ddb576040517f350e95f600000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b600a8190556040518181527fce653f06b9044b00e7d9d01b9b4228e84812092cb6a38371889bef19370d21f7906020016109c3565b60015473ffffffffffffffffffffffffffffffffffffffff163314610e61576040517fd74b334e00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b5f546001546040805173ffffffffffffffffffffffffffffffffffffffff93841681529290911660208301527fb532073b38c83145e3e5135377a08bf9aab55bc0fd7c1179cd4fb995d2a5159c910160405180910390a1600180545f80547fffffffffffffffffffffffff000000000000000000000000000000000000000090811673ffffffffffffffffffffffffffffffffffffffff841617909155169055565b5f6109df3333611c01565b5f5473ffffffffffffffffffffffffffffffffffffffff163314801590610f4d575060065473ffffffffffffffffffffffffffffffffffffffff163314155b15610f84576040517ffee4291a00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b600380547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff92909216919091179055565b5f5473ffffffffffffffffffffffffffffffffffffffff16331480159061100a575060065473ffffffffffffffffffffffffffffffffffffffff163314155b15611041576040517ffee4291a00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b5f5461106590839073ffffffffffffffffffffffffffffffffffffffff1683611e0c565b6040805173ffffffffffffffffffffffffffffffffffffffff84168152602081018390527f55350610fe57096d8c0ffa30beede987326bccfcb0b4415804164d0dd50ce8b1910160405180910390a15050565b5f5473ffffffffffffffffffffffffffffffffffffffff1633148015906110f7575060065473ffffffffffffffffffffffffffffffffffffffff163314155b1561112e576040517ffee4291a00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b73ffffffffffffffffffffffffffffffffffffffff9182165f90815260166020526040902080547fffffffffffffffffffffffff00000000000000000000000000000000000000001691909216179055565b5f5473ffffffffffffffffffffffffffffffffffffffff1633148015906111bf575060065473ffffffffffffffffffffffffffffffffffffffff163314155b156111f6576040517ffee4291a00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b60098290558015610ca257610ca2611764565b5f5473ffffffffffffffffffffffffffffffffffffffff163314801590611248575060065473ffffffffffffffffffffffffffffffffffffffff163314155b1561127f576040517ffee4291a00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b73ffffffffffffffffffffffffffffffffffffffff165f90815260156020526040902080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00811660ff90911615179055565b5f5473ffffffffffffffffffffffffffffffffffffffff163314801590611311575060065473ffffffffffffffffffffffffffffffffffffffff163314155b15611348576040517ffee4291a00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b601780547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0016911515919091179055565b6113848160016118ac565b50565b5f5473ffffffffffffffffffffffffffffffffffffffff1633148015906113c6575060065473ffffffffffffffffffffffffffffffffffffffff163314155b156113fd576040517ffee4291a00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b600680547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff83169081179091556040519081527ff02fdf7b40fb25784d39342249bbb15cee2bc0288f75ded1cf8ad2e63d4d91aa906020016109c3565b61147b3360016118ac565b565b6003546040517fc12fa66b00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff83811660048301525f92839283929091169063c12fa66b90602401602060405180830381865afa1580156114f1573d5f803e3d5ffd5b505050506040513d601f19601f82011682018060405250810190611515919061260b565b73ffffffffffffffffffffffffffffffffffffffff85165f908152601360205260409020549250905042821161154d575f9250611551565b8092505b50915091565b73ffffffffffffffffffffffffffffffffffffffff8181165f9081526016602052604081205490911633146115b8576040517f86e2586e00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b6115c28233611c01565b92915050565b601754610100900460ff16806115f2575073ffffffffffffffffffffffffffffffffffffffff8216155b80611614575060055473ffffffffffffffffffffffffffffffffffffffff1615155b1561164b576040517fd08e7ac200000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b5f805473ffffffffffffffffffffffffffffffffffffffff9586167fffffffffffffffffffffffff000000000000000000000000000000000000000091821681178355600580549588169583168617905560048054831690951790945560068054958716958216959095179094556003805492909516919093161790925542600855908152600b6020526040902080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0016600117905562093a80600a55601780547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00ff16610100179055565b5f6010545f0361174657505f90565b601054620f4240600f5461175a91906125a9565b6109df91906125c0565b61176c610cbc565b600c55600354604080517fc906fbb9000000000000000000000000000000000000000000000000000000008152905173ffffffffffffffffffffffffffffffffffffffff9092169163c906fbb9916004808201926020929091908290030181865afa1580156117dd573d5f803e3d5ffd5b505050506040513d601f19601f82011682018060405250810190611801919061260b565b60105561180c610ca6565b600855565b6040805173ffffffffffffffffffffffffffffffffffffffff85811660248301528416604482015260648082018490528251808303909101815260849091019091526020810180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff167f23b872dd000000000000000000000000000000000000000000000000000000001790526118a6908590611f4c565b50505050565b80156118ba576118ba611764565b6118c38261205c565b73ffffffffffffffffffffffffffffffffffffffff8281165f818152601260205260408082205460035491517fc12fa66b000000000000000000000000000000000000000000000000000000008152600481019490945293919291169063c12fa66b90602401602060405180830381865afa158015611944573d5f803e3d5ffd5b505050506040513d601f19601f82011682018060405250810190611968919061260b565b73ffffffffffffffffffffffffffffffffffffffff8581165f8181526012602052604080822085905560035490517f7eb1554e0000000000000000000000000000000000000000000000000000000081526004810193909352602483018290529394509290911690637eb1554e906044015f60405180830381865afa1580156119f3573d5f803e3d5ffd5b505050506040513d5f823e601f3d9081017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0168201604052611a389190810190612673565b90505f8082511115611a6557815f81518110611a5657611a56612622565b60200260200101516060015190505b600182511115611aee575f5b8251811015611aec57816fffffffffffffffffffffffffffffffff16838281518110611a9f57611a9f612622565b6020026020010151606001516fffffffffffffffffffffffffffffffff161015611ae457828181518110611ad557611ad5612622565b60200260200101516060015191505b600101611a71565b505b73ffffffffffffffffffffffffffffffffffffffff86165f9081526013602052604090206fffffffffffffffffffffffffffffffff82169055838310611b52575f611b398585612596565b905080600f54611b4991906125f8565b600f5550611b72565b5f611b5d8486612596565b905080600f54611b6d9190612596565b600f55505b73ffffffffffffffffffffffffffffffffffffffff86165f9081526011602052604090205460ff16611bf95773ffffffffffffffffffffffffffffffffffffffff86165f90815260116020908152604080832080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00166001179055601490915290204290555b505050505050565b5f6002805403611c72576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601f60248201527f5265656e7472616e637947756172643a207265656e7472616e742063616c6c0060448201526064015b60405180910390fd5b6002805560175460ff1615611cb3576040517f6efa33c900000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b82611cbf8160016118ac565b73ffffffffffffffffffffffffffffffffffffffff84165f9081526015602052604090205460ff1615611d1e576040517f70e5228400000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b73ffffffffffffffffffffffffffffffffffffffff84165f908152600e602052604090205491508115611dda5773ffffffffffffffffffffffffffffffffffffffff8085165f908152600e6020526040812055600554611d8091168484611e0c565b6005546040805184815273ffffffffffffffffffffffffffffffffffffffff9283166020820152858316928716917fca927b8152f4c35113c332dd69d3f2fc3328428c7d560f0e84a556a3a4ef20a0910160405180910390a35b5073ffffffffffffffffffffffffffffffffffffffff9092165f90815260146020526040902042905550600160025590565b6040805173ffffffffffffffffffffffffffffffffffffffff8481166024830152604480830185905283518084039091018152606490920183526020820180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff167fa9059cbb0000000000000000000000000000000000000000000000000000000017905291515f92839290871691611ea2919061276c565b5f604051808303815f865af19150503d805f8114611edb576040519150601f19603f3d011682016040523d82523d5f602084013e611ee0565b606091505b5091509150811580611f0e5750805115801590611f0e575080806020019051810190611f0c9190612782565b155b15611f45576040517f19a9708500000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b5050505050565b5f611fad826040518060400160405280602081526020017f5361666545524332303a206c6f772d6c6576656c2063616c6c206661696c65648152508573ffffffffffffffffffffffffffffffffffffffff166120bd9092919063ffffffff16565b8051909150156120575780806020019051810190611fcb9190612782565b612057576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152602a60248201527f5361666545524332303a204552433230206f7065726174696f6e20646964206e60448201527f6f742073756363656564000000000000000000000000000000000000000000006064820152608401611c69565b505050565b73ffffffffffffffffffffffffffffffffffffffff811615611384575f6120828261070b565b73ffffffffffffffffffffffffffffffffffffffff83165f908152600e6020908152604080832093909355600c54600d909152919020555050565b60606120cb84845f856120d5565b90505b9392505050565b606082471015612167576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152602660248201527f416464726573733a20696e73756666696369656e742062616c616e636520666f60448201527f722063616c6c00000000000000000000000000000000000000000000000000006064820152608401611c69565b73ffffffffffffffffffffffffffffffffffffffff85163b6121e5576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601d60248201527f416464726573733a2063616c6c20746f206e6f6e2d636f6e74726163740000006044820152606401611c69565b5f808673ffffffffffffffffffffffffffffffffffffffff16858760405161220d919061276c565b5f6040518083038185875af1925050503d805f8114612247576040519150601f19603f3d011682016040523d82523d5f602084013e61224c565b606091505b50915091506108f9828286606083156122665750816120ce565b8251156122765782518084602001fd5b816040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401611c69919061279d565b73ffffffffffffffffffffffffffffffffffffffff81168114611384575f80fd5b5f602082840312156122db575f80fd5b81356120ce816122aa565b5f602082840312156122f6575f80fd5b5035919050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52604160045260245ffd5b60405160c0810167ffffffffffffffff8111828210171561234d5761234d6122fd565b60405290565b604051601f82017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe016810167ffffffffffffffff8111828210171561239a5761239a6122fd565b604052919050565b5f67ffffffffffffffff8211156123bb576123bb6122fd565b5060051b60200190565b5f602082840312156123d5575f80fd5b813567ffffffffffffffff8111156123eb575f80fd5b8201601f810184136123fb575f80fd5b803561240e612409826123a2565b612353565b8082825260208201915060208360051b85010192508683111561242f575f80fd5b6020840193505b8284101561245a578335612449816122aa565b825260209384019390910190612436565b9695505050505050565b5f8060408385031215612475575f80fd5b8235612480816122aa565b946020939093013593505050565b5f806040838503121561249f575f80fd5b82356124aa816122aa565b915060208301356124ba816122aa565b809150509250929050565b8015158114611384575f80fd5b5f80604083850312156124e3575f80fd5b8235915060208301356124ba816124c5565b5f60208284031215612505575f80fd5b81356120ce816124c5565b5f805f8060808587031215612523575f80fd5b843561252e816122aa565b9350602085013561253e816122aa565b9250604085013561254e816122aa565b9150606085013561255e816122aa565b939692955090935050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601160045260245ffd5b818103818111156115c2576115c2612569565b80820281158282048414176115c2576115c2612569565b5f826125f3577f4e487b71000000000000000000000000000000000000000000000000000000005f52601260045260245ffd5b500490565b808201808211156115c2576115c2612569565b5f6020828403121561261b575f80fd5b5051919050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52603260045260245ffd5b80516fffffffffffffffffffffffffffffffff8116811461266e575f80fd5b919050565b5f60208284031215612683575f80fd5b815167ffffffffffffffff811115612699575f80fd5b8201601f810184136126a9575f80fd5b80516126b7612409826123a2565b80828252602082019150602060c084028501019250868311156126d8575f80fd5b6020840193505b8284101561245a5760c084880312156126f6575f80fd5b6126fe61232a565b8451815261270e6020860161264f565b6020820152604085015180600f0b8114612726575f80fd5b60408201526127376060860161264f565b6060820152608085015161274a816122aa565b608082015260a08581015190820152825260c0909301926020909101906126df565b5f82518060208501845e5f920191825250919050565b5f60208284031215612792575f80fd5b81516120ce816124c5565b602081525f82518060208401528060208501604085015e5f6040828501015260407fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0601f8301168401019150509291505056fea2646970667358221220dbe7758a264cdda7bc83a789af33903b696b43fe0824996aed4dfbd9555f62fc64736f6c634300081a0033",
+        "sourceMap": "2054:31304:71:-:0;;;5408:41;;;-1:-1:-1;;5408:41:71;;;6663:95;;;;;;;;;-1:-1:-1;333:5:67;:18;;-1:-1:-1;;;;;;333:18:67;341:10;333:18;;;;;366:36;;;188:51:113;;;270:2;255:18;;248:60;;;;366:36:67;;161:18:113;366:36:67;;;;;;;1701:1:35;1806:7;:22;6730:14:71;:21;;-1:-1:-1;;6730:21:71;;;;;2054:31304;;;;;;",
+        "linkReferences": {}
+    },
+    "deployedBytecode": {
+        "object": "0x608060405234801561000f575f80fd5b5060043610610303575f3560e01c80638c329f661161019d578063c2c4c5c1116100e8578063ebe2b12b11610093578063f8c8765e1161006e578063f8c8765e146106e8578063fc939bb1146106fb578063fff6cae914610703575f80fd5b8063ebe2b12b146106ac578063f3b0fb45146106b5578063f43ae1c7146106c8575f80fd5b8063d8ae7014116100c3578063d8ae70141461065b578063e172cf2114610683578063e9218ff61461068c575f80fd5b8063c2c4c5c114610628578063c8f33c9114610630578063d15166ff14610639575f80fd5b80639f8a835a11610148578063b04b91ad11610123578063b04b91ad146105c1578063b1dd0ce9146105e0578063bdacb30314610615575f80fd5b80639f8a835a14610582578063a875f47214610595578063ad1148cb146105b4575f80fd5b8063941d9f6511610178578063941d9f6514610553578063948e25a2146105665780639513fdf814610579575f80fd5b80638c329f661461050e5780638da5cb5b1461052157806391519bda14610540575f80fd5b806350fe98ac1161025d57806374ea0b981161020857806385a74fde116101e357806385a74fde146104c85780638980f11f146104db5780638b80f480146104ee575f80fd5b806374ea0b98146104a557806379ba5097146104b85780637c262871146104c0575f80fd5b80635de9fae3116102385780635de9fae31461048b5780635e450ad5146104945780636999ac931461049c575f80fd5b806350fe98ac1461044457806353a47bb71461046357806356d9fff314610483575f80fd5b806331ca208c116102bd57806349a9b8481161029857806349a9b848146103cd5780634bc66f32146103ec5780634c5de82314610431575f80fd5b806331ca208c146103855780633c6b16ab146103a757806342c92f6e146103ba575f80fd5b806314b30537116102ed57806314b30537146103365780631627540c1461036857806319aec6d21461037d575f80fd5b80628cc2621461030757806312ab50c41461032d575b5f80fd5b61031a6103153660046122cb565b61070b565b6040519081526020015b60405180910390f35b61031a600f5481565b6103586103443660046122cb565b60116020525f908152604090205460ff1681565b6040519015158152602001610324565b61037b6103763660046122cb565b610904565b005b61031a6109ce565b6103586103933660046122cb565b60156020525f908152604090205460ff1681565b61037b6103b53660046122e6565b6109e4565b61037b6103c83660046122cb565b610b9b565b61031a6103db3660046122cb565b60136020525f908152604090205481565b60065461040c9073ffffffffffffffffffffffffffffffffffffffff1681565b60405173ffffffffffffffffffffffffffffffffffffffff9091168152602001610324565b61037b61043f3660046123c5565b610c64565b61031a6104523660046122cb565b600e6020525f908152604090205481565b60015461040c9073ffffffffffffffffffffffffffffffffffffffff1681565b61031a610ca6565b61031a60105481565b61031a610cbc565b61031a60095481565b61037b6104b33660046122e6565b610d1b565b61037b610e10565b61031a610f03565b61037b6104d63660046122cb565b610f0e565b61037b6104e9366004612464565b610fcb565b60035461040c9073ffffffffffffffffffffffffffffffffffffffff1681565b61037b61051c36600461248e565b6110b8565b5f5461040c9073ffffffffffffffffffffffffffffffffffffffff1681565b61037b61054e3660046124d2565b611180565b61037b6105613660046122cb565b611209565b61037b6105743660046124f5565b6112d2565b61031a600c5481565b61037b6105903660046122cb565b611379565b61031a6105a33660046122cb565b600d6020525f908152604090205481565b6017546103589060ff1681565b61031a6105cf3660046122cb565b60126020525f908152604090205481565b61040c6105ee3660046122cb565b60166020525f908152604090205473ffffffffffffffffffffffffffffffffffffffff1681565b61037b6106233660046122cb565b611387565b61037b611470565b61031a60085481565b6103586106473660046122cb565b600b6020525f908152604090205460ff1681565b61066e6106693660046122cb565b61147d565b60408051928352602083019190915201610324565b61031a600a5481565b60045461040c9073ffffffffffffffffffffffffffffffffffffffff1681565b61031a60075481565b61031a6106c33660046122cb565b611557565b60055461040c9073ffffffffffffffffffffffffffffffffffffffff1681565b61037b6106f6366004612510565b6115c8565b61031a611737565b61037b611764565b73ffffffffffffffffffffffffffffffffffffffff81165f9081526011602052604081205460ff1661073e57505f919050565b5f806107498461147d565b9092509050620f42405f8390036108105773ffffffffffffffffffffffffffffffffffffffff85165f90815260146020526040902054821161078f57505f949350505050565b73ffffffffffffffffffffffffffffffffffffffff85165f908152601460205260408120546107be9084612596565b73ffffffffffffffffffffffffffffffffffffffff87165f90815260146020526040812054919250906107f19042612596565b90508061080183620f42406125a9565b61080b91906125c0565b925050505b73ffffffffffffffffffffffffffffffffffffffff85165f90815260126020526040812054808511156108455780915061085e565b600261085182876125f8565b61085b91906125c0565b91505b73ffffffffffffffffffffffffffffffffffffffff87165f908152600e6020526040902054610898620f4240670de0b6b3a76400006125a9565b73ffffffffffffffffffffffffffffffffffffffff89165f908152600d602052604090205485906108c7610cbc565b6108d19190612596565b6108db90866125a9565b6108e591906125a9565b6108ef91906125c0565b6108f991906125f8565b979650505050505050565b5f5473ffffffffffffffffffffffffffffffffffffffff163314610954576040517f5fc483c500000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b600180547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff83169081179091556040519081527f906a1c6bd7e3091ea86693dd029a831c19049ce77f1dce2ce0bab1cacbabce22906020015b60405180910390a150565b5f600a546009546109df91906125a9565b905090565b335f908152600b602052604090205460ff16610a2c576040517fae582d4300000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b600454610a519073ffffffffffffffffffffffffffffffffffffffff16333084611811565b610a59611764565b6007544210610a7757600a54610a6f90826125c0565b600955610ab7565b5f42600754610a869190612596565b90505f60095482610a9791906125a9565b600a54909150610aa782856125f8565b610ab191906125c0565b60095550505b426008819055600a54610ac9916125f8565b600755600354604080517fc906fbb9000000000000000000000000000000000000000000000000000000008152905173ffffffffffffffffffffffffffffffffffffffff9092169163c906fbb9916004808201926020929091908290030181865afa158015610b3a573d5f803e3d5ffd5b505050506040513d601f19601f82011682018060405250810190610b5e919061260b565b6010556009546040805183815260208101929092527f6c07ee05dcf262f13abf9d87b846ee789d2f90fe991d495acd7d7fc109ee1f5591016109c3565b5f5473ffffffffffffffffffffffffffffffffffffffff163314801590610bda575060065473ffffffffffffffffffffffffffffffffffffffff163314155b15610c11576040517ffee4291a00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b73ffffffffffffffffffffffffffffffffffffffff165f908152600b6020526040902080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00811660ff90911615179055565b5f5b8151811015610ca257610c77611764565b610c9a828281518110610c8c57610c8c612622565b60200260200101515f6118ac565b600101610c66565b5050565b5f6007544210610cb7575060075490565b504290565b5f6010545f03610ccd5750600c5490565b601054600954600854610cde610ca6565b610ce89190612596565b610cf291906125a9565b610d0490670de0b6b3a76400006125a9565b610d0e91906125c0565b600c546109df91906125f8565b5f5473ffffffffffffffffffffffffffffffffffffffff163314801590610d5a575060065473ffffffffffffffffffffffffffffffffffffffff163314155b15610d91576040517ffee4291a00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b60075415801590610da457506007544211155b15610ddb576040517f350e95f600000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b600a8190556040518181527fce653f06b9044b00e7d9d01b9b4228e84812092cb6a38371889bef19370d21f7906020016109c3565b60015473ffffffffffffffffffffffffffffffffffffffff163314610e61576040517fd74b334e00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b5f546001546040805173ffffffffffffffffffffffffffffffffffffffff93841681529290911660208301527fb532073b38c83145e3e5135377a08bf9aab55bc0fd7c1179cd4fb995d2a5159c910160405180910390a1600180545f80547fffffffffffffffffffffffff000000000000000000000000000000000000000090811673ffffffffffffffffffffffffffffffffffffffff841617909155169055565b5f6109df3333611c01565b5f5473ffffffffffffffffffffffffffffffffffffffff163314801590610f4d575060065473ffffffffffffffffffffffffffffffffffffffff163314155b15610f84576040517ffee4291a00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b600380547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff92909216919091179055565b5f5473ffffffffffffffffffffffffffffffffffffffff16331480159061100a575060065473ffffffffffffffffffffffffffffffffffffffff163314155b15611041576040517ffee4291a00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b5f5461106590839073ffffffffffffffffffffffffffffffffffffffff1683611e0c565b6040805173ffffffffffffffffffffffffffffffffffffffff84168152602081018390527f55350610fe57096d8c0ffa30beede987326bccfcb0b4415804164d0dd50ce8b1910160405180910390a15050565b5f5473ffffffffffffffffffffffffffffffffffffffff1633148015906110f7575060065473ffffffffffffffffffffffffffffffffffffffff163314155b1561112e576040517ffee4291a00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b73ffffffffffffffffffffffffffffffffffffffff9182165f90815260166020526040902080547fffffffffffffffffffffffff00000000000000000000000000000000000000001691909216179055565b5f5473ffffffffffffffffffffffffffffffffffffffff1633148015906111bf575060065473ffffffffffffffffffffffffffffffffffffffff163314155b156111f6576040517ffee4291a00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b60098290558015610ca257610ca2611764565b5f5473ffffffffffffffffffffffffffffffffffffffff163314801590611248575060065473ffffffffffffffffffffffffffffffffffffffff163314155b1561127f576040517ffee4291a00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b73ffffffffffffffffffffffffffffffffffffffff165f90815260156020526040902080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00811660ff90911615179055565b5f5473ffffffffffffffffffffffffffffffffffffffff163314801590611311575060065473ffffffffffffffffffffffffffffffffffffffff163314155b15611348576040517ffee4291a00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b601780547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0016911515919091179055565b6113848160016118ac565b50565b5f5473ffffffffffffffffffffffffffffffffffffffff1633148015906113c6575060065473ffffffffffffffffffffffffffffffffffffffff163314155b156113fd576040517ffee4291a00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b600680547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff83169081179091556040519081527ff02fdf7b40fb25784d39342249bbb15cee2bc0288f75ded1cf8ad2e63d4d91aa906020016109c3565b61147b3360016118ac565b565b6003546040517fc12fa66b00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff83811660048301525f92839283929091169063c12fa66b90602401602060405180830381865afa1580156114f1573d5f803e3d5ffd5b505050506040513d601f19601f82011682018060405250810190611515919061260b565b73ffffffffffffffffffffffffffffffffffffffff85165f908152601360205260409020549250905042821161154d575f9250611551565b8092505b50915091565b73ffffffffffffffffffffffffffffffffffffffff8181165f9081526016602052604081205490911633146115b8576040517f86e2586e00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b6115c28233611c01565b92915050565b601754610100900460ff16806115f2575073ffffffffffffffffffffffffffffffffffffffff8216155b80611614575060055473ffffffffffffffffffffffffffffffffffffffff1615155b1561164b576040517fd08e7ac200000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b5f805473ffffffffffffffffffffffffffffffffffffffff9586167fffffffffffffffffffffffff000000000000000000000000000000000000000091821681178355600580549588169583168617905560048054831690951790945560068054958716958216959095179094556003805492909516919093161790925542600855908152600b6020526040902080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0016600117905562093a80600a55601780547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00ff16610100179055565b5f6010545f0361174657505f90565b601054620f4240600f5461175a91906125a9565b6109df91906125c0565b61176c610cbc565b600c55600354604080517fc906fbb9000000000000000000000000000000000000000000000000000000008152905173ffffffffffffffffffffffffffffffffffffffff9092169163c906fbb9916004808201926020929091908290030181865afa1580156117dd573d5f803e3d5ffd5b505050506040513d601f19601f82011682018060405250810190611801919061260b565b60105561180c610ca6565b600855565b6040805173ffffffffffffffffffffffffffffffffffffffff85811660248301528416604482015260648082018490528251808303909101815260849091019091526020810180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff167f23b872dd000000000000000000000000000000000000000000000000000000001790526118a6908590611f4c565b50505050565b80156118ba576118ba611764565b6118c38261205c565b73ffffffffffffffffffffffffffffffffffffffff8281165f818152601260205260408082205460035491517fc12fa66b000000000000000000000000000000000000000000000000000000008152600481019490945293919291169063c12fa66b90602401602060405180830381865afa158015611944573d5f803e3d5ffd5b505050506040513d601f19601f82011682018060405250810190611968919061260b565b73ffffffffffffffffffffffffffffffffffffffff8581165f8181526012602052604080822085905560035490517f7eb1554e0000000000000000000000000000000000000000000000000000000081526004810193909352602483018290529394509290911690637eb1554e906044015f60405180830381865afa1580156119f3573d5f803e3d5ffd5b505050506040513d5f823e601f3d9081017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0168201604052611a389190810190612673565b90505f8082511115611a6557815f81518110611a5657611a56612622565b60200260200101516060015190505b600182511115611aee575f5b8251811015611aec57816fffffffffffffffffffffffffffffffff16838281518110611a9f57611a9f612622565b6020026020010151606001516fffffffffffffffffffffffffffffffff161015611ae457828181518110611ad557611ad5612622565b60200260200101516060015191505b600101611a71565b505b73ffffffffffffffffffffffffffffffffffffffff86165f9081526013602052604090206fffffffffffffffffffffffffffffffff82169055838310611b52575f611b398585612596565b905080600f54611b4991906125f8565b600f5550611b72565b5f611b5d8486612596565b905080600f54611b6d9190612596565b600f55505b73ffffffffffffffffffffffffffffffffffffffff86165f9081526011602052604090205460ff16611bf95773ffffffffffffffffffffffffffffffffffffffff86165f90815260116020908152604080832080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00166001179055601490915290204290555b505050505050565b5f6002805403611c72576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601f60248201527f5265656e7472616e637947756172643a207265656e7472616e742063616c6c0060448201526064015b60405180910390fd5b6002805560175460ff1615611cb3576040517f6efa33c900000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b82611cbf8160016118ac565b73ffffffffffffffffffffffffffffffffffffffff84165f9081526015602052604090205460ff1615611d1e576040517f70e5228400000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b73ffffffffffffffffffffffffffffffffffffffff84165f908152600e602052604090205491508115611dda5773ffffffffffffffffffffffffffffffffffffffff8085165f908152600e6020526040812055600554611d8091168484611e0c565b6005546040805184815273ffffffffffffffffffffffffffffffffffffffff9283166020820152858316928716917fca927b8152f4c35113c332dd69d3f2fc3328428c7d560f0e84a556a3a4ef20a0910160405180910390a35b5073ffffffffffffffffffffffffffffffffffffffff9092165f90815260146020526040902042905550600160025590565b6040805173ffffffffffffffffffffffffffffffffffffffff8481166024830152604480830185905283518084039091018152606490920183526020820180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff167fa9059cbb0000000000000000000000000000000000000000000000000000000017905291515f92839290871691611ea2919061276c565b5f604051808303815f865af19150503d805f8114611edb576040519150601f19603f3d011682016040523d82523d5f602084013e611ee0565b606091505b5091509150811580611f0e5750805115801590611f0e575080806020019051810190611f0c9190612782565b155b15611f45576040517f19a9708500000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b5050505050565b5f611fad826040518060400160405280602081526020017f5361666545524332303a206c6f772d6c6576656c2063616c6c206661696c65648152508573ffffffffffffffffffffffffffffffffffffffff166120bd9092919063ffffffff16565b8051909150156120575780806020019051810190611fcb9190612782565b612057576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152602a60248201527f5361666545524332303a204552433230206f7065726174696f6e20646964206e60448201527f6f742073756363656564000000000000000000000000000000000000000000006064820152608401611c69565b505050565b73ffffffffffffffffffffffffffffffffffffffff811615611384575f6120828261070b565b73ffffffffffffffffffffffffffffffffffffffff83165f908152600e6020908152604080832093909355600c54600d909152919020555050565b60606120cb84845f856120d5565b90505b9392505050565b606082471015612167576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152602660248201527f416464726573733a20696e73756666696369656e742062616c616e636520666f60448201527f722063616c6c00000000000000000000000000000000000000000000000000006064820152608401611c69565b73ffffffffffffffffffffffffffffffffffffffff85163b6121e5576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601d60248201527f416464726573733a2063616c6c20746f206e6f6e2d636f6e74726163740000006044820152606401611c69565b5f808673ffffffffffffffffffffffffffffffffffffffff16858760405161220d919061276c565b5f6040518083038185875af1925050503d805f8114612247576040519150601f19603f3d011682016040523d82523d5f602084013e61224c565b606091505b50915091506108f9828286606083156122665750816120ce565b8251156122765782518084602001fd5b816040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401611c69919061279d565b73ffffffffffffffffffffffffffffffffffffffff81168114611384575f80fd5b5f602082840312156122db575f80fd5b81356120ce816122aa565b5f602082840312156122f6575f80fd5b5035919050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52604160045260245ffd5b60405160c0810167ffffffffffffffff8111828210171561234d5761234d6122fd565b60405290565b604051601f82017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe016810167ffffffffffffffff8111828210171561239a5761239a6122fd565b604052919050565b5f67ffffffffffffffff8211156123bb576123bb6122fd565b5060051b60200190565b5f602082840312156123d5575f80fd5b813567ffffffffffffffff8111156123eb575f80fd5b8201601f810184136123fb575f80fd5b803561240e612409826123a2565b612353565b8082825260208201915060208360051b85010192508683111561242f575f80fd5b6020840193505b8284101561245a578335612449816122aa565b825260209384019390910190612436565b9695505050505050565b5f8060408385031215612475575f80fd5b8235612480816122aa565b946020939093013593505050565b5f806040838503121561249f575f80fd5b82356124aa816122aa565b915060208301356124ba816122aa565b809150509250929050565b8015158114611384575f80fd5b5f80604083850312156124e3575f80fd5b8235915060208301356124ba816124c5565b5f60208284031215612505575f80fd5b81356120ce816124c5565b5f805f8060808587031215612523575f80fd5b843561252e816122aa565b9350602085013561253e816122aa565b9250604085013561254e816122aa565b9150606085013561255e816122aa565b939692955090935050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601160045260245ffd5b818103818111156115c2576115c2612569565b80820281158282048414176115c2576115c2612569565b5f826125f3577f4e487b71000000000000000000000000000000000000000000000000000000005f52601260045260245ffd5b500490565b808201808211156115c2576115c2612569565b5f6020828403121561261b575f80fd5b5051919050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52603260045260245ffd5b80516fffffffffffffffffffffffffffffffff8116811461266e575f80fd5b919050565b5f60208284031215612683575f80fd5b815167ffffffffffffffff811115612699575f80fd5b8201601f810184136126a9575f80fd5b80516126b7612409826123a2565b80828252602082019150602060c084028501019250868311156126d8575f80fd5b6020840193505b8284101561245a5760c084880312156126f6575f80fd5b6126fe61232a565b8451815261270e6020860161264f565b6020820152604085015180600f0b8114612726575f80fd5b60408201526127376060860161264f565b6060820152608085015161274a816122aa565b608082015260a08581015190820152825260c0909301926020909101906126df565b5f82518060208501845e5f920191825250919050565b5f60208284031215612792575f80fd5b81516120ce816124c5565b602081525f82518060208401528060208501604085015e5f6040828501015260407fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0601f8301168401019150509291505056fea2646970667358221220dbe7758a264cdda7bc83a789af33903b696b43fe0824996aed4dfbd9555f62fc64736f6c634300081a0033",
+        "sourceMap": "2054:31304:71:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;10252:3289;;;;;;:::i;:::-;;:::i;:::-;;;571:25:113;;;559:2;544:18;10252:3289:71;;;;;;;;4045:38;;;;;;4247:49;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;772:14:113;;765:22;747:41;;735:2;720:18;4247:49:71;607:187:113;415:138:67;;;;;;:::i;:::-;;:::i;:::-;;13663:121:71;;;:::i;4903:40::-;;;;;;:::i;:::-;;;;;;;;;;;;;;;;21067:1147;;;;;;:::i;:::-;;:::i;23804:156::-;;;;;;:::i;:::-;;:::i;4587:64::-;;;;;;:::i;:::-;;;;;;;;;;;;;;2820:30;;;;;;;;;;;;1206:42:113;1194:55;;;1176:74;;1164:2;1149:18;2820:30:71;1030:226:113;17966:408:71;;;;;;:::i;:::-;;:::i;3867:41::-;;;;;;:::i;:::-;;;;;;;;;;;;;;273:29:67;;;;;;;;;9516:158:71;;;:::i;4147:42::-;;;;;;9765:342;;;:::i;3193:24::-;;;;;;23056:318;;;;;;:::i;:::-;;:::i;559:348:67:-;;;:::i;19408:162:71:-;;;:::i;24088:144::-;;;;;;:::i;:::-;;:::i;22648:302::-;;;;;;:::i;:::-;;:::i;2503:38::-;;;;;;;;;25160:142;;;;;;:::i;:::-;;:::i;247:20:67:-;;;;;;;;;24674:169:71;;;;;;:::i;:::-;;:::i;23551:124::-;;;;;;:::i;:::-;;:::i;24340:133::-;;;;;;:::i;:::-;;:::i;3589:34::-;;;;;;17763:104;;;;;;:::i;:::-;;:::i;3698:56::-;;;;;;:::i;:::-;;;;;;;;;;;;;;5408:41;;;;;;;;;4358:56;;;;;;:::i;:::-;;;;;;;;;;;;;;5283:68;;;;;;:::i;:::-;;;;;;;;;;;;;;;;25405:157;;;;;;:::i;:::-;;:::i;18416:81::-;;;:::i;3095:29::-;;;;;;3412:47;;;;;;:::i;:::-;;;;;;;;;;;;;;;;8818:609;;;;;;:::i;:::-;;:::i;:::-;;;;5131:25:113;;;5187:2;5172:18;;5165:34;;;;5104:18;8818:609:71;4957:248:113;3275:28:71;;;;;;2606:25;;;;;;;;;2976:27;;;;;;19977:359;;;;;;:::i;:::-;;:::i;2739:34::-;;;;;;;;;7042:952;;;;;;:::i;:::-;;:::i;8302:233::-;;;:::i;20387:562::-;;;:::i;10252:3289::-;10486:27;;;10307:15;10486:27;;;:17;:27;;;;;;;;10481:42;;-1:-1:-1;10522:1:71;;10252:3289;-1:-1:-1;10252:3289:71:o;10481:42::-;10574:28;10604:23;10631:30;10652:8;10631:20;:30::i;:::-;10573:88;;-1:-1:-1;10573:88:71;-1:-1:-1;5088:3:71;10709:28;10842:25;;;10838:1207;;11173:29;;;;;;;:19;:29;;;;;;:48;-1:-1:-1;11169:866:71;;-1:-1:-1;11308:1:71;;10252:3289;-1:-1:-1;;;;10252:3289:71:o;11169:866::-;11616:29;;;11575:20;11616:29;;;:19;:29;;;;;;11598:47;;:15;:47;:::i;:::-;11766:29;;;11728:17;11766:29;;;:19;:29;;;;;;11575:70;;-1:-1:-1;11728:17:71;11748:47;;:15;:47;:::i;:::-;11728:67;-1:-1:-1;11728:67:71;11896:30;11914:12;5088:3;11896:30;:::i;:::-;11895:44;;;;:::i;:::-;11872:67;;11381:654;;11169:866;12239:31;;;12178:25;12239:31;;;:21;:31;;;;;;12415:38;;;12411:908;;;12538:15;12518:35;;12411:908;;;12791:1;12749:38;12772:15;12749:20;:38;:::i;:::-;12748:44;;;;:::i;:::-;12728:64;;12411:908;13517:16;;;;;;;:6;:16;;;;;;13479:22;5088:3;13479:4;:22;:::i;:::-;13407:31;;;;;;;:21;:31;;;;;;13442:20;;13389:15;:13;:15::i;:::-;:49;;;;:::i;:::-;13368:71;;:17;:71;:::i;:::-;:94;;;;:::i;:::-;13367:135;;;;:::i;:::-;:166;;;;:::i;:::-;13359:175;10252:3289;-1:-1:-1;;;;;;;10252:3289:71:o;415:138:67:-;1054:5;;;;1040:10;:19;1036:43;;1068:11;;;;;;;;;;;;;;1036:43;486:14:::1;:23:::0;;;::::1;;::::0;::::1;::::0;;::::1;::::0;;;524:22:::1;::::0;1176:74:113;;;524:22:67::1;::::0;1164:2:113;1149:18;524:22:67::1;;;;;;;;415:138:::0;:::o;13663:121:71:-;13717:14;13763:13;;13751:9;;:25;;;;:::i;:::-;13743:34;;13663:121;:::o;21067:1147::-;21209:10;21193:27;;;;:15;:27;;;;;;;;21188:60;;21229:19;;;;;;;;;;;;;;21188:60;21431:12;;:65;;:12;;21461:10;21481:4;21488:7;21431:29;:65::i;:::-;21548:6;:4;:6::i;:::-;21624:12;;21605:15;:31;21601:294;;21674:13;;21664:23;;:7;:23;:::i;:::-;21652:9;:35;21601:294;;;21718:17;21753:15;21738:12;;:30;;;;:::i;:::-;21718:50;;21782:16;21813:9;;21801;:21;;;;:::i;:::-;21871:13;;21782:40;;-1:-1:-1;21849:18:71;21782:40;21849:7;:18;:::i;:::-;21848:36;;;;:::i;:::-;21836:9;:48;-1:-1:-1;;21601:294:71;21962:15;21945:14;:32;;;22020:13;;22002:31;;;:::i;:::-;21987:12;:46;22115:15;;:45;;;;;;;;:15;;;;;:43;;:45;;;;;;;;;;;;;;;:15;:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;22085:27;:75;22197:9;;22176:31;;;5131:25:113;;;5187:2;5172:18;;5165:34;;;;22176:31:71;;5104:18:113;22176:31:71;4957:248:113;23804:156:71;6055:5;;;;6041:10;:19;;;;:52;;-1:-1:-1;6078:15:71;;;;6064:10;:29;;6041:52;6037:85;;;6102:20;;;;;;;;;;;;;;6037:85;23923:30:::1;;;::::0;;;:15:::1;:30;::::0;;;;;;23889:64;;::::1;23923:30;::::0;;::::1;23922:31;23889:64;::::0;;23804:156::o;17966:408::-;18090:9;18085:283;18109:9;:16;18105:1;:20;18085:283;;;18180:6;:4;:6::i;:::-;18261:36;18277:9;18287:1;18277:12;;;;;;;;:::i;:::-;;;;;;;18291:5;18261:15;:36::i;:::-;18340:3;;18085:283;;;;17966:408;:::o;9516:158::-;9572:11;9621:12;;9603:15;:30;:63;;-1:-1:-1;9654:12:71;;;13663:121::o;9603:63::-;-1:-1:-1;9636:15:71;;9516:158::o;9765:342::-;9811:14;9841:27;;9872:1;9841:32;9837:264;;-1:-1:-1;9896:19:71;;;9765:342::o;9837:264::-;10061:27;;10041:9;;10023:14;;9995:25;:23;:25::i;:::-;:42;;;;:::i;:::-;9994:56;;;;:::i;:::-;:63;;10053:4;9994:63;:::i;:::-;9993:95;;;;:::i;:::-;9954:19;;:135;;;;:::i;23056:318::-;6055:5;;;;6041:10;:19;;;;:52;;-1:-1:-1;6078:15:71;;;;6064:10;:29;;6041:52;6037:85;;;6102:20;;;;;;;;;;;;;;6037:85;23142:12:::1;::::0;:17;;::::1;::::0;:52:::1;;;23182:12;;23163:15;:31;;23142:52;23138:140;;;23217:50;;;;;;;;;;;;;;23138:140;23287:13;:30:::0;;;23332:35:::1;::::0;571:25:113;;;23332:35:71::1;::::0;559:2:113;544:18;23332:35:71::1;425:177:113::0;559:348:67;730:14;;;;716:10;:28;712:69;;753:28;;;;;;;;;;;;;;712:69;809:5;;;816:14;796:35;;;809:5;;;;7634:74:113;;816:14:67;;;;7739:2:113;7724:18;;7717:83;796:35:67;;7607:18:113;796:35:67;;;;;;;849:14;;;;841:22;;;;;;849:14;;;841:22;;;;873:27;;;559:348::o;19408:162:71:-;19446:15;19530:33;19540:10;19552;19530:9;:33::i;24088:144::-;6055:5;;;;6041:10;:19;;;;:52;;-1:-1:-1;6078:15:71;;;;6064:10;:29;;6041:52;6037:85;;;6102:20;;;;;;;;;;;;;;6037:85;24174:15:::1;:51:::0;;;::::1;;::::0;;;::::1;::::0;;;::::1;::::0;;24088:144::o;22648:302::-;6055:5;;;;6041:10;:19;;;;:52;;-1:-1:-1;6078:15:71;;;;6064:10;:29;;6041:52;6037:85;;;6102:20;;;;;;;;;;;;;;6037:85;22865:5:::1;::::0;22822:63:::1;::::0;22850:13;;22865:5:::1;;22872:12:::0;22822:27:::1;:63::i;:::-;22900:43;::::0;;8015:42:113;8003:55;;7985:74;;8090:2;8075:18;;8068:34;;;22900:43:71::1;::::0;7958:18:113;22900:43:71::1;;;;;;;22648:302:::0;;:::o;25160:142::-;6055:5;;;;6041:10;:19;;;;:52;;-1:-1:-1;6078:15:71;;;;6064:10;:29;;6041:52;6037:85;;;6102:20;;;;;;;;;;;;;;6037:85;25257:27:::1;::::0;;::::1;;::::0;;;:18:::1;:27;::::0;;;;:38;;;::::1;::::0;;;::::1;;::::0;;25160:142::o;24674:169::-;6055:5;;;;6041:10;:19;;;;:52;;-1:-1:-1;6078:15:71;;;;6064:10;:29;;6041:52;6037:85;;;6102:20;;;;;;;;;;;;;;6037:85;24761:9:::1;:20:::0;;;24792:45;::::1;;;24820:6;:4;:6::i;23551:124::-:0;6055:5;;;;6041:10;:19;;;;:52;;-1:-1:-1;6078:15:71;;;;6064:10;:29;;6041:52;6037:85;;;6102:20;;;;;;;;;;;;;;6037:85;23649:18:::1;;;::::0;;;:8:::1;:18;::::0;;;;;;23626:42;;::::1;23649:18;::::0;;::::1;23647:21;23626:42;::::0;;23551:124::o;24340:133::-;6055:5;;;;6041:10;:19;;;;:52;;-1:-1:-1;6078:15:71;;;;6064:10;:29;;6041:52;6037:85;;;6102:20;;;;;;;;;;;;;;6037:85;24420:21:::1;:46:::0;;;::::1;::::0;::::1;;::::0;;;::::1;::::0;;24340:133::o;17763:104::-;17829:31;17845:8;17855:4;17829:15;:31::i;:::-;17763:104;:::o;25405:157::-;6055:5;;;;6041:10;:19;;;;:52;;-1:-1:-1;6078:15:71;;;;6064:10;:29;;6041:52;6037:85;;;6102:20;;;;;;;;;;;;;;6037:85;25480:15:::1;:30:::0;;;::::1;;::::0;::::1;::::0;;::::1;::::0;;;25526:29:::1;::::0;1176:74:113;;;25526:29:71::1;::::0;1164:2:113;1149:18;25526:29:71::1;1030:226:113::0;18416:81:71;18457:33;18473:10;18485:4;18457:15;:33::i;:::-;18416:81::o;8818:609::-;9048:15;;:39;;;;;:15;1194:55:113;;;9048:39:71;;;1176:74:113;8898:25:71;;;;;;9048:15;;;;:32;;1149:18:113;;9048:39:71;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;9166:36;;;;;;;:29;:36;;;;;;;-1:-1:-1;9024:63:71;-1:-1:-1;9268:15:71;:41;-1:-1:-1;9264:157:71;;9345:1;9325:21;;9264:157;;;9397:13;9377:33;;9264:157;8957:470;8818:609;;;:::o;19977:359::-;20134:41;:27;;;20040:15;20134:27;;;:18;:27;;;;;;20040:15;;20134:27;20165:10;20134:41;20130:82;;20184:28;;;;;;;;;;;;;;20130:82;20299:30;20309:7;20318:10;20299:9;:30::i;:::-;20289:40;19977:359;-1:-1:-1;;19977:359:71:o;7042:952::-;7304:14;;;;;;;;:45;;-1:-1:-1;7322:27:71;;;;7304:45;:82;;;-1:-1:-1;7353:19:71;;:33;:19;:33;;7304:82;7300:138;;;7409:18;;;;;;;;;;;;;;7300:138;7481:5;:14;;;;;;;;;;;;;;7536:19;:35;;;;;;;;;;;;7581:12;:35;;;;;;;;;;7626:15;:34;;;;;;;;;;;;;;;7707:15;:51;;;;;;;;;;;;;;7824:15;7807:14;:32;7849:23;;;:15;:23;;;;;:30;;;;7481:14;7849:30;;;7905:7;7889:13;:23;7966:14;:21;;;;7481:14;7966:21;;;7042:952::o;8302:233::-;8358:17;8391:27;;8422:1;8391:32;8387:141;;-1:-1:-1;8432:1:71;;8302:233::o;8387:141::-;8501:27;;5088:3;8456:23;;:41;;;;:::i;:::-;8455:73;;;;:::i;20387:562::-;20543:15;:13;:15::i;:::-;20521:19;:37;20707:15;;:45;;;;;;;;:15;;;;;:43;;:45;;;;;;;;;;;;;;;:15;:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;20677:27;:75;20873:25;:23;:25::i;:::-;20856:14;:42;20387:562::o;974:241:41:-;1139:68;;;8345:42:113;8333:55;;;1139:68:41;;;8315:74:113;8425:55;;8405:18;;;8398:83;8497:18;;;;8490:34;;;1139:68:41;;;;;;;;;;8288:18:113;;;;1139:68:41;;;;;;;;;;1162:27;1139:68;;;1112:96;;1132:5;;1112:19;:96::i;:::-;974:241;;;;:::o;14329:2992:71:-;14630:8;14626:20;;;14640:6;:4;:6::i;:::-;14697:21;14709:8;14697:11;:21::i;:::-;14806:31;;;;14779:24;14806:31;;;:21;:31;;;;;;;14932:15;;:42;;;;;;;;1176:74:113;;;;14806:31:71;14779:24;;14932:15;;;:32;;1149:18:113;;14932:42:71;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;15035:31;;;;;;;;:21;:31;;;;;;:50;;;15193:15;;:88;;;;;;;;8703:74:113;;;;8793:18;;;8786:50;;;15035::71;;-1:-1:-1;15035:31:71;15193:15;;;;:37;;8676:18:113;;15193:88:71;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;15132:149;;15614:30;15748:1;15713:25;:32;:36;15709:189;;;15855:25;15881:1;15855:28;;;;;;;;:::i;:::-;;;;;;;:32;;;15830:57;;15709:189;16007:1;15972:25;:32;:36;15968:557;;;16094:9;16089:426;16109:25;:32;16105:1;:36;16089:426;;;16307:22;16272:57;;:25;16298:1;16272:28;;;;;;;;:::i;:::-;;;;;;;:32;;;:57;;;16268:161;;;16378:25;16404:1;16378:28;;;;;;;;:::i;:::-;;;;;;;:32;;;16353:57;;16268:161;16479:3;;16089:426;;;;15968:557;16625:39;;;;;;;:29;:39;;;;;:64;;;;;16753:36;;;16749:362;;16805:18;16826:35;16845:16;16826;:35;:::i;:::-;16805:56;;16927:10;16901:23;;:36;;;;:::i;:::-;16875:23;:62;-1:-1:-1;16749:362:71;;;16968:18;16989:35;17008:16;16989;:35;:::i;:::-;16968:56;;17090:10;17064:23;;:36;;;;:::i;:::-;17038:23;:62;-1:-1:-1;16749:362:71;17166:27;;;;;;;:17;:27;;;;;;;;17161:154;;17209:27;;;;;;;:17;:27;;;;;;;;:34;;;;17239:4;17209:34;;;17257:19;:29;;;;;17289:15;17257:47;;17161:154;14396:2925;;;;14329:2992;;:::o;18751:571::-;18909:15;1744:1:35;2325:7;;:19;2317:63;;;;;;;10961:2:113;2317:63:35;;;10943:21:113;11000:2;10980:18;;;10973:30;11039:33;11019:18;;;11012:61;11090:18;;2317:63:35;;;;;;;;;1744:1;2455:18;;6253:21:71::1;::::0;::::1;;6249:57;;;6283:23;;;;;;;;;;;;;;6249:57;18891:7:::2;6417:30;6433:7;6442:4;6417:15;:30::i;:::-;18940:17:::3;::::0;::::3;;::::0;;;:8:::3;:17;::::0;;;;;::::3;;18936:49;;;18966:19;;;;;;;;;;;;;;18936:49;19006:15;::::0;::::3;;::::0;;;:6:::3;:15;::::0;;;;;;-1:-1:-1;19035:11:71;;19031:228:::3;;19062:15;::::0;;::::3;19080:1;19062:15:::0;;;:6:::3;:15;::::0;;;;:19;19123::::3;::::0;19095:69:::3;::::0;19123:19:::3;19144:10:::0;19156:7;19095:27:::3;:69::i;:::-;19228:19;::::0;19183:65:::3;::::0;;11293:25:113;;;19183:65:71::3;19228:19:::0;;::::3;11349:2:113::0;11334:18;;11327:83;19183:65:71;;::::3;::::0;;::::3;::::0;::::3;::::0;11266:18:113;19183:65:71::3;;;;;;;19031:228;-1:-1:-1::0;19269:28:71::3;::::0;;::::3;;::::0;;;:19:::3;:28;::::0;;;;19300:15:::3;19269:46:::0;;-1:-1:-1;1701:1:35;2628:7;:22;18751:571:71;:::o;850:475:60:-;1046:45;;;1035:10;8003:55:113;;;1046:45:60;;;7985:74:113;8075:18;;;;8068:34;;;1046:45:60;;;;;;;;;;7958:18:113;;;;1046:45:60;;;;;;;;;;;;;1035:57;;-1:-1:-1;;;;1035:10:60;;;;:57;;1046:45;1035:57;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;999:93;;;;1221:7;1220:8;:59;;;-1:-1:-1;1233:11:60;;:16;;;;:45;;;1265:4;1254:24;;;;;;;;;;;;:::i;:::-;1253:25;1233:45;1216:102;;;1288:30;;;;;;;;;;;;;;1216:102;923:402;;850:475;;;:::o;3747:706:41:-;4166:23;4192:69;4220:4;4192:69;;;;;;;;;;;;;;;;;4200:5;4192:27;;;;:69;;;;;:::i;:::-;4275:17;;4166:95;;-1:-1:-1;4275:21:41;4271:176;;4370:10;4359:30;;;;;;;;;;;;:::i;:::-;4351:85;;;;;;;12179:2:113;4351:85:41;;;12161:21:113;12218:2;12198:18;;;12191:30;12257:34;12237:18;;;12230:62;12328:12;12308:18;;;12301:40;12358:19;;4351:85:41;11977:406:113;4351:85:41;3817:636;3747:706;;:::o;17407:258:71:-;17469:22;;;;17465:194;;17507:15;17525:16;17532:8;17525:6;:16::i;:::-;17555;;;;;;;:6;:16;;;;;;;;:26;;;;17629:19;;17595:21;:31;;;;;;:53;-1:-1:-1;17407:258:71;:::o;3861:223:42:-;3994:12;4025:52;4047:6;4055:4;4061:1;4064:12;4025:21;:52::i;:::-;4018:59;;3861:223;;;;;;:::o;4948:499::-;5113:12;5170:5;5145:21;:30;;5137:81;;;;;;;12590:2:113;5137:81:42;;;12572:21:113;12629:2;12609:18;;;12602:30;12668:34;12648:18;;;12641:62;12739:8;12719:18;;;12712:36;12765:19;;5137:81:42;12388:402:113;5137:81:42;1465:19;;;;5228:60;;;;;;;12997:2:113;5228:60:42;;;12979:21:113;13036:2;13016:18;;;13009:30;13075:31;13055:18;;;13048:59;13124:18;;5228:60:42;12795:353:113;5228:60:42;5300:12;5314:23;5341:6;:11;;5360:5;5367:4;5341:31;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5299:73;;;;5389:51;5406:7;5415:10;5427:12;7707;7735:7;7731:566;;;-1:-1:-1;7765:10:42;7758:17;;7731:566;7876:17;;:21;7872:415;;8120:10;8114:17;8180:15;8167:10;8163:2;8159:19;8152:44;7872:415;8259:12;8252:20;;;;;;;;;;;:::i;14:154:113:-;100:42;93:5;89:54;82:5;79:65;69:93;;158:1;155;148:12;173:247;232:6;285:2;273:9;264:7;260:23;256:32;253:52;;;301:1;298;291:12;253:52;340:9;327:23;359:31;384:5;359:31;:::i;799:226::-;858:6;911:2;899:9;890:7;886:23;882:32;879:52;;;927:1;924;917:12;879:52;-1:-1:-1;972:23:113;;799:226;-1:-1:-1;799:226:113:o;1261:184::-;1313:77;1310:1;1303:88;1410:4;1407:1;1400:15;1434:4;1431:1;1424:15;1450:253;1522:2;1516:9;1564:4;1552:17;;1599:18;1584:34;;1620:22;;;1581:62;1578:88;;;1646:18;;:::i;:::-;1682:2;1675:22;1450:253;:::o;1708:334::-;1779:2;1773:9;1835:2;1825:13;;1840:66;1821:86;1809:99;;1938:18;1923:34;;1959:22;;;1920:62;1917:88;;;1985:18;;:::i;:::-;2021:2;2014:22;1708:334;;-1:-1:-1;1708:334:113:o;2047:183::-;2107:4;2140:18;2132:6;2129:30;2126:56;;;2162:18;;:::i;:::-;-1:-1:-1;2207:1:113;2203:14;2219:4;2199:25;;2047:183::o;2235:961::-;2319:6;2372:2;2360:9;2351:7;2347:23;2343:32;2340:52;;;2388:1;2385;2378:12;2340:52;2428:9;2415:23;2461:18;2453:6;2450:30;2447:50;;;2493:1;2490;2483:12;2447:50;2516:22;;2569:4;2561:13;;2557:27;-1:-1:-1;2547:55:113;;2598:1;2595;2588:12;2547:55;2638:2;2625:16;2661:64;2677:47;2717:6;2677:47;:::i;:::-;2661:64;:::i;:::-;2747:3;2771:6;2766:3;2759:19;2803:2;2798:3;2794:12;2787:19;;2858:2;2848:6;2845:1;2841:14;2837:2;2833:23;2829:32;2815:46;;2884:7;2876:6;2873:19;2870:39;;;2905:1;2902;2895:12;2870:39;2937:2;2933;2929:11;2918:22;;2949:217;2965:6;2960:3;2957:15;2949:217;;;3045:3;3032:17;3062:31;3087:5;3062:31;:::i;:::-;3106:18;;3153:2;2982:12;;;;3144;;;;2949:217;;;3185:5;2235:961;-1:-1:-1;;;;;;2235:961:113:o;3201:367::-;3269:6;3277;3330:2;3318:9;3309:7;3305:23;3301:32;3298:52;;;3346:1;3343;3336:12;3298:52;3385:9;3372:23;3404:31;3429:5;3404:31;:::i;:::-;3454:5;3532:2;3517:18;;;;3504:32;;-1:-1:-1;;;3201:367:113:o;3829:388::-;3897:6;3905;3958:2;3946:9;3937:7;3933:23;3929:32;3926:52;;;3974:1;3971;3964:12;3926:52;4013:9;4000:23;4032:31;4057:5;4032:31;:::i;:::-;4082:5;-1:-1:-1;4139:2:113;4124:18;;4111:32;4152:33;4111:32;4152:33;:::i;:::-;4204:7;4194:17;;;3829:388;;;;;:::o;4222:118::-;4308:5;4301:13;4294:21;4287:5;4284:32;4274:60;;4330:1;4327;4320:12;4345:361;4410:6;4418;4471:2;4459:9;4450:7;4446:23;4442:32;4439:52;;;4487:1;4484;4477:12;4439:52;4532:23;;;-1:-1:-1;4631:2:113;4616:18;;4603:32;4644:30;4603:32;4644:30;:::i;4711:241::-;4767:6;4820:2;4808:9;4799:7;4795:23;4791:32;4788:52;;;4836:1;4833;4826:12;4788:52;4875:9;4862:23;4894:28;4916:5;4894:28;:::i;5456:671::-;5542:6;5550;5558;5566;5619:3;5607:9;5598:7;5594:23;5590:33;5587:53;;;5636:1;5633;5626:12;5587:53;5675:9;5662:23;5694:31;5719:5;5694:31;:::i;:::-;5744:5;-1:-1:-1;5801:2:113;5786:18;;5773:32;5814:33;5773:32;5814:33;:::i;:::-;5866:7;-1:-1:-1;5925:2:113;5910:18;;5897:32;5938:33;5897:32;5938:33;:::i;:::-;5990:7;-1:-1:-1;6049:2:113;6034:18;;6021:32;6062:33;6021:32;6062:33;:::i;:::-;5456:671;;;;-1:-1:-1;5456:671:113;;-1:-1:-1;;5456:671:113:o;6132:184::-;6184:77;6181:1;6174:88;6281:4;6278:1;6271:15;6305:4;6302:1;6295:15;6321:128;6388:9;;;6409:11;;;6406:37;;;6423:18;;:::i;6454:168::-;6527:9;;;6558;;6575:15;;;6569:22;;6555:37;6545:71;;6596:18;;:::i;6627:274::-;6667:1;6693;6683:189;;6728:77;6725:1;6718:88;6829:4;6826:1;6819:15;6857:4;6854:1;6847:15;6683:189;-1:-1:-1;6886:9:113;;6627:274::o;6906:125::-;6971:9;;;6992:10;;;6989:36;;;7005:18;;:::i;7036:230::-;7106:6;7159:2;7147:9;7138:7;7134:23;7130:32;7127:52;;;7175:1;7172;7165:12;7127:52;-1:-1:-1;7220:16:113;;7036:230;-1:-1:-1;7036:230:113:o;7271:184::-;7323:77;7320:1;7313:88;7420:4;7417:1;7410:15;7444:4;7441:1;7434:15;8847:192;8926:13;;8979:34;8968:46;;8958:57;;8948:85;;9029:1;9026;9019:12;8948:85;8847:192;;;:::o;9044:1710::-;9181:6;9234:2;9222:9;9213:7;9209:23;9205:32;9202:52;;;9250:1;9247;9240:12;9202:52;9283:9;9277:16;9316:18;9308:6;9305:30;9302:50;;;9348:1;9345;9338:12;9302:50;9371:22;;9424:4;9416:13;;9412:27;-1:-1:-1;9402:55:113;;9453:1;9450;9443:12;9402:55;9486:2;9480:9;9509:64;9525:47;9565:6;9525:47;:::i;9509:64::-;9595:3;9619:6;9614:3;9607:19;9651:2;9646:3;9642:12;9635:19;;9709:2;9701:4;9693:6;9689:17;9685:2;9681:26;9677:35;9663:49;;9735:7;9727:6;9724:19;9721:39;;;9756:1;9753;9746:12;9721:39;9788:2;9784;9780:11;9769:22;;9800:924;9816:6;9811:3;9808:15;9800:924;;;9898:4;9892:3;9883:7;9879:17;9875:28;9872:48;;;9916:1;9913;9906:12;9872:48;9946:22;;:::i;:::-;10021:10;;10044:22;;10102:43;10141:2;10132:12;;10102:43;:::i;:::-;10097:2;10090:5;10086:14;10079:67;10189:2;10184:3;10180:12;10174:19;10243:7;10239:2;10228:23;10219:7;10216:36;10206:64;;10266:1;10263;10256:12;10206:64;10301:2;10290:14;;10283:31;10350:43;10389:2;10380:12;;10350:43;:::i;:::-;10345:2;10338:5;10334:14;10327:67;10437:3;10432;10428:13;10422:20;10455:33;10480:7;10455:33;:::i;:::-;10519:3;10508:15;;10501:32;10601:3;10592:13;;;10586:20;10626:15;;;10619:32;10664:18;;9842:4;9833:14;;;;10711:2;10702:12;;;;9800:924;;11421:301;11550:3;11588:6;11582:13;11634:6;11627:4;11619:6;11615:17;11610:3;11604:37;11696:1;11660:16;;11685:13;;;-1:-1:-1;11660:16:113;11421:301;-1:-1:-1;11421:301:113:o;11727:245::-;11794:6;11847:2;11835:9;11826:7;11822:23;11818:32;11815:52;;;11863:1;11860;11853:12;11815:52;11895:9;11889:16;11914:28;11936:5;11914:28;:::i;13153:477::-;13302:2;13291:9;13284:21;13265:4;13334:6;13328:13;13377:6;13372:2;13361:9;13357:18;13350:34;13436:6;13431:2;13423:6;13419:15;13414:2;13403:9;13399:18;13393:50;13492:1;13487:2;13478:6;13467:9;13463:22;13459:31;13452:42;13621:2;13551:66;13546:2;13538:6;13534:15;13530:88;13519:9;13515:104;13511:113;13503:121;;;13153:477;;;;:::o",
+        "linkReferences": {}
+    },
+    "methodIdentifiers": {
+        "acceptOwnership()": "79ba5097",
+        "bulkCheckpointOtherUsers(address[])": "4c5de823",
+        "checkpoint()": "c2c4c5c1",
+        "checkpointOtherUser(address)": "9f8a835a",
+        "earned(address)": "008cc262",
+        "eligibleCurrentVePMX(address)": "d8ae7014",
+        "emittedToken()": "e9218ff6",
+        "emittedTokenAddress()": "f43ae1c7",
+        "fractionParticipating()": "fc939bb1",
+        "getYield()": "7c262871",
+        "getYieldForDuration()": "19aec6d2",
+        "getYieldThirdParty(address)": "f3b0fb45",
+        "greylist(address)": "31ca208c",
+        "greylistAddress(address)": "941d9f65",
+        "initialize(address,address,address,address)": "f8c8765e",
+        "lastTimeYieldApplicable()": "56d9fff3",
+        "lastUpdateTime()": "c8f33c91",
+        "nominateNewOwner(address)": "1627540c",
+        "nominatedOwner()": "53a47bb7",
+        "notifyRewardAmount(uint256)": "3c6b16ab",
+        "owner()": "8da5cb5b",
+        "periodFinish()": "ebe2b12b",
+        "recoverERC20(address,uint256)": "8980f11f",
+        "rewardNotifiers(address)": "d15166ff",
+        "setPauses(bool)": "948e25a2",
+        "setThirdPartyClaimer(address,address)": "8c329f66",
+        "setTimelock(address)": "bdacb303",
+        "setVePMXAggregator(address)": "85a74fde",
+        "setYieldDuration(uint256)": "74ea0b98",
+        "setYieldRate(uint256,bool)": "91519bda",
+        "sync()": "fff6cae9",
+        "thirdPartyClaimers(address)": "b1dd0ce9",
+        "timelockAddress()": "4bc66f32",
+        "toggleRewardNotifier(address)": "42c92f6e",
+        "totalComboVePMXSupplyStored()": "5de9fae3",
+        "totalVePMXParticipating()": "12ab50c4",
+        "userIsInitialized(address)": "14b30537",
+        "userVePMXCheckpointed(address)": "b04b91ad",
+        "userVePMXEndpointCheckpointed(address)": "49a9b848",
+        "userYieldPerTokenPaid(address)": "a875f472",
+        "vePMXAggregator()": "8b80f480",
+        "yieldCollectionPaused()": "ad1148cb",
+        "yieldDuration()": "e172cf21",
+        "yieldPerVePMX()": "5e450ad5",
+        "yieldPerVePMXStored()": "9513fdf8",
+        "yieldRate()": "6999ac93",
+        "yields(address)": "50fe98ac"
+    },
+    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.26+commit.8a97fa7a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"AddressGreylisted\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InitializeFailed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidOwnershipAcceptance\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotOwnerOrTimelock\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"OnlyOwner\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"OwnerCannotBeZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"SenderNotAuthorizedClaimer\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"SenderNotRewarder\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"TransferHelperTransferFailed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"YieldCollectionPaused\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"YieldPeriodMustCompleteBeforeChangingToNewPeriod\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[],\"name\":\"DefaultInitialization\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"oldOwner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnerChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnerNominated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"RecoveredERC20\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"reward\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"yieldRate\",\"type\":\"uint256\"}],\"name\":\"RewardAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"timelock_address\",\"type\":\"address\"}],\"name\":\"TimelockChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"staker\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"yield\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"tokenAddress\",\"type\":\"address\"}],\"name\":\"YieldCollected\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newDuration\",\"type\":\"uint256\"}],\"name\":\"YieldDurationUpdated\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"acceptOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_accounts\",\"type\":\"address[]\"}],\"name\":\"bulkCheckpointOtherUsers\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"checkpoint\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_account\",\"type\":\"address\"}],\"name\":\"checkpointOtherUser\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_account\",\"type\":\"address\"}],\"name\":\"earned\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_earned\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"eligibleCurrentVePMX\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_eligibleVepmxBal\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_storedEndingTimestamp\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"emittedToken\",\"outputs\":[{\"internalType\":\"contract ERC20\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"emittedTokenAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"fractionParticipating\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_fraction\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getYield\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_yield0\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getYieldForDuration\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_yield\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_staker\",\"type\":\"address\"}],\"name\":\"getYieldThirdParty\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_yield0\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"greylist\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_address\",\"type\":\"address\"}],\"name\":\"greylistAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_timelockAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_emittedToken\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_vePMXAggregator\",\"type\":\"address\"}],\"name\":\"initialize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lastTimeYieldApplicable\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_ts\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lastUpdateTime\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"}],\"name\":\"nominateNewOwner\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"nominatedOwner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"notifyRewardAmount\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"periodFinish\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_tokenAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_tokenAmount\",\"type\":\"uint256\"}],\"name\":\"recoverERC20\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"rewardNotifiers\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bool\",\"name\":\"_yieldCollectionPaused\",\"type\":\"bool\"}],\"name\":\"setPauses\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_staker\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_claimer\",\"type\":\"address\"}],\"name\":\"setThirdPartyClaimer\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newTimelock\",\"type\":\"address\"}],\"name\":\"setTimelock\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_vePMXAggregator\",\"type\":\"address\"}],\"name\":\"setVePMXAggregator\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_yieldDuration\",\"type\":\"uint256\"}],\"name\":\"setYieldDuration\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_newRate\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"_syncToo\",\"type\":\"bool\"}],\"name\":\"setYieldRate\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"sync\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"staker\",\"type\":\"address\"}],\"name\":\"thirdPartyClaimers\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"claimer\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"timelockAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_notifierAddr\",\"type\":\"address\"}],\"name\":\"toggleRewardNotifier\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalComboVePMXSupplyStored\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalVePMXParticipating\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"userIsInitialized\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"userVePMXCheckpointed\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"userVePMXEndpointCheckpointed\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"userYieldPerTokenPaid\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"vePMXAggregator\",\"outputs\":[{\"internalType\":\"contract VePMXAggregator\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"yieldCollectionPaused\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"yieldDuration\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"yieldPerVePMX\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_yield\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"yieldPerVePMXStored\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"yieldRate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"yields\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"events\":{\"RecoveredERC20(address,uint256)\":{\"params\":{\"amount\":\"Amount of tokens collected\",\"token\":\"Token address\"}},\"RewardAdded(uint256,uint256)\":{\"params\":{\"reward\":\"Amount of tokens deposited\",\"yieldRate\":\"The resultant yield/emission rate\"}},\"TimelockChanged(address)\":{\"params\":{\"timelock_address\":\"Address of the removed timelock\"}},\"YieldCollected(address,address,uint256,address)\":{\"params\":{\"recipient\":\"Address where the yield is ultimately sent\",\"staker\":\"Address whose rewards to collect\",\"tokenAddress\":\"The address collecting the rewards\",\"yield\":\"The amount of tokens collected\"}},\"YieldDurationUpdated(uint256)\":{\"params\":{\"newDuration\":\"The new duration\"}}},\"kind\":\"dev\",\"methods\":{\"bulkCheckpointOtherUsers(address[])\":{\"params\":{\"_accounts\":\"The users to sync\"}},\"checkpointOtherUser(address)\":{\"params\":{\"_account\":\"The user to sync\"}},\"earned(address)\":{\"params\":{\"_account\":\"The user to check\"},\"returns\":{\"_earned\":\"The amount of yield\"}},\"eligibleCurrentVePMX(address)\":{\"params\":{\"_user\":\"The user to check\"},\"returns\":{\"_eligibleVepmxBal\":\"Eligible vePMX\",\"_storedEndingTimestamp\":\"The stored ending timestamp\"}},\"fractionParticipating()\":{\"returns\":{\"_fraction\":\"The Fraction\"}},\"getYield()\":{\"returns\":{\"_yield0\":\"The amount collected\"}},\"getYieldForDuration()\":{\"returns\":{\"_yield\":\"The amount of yield\"}},\"getYieldThirdParty(address)\":{\"details\":\"Only specific addresses allowed by the admin can do this, and only 1:1 (i.e. the third party can only collect one specified address's rewards)\",\"params\":{\"_staker\":\"Address whose rewards to collect\"},\"returns\":{\"_yield0\":\"The amount collected\"}},\"greylistAddress(address)\":{\"details\":\"This is a toggle, so it can re-enable to user as well\",\"params\":{\"_address\":\"The address to greylist\"}},\"initialize(address,address,address,address)\":{\"params\":{\"_emittedToken\":\"Address of the token being emitted as yield\",\"_owner\":\"The owner of this contract\",\"_timelockAddress\":\"Address of the timelock\",\"_vePMXAggregator\":\"Address of the vePMX aggregator\"}},\"lastTimeYieldApplicable()\":{\"returns\":{\"_ts\":\"The timestamp\"}},\"notifyRewardAmount(uint256)\":{\"params\":{\"_amount\":\"The amount to deposit\"}},\"recoverERC20(address,uint256)\":{\"params\":{\"_tokenAddress\":\"The token to recover\",\"_tokenAmount\":\"The amount to recover\"}},\"setPauses(bool)\":{\"params\":{\"_yieldCollectionPaused\":\"The new status\"}},\"setThirdPartyClaimer(address,address)\":{\"details\":\"For Convex, StakeDAO, etc whose contract addresses cannot claim for themselves. Admin set on a case-by-case basis\",\"params\":{\"_claimer\":\"The address of the claimer\",\"_staker\":\"The address of the staker\"}},\"setTimelock(address)\":{\"params\":{\"_newTimelock\":\"The address of the timelock\"}},\"setVePMXAggregator(address)\":{\"params\":{\"_vePMXAggregator\":\"The new address of the vePMX Aggregator\"}},\"setYieldDuration(uint256)\":{\"params\":{\"_yieldDuration\":\"New duration in seconds\"}},\"setYieldRate(uint256,bool)\":{\"params\":{\"_newRate\":\"The new rate\",\"_syncToo\":\"Whether to sync or not\"}},\"toggleRewardNotifier(address)\":{\"params\":{\"_notifierAddr\":\"The address to toggle\"}},\"yieldPerVePMX()\":{\"returns\":{\"_yield\":\"The amount of yield\"}}},\"stateVariables\":{\"__gap\":{\"details\":\"reserve extra storage for future upgrades\"}},\"version\":1},\"userdoc\":{\"errors\":{\"AddressGreylisted()\":[{\"notice\":\"If the address was greylisted\"}],\"InitializeFailed()\":[{\"notice\":\"Cannot initialize twice\"}],\"NotOwnerOrTimelock()\":[{\"notice\":\"If you are trying to call a function not as the owner or timelock\"}],\"SenderNotAuthorizedClaimer()\":[{\"notice\":\"If the sender is not an authorized thirdPartyClaimers for the specified staker address\"}],\"SenderNotRewarder()\":[{\"notice\":\"If the sender is not a rewarder\"}],\"YieldCollectionPaused()\":[{\"notice\":\"If yield collection is paused\"}],\"YieldPeriodMustCompleteBeforeChangingToNewPeriod()\":[{\"notice\":\"If you are trying to change a yield period before it ends\"}]},\"events\":{\"DefaultInitialization()\":{\"notice\":\"When the contract is initialized\"},\"RecoveredERC20(address,uint256)\":{\"notice\":\"When ERC20 tokens were recovered\"},\"RewardAdded(uint256,uint256)\":{\"notice\":\"When a reward is deposited\"},\"TimelockChanged(address)\":{\"notice\":\"Emitted when the timelock address changes\"},\"YieldCollected(address,address,uint256,address)\":{\"notice\":\"When yield is collected\"},\"YieldDurationUpdated(uint256)\":{\"notice\":\"When the yield duration is updated\"}},\"kind\":\"user\",\"methods\":{\"bulkCheckpointOtherUsers(address[])\":{\"notice\":\"Anyone can checkpoint other users\"},\"checkpoint()\":{\"notice\":\"Checkpoint yourself\"},\"checkpointOtherUser(address)\":{\"notice\":\"Anyone can checkpoint another user\"},\"earned(address)\":{\"notice\":\"Amount of tokens claimaible as yield\"},\"eligibleCurrentVePMX(address)\":{\"notice\":\"Eligible vePMX for a given user. Only positions with locked vePMX can accrue yield, not expired positions\"},\"emittedToken()\":{\"notice\":\"ERC20 instance of the token being emitted\"},\"emittedTokenAddress()\":{\"notice\":\"Address of the token being emitted\"},\"fractionParticipating()\":{\"notice\":\"Fraction of the total Fraxtal-visible vePMX collecting yield\"},\"getYield()\":{\"notice\":\"Retrieve own yield\"},\"getYieldForDuration()\":{\"notice\":\"Total amount of yield for the duration (normally a week)\"},\"getYieldThirdParty(address)\":{\"notice\":\"Retrieve another address's yield. Only for specific cases (e.g. Convex, etc) where the mainnet contract cannot claim for itself\"},\"greylist(address)\":{\"notice\":\"A graylist for questionable users\"},\"greylistAddress(address)\":{\"notice\":\"Greylist an address that is misbehaving\"},\"initialize(address,address,address,address)\":{\"notice\":\"Initialize contract\"},\"lastTimeYieldApplicable()\":{\"notice\":\"Last time the yield was accruing\"},\"lastUpdateTime()\":{\"notice\":\"Timestamp when the contract was last synced or had rewards deposited\"},\"notifyRewardAmount(uint256)\":{\"notice\":\"Deposit rewards. Only callable by privileged users\"},\"periodFinish()\":{\"notice\":\"Timestamp when the reward period ends\"},\"recoverERC20(address,uint256)\":{\"notice\":\"Added to support recovering LP Yield and other mistaken tokens from other systems to be distributed to holders\"},\"rewardNotifiers(address)\":{\"notice\":\"Mapping of addresses that are allowed to deposit reward tokens\"},\"setPauses(bool)\":{\"notice\":\"Pause / unpause yield collecting\"},\"setThirdPartyClaimer(address,address)\":{\"notice\":\"Allow a 3rd party address to claim the rewards of a specific staker\"},\"setTimelock(address)\":{\"notice\":\"Set the timelock address\"},\"setVePMXAggregator(address)\":{\"notice\":\"Set the vePMX Aggregator contract\"},\"setYieldDuration(uint256)\":{\"notice\":\"Set the duration of the yield\"},\"setYieldRate(uint256,bool)\":{\"notice\":\"Used for manual reward rates. Only valid until the next notifyRewardAmount() or setYieldRate()\"},\"sync()\":{\"notice\":\"Sync contract-wide variables\"},\"thirdPartyClaimers(address)\":{\"notice\":\"For Convex, StakeDAO, etc whose contract addresses cannot claim for themselves. Admin set on a case-by-case basis\"},\"timelockAddress()\":{\"notice\":\"Address of the timelock\"},\"toggleRewardNotifier(address)\":{\"notice\":\"Toggle an address as being able to be a reward notifier\"},\"totalComboVePMXSupplyStored()\":{\"notice\":\"Stored version of the total vePMX supply\"},\"totalVePMXParticipating()\":{\"notice\":\"Total amount of vePMX that was checkpointed and is earning\"},\"userIsInitialized(address)\":{\"notice\":\"If the user was initialized or not\"},\"userVePMXCheckpointed(address)\":{\"notice\":\"Last stored vePMX balance for the user\"},\"userVePMXEndpointCheckpointed(address)\":{\"notice\":\"The stored shortest endpoint of any of the user's vePMX positions. You will need to re-checkpoint after any lock expires if you want to keep earning.\"},\"userYieldPerTokenPaid(address)\":{\"notice\":\"Accumulator for tracking user-specific rewards paid\"},\"vePMXAggregator()\":{\"notice\":\"Aggregator contract that sums a user's vePMX from multiple sources\"},\"yieldCollectionPaused()\":{\"notice\":\"A graylist for questionable users\"},\"yieldDuration()\":{\"notice\":\"Duration of the period, in seconds\"},\"yieldPerVePMX()\":{\"notice\":\"Amount of yield per vePMX\"},\"yieldPerVePMXStored()\":{\"notice\":\"Accumulator for tracking contract-wide rewards paid\"},\"yieldRate()\":{\"notice\":\"Emission rate of tokens, in tokens per second\"},\"yields(address)\":{\"notice\":\"Last stored version of earned(). Set to 0 on yield claim and to earned() on a checkpoint.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/contracts/VestedPMX-and-Flox/VestedPMX/YieldDistributor.sol\":\"YieldDistributor\"},\"evmVersion\":\"cancun\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":100000},\"remappings\":[\":@eth-optimism/=lib/optimism/packages/\",\":@openzeppelin-4/=node_modules/@openzeppelin-4/\",\":@openzeppelin-5/=node_modules/@openzeppelin-5/\",\":@openzeppelin/=node_modules/@openzeppelin/\",\":@rari-capital/=node_modules/@rari-capital/\",\":clones-with-immutable-args/=lib/optimism/packages/contracts-bedrock/lib/clones-with-immutable-args/src/\",\":ds-test/=lib/frax-standard-solidity/lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/frax-standard-solidity/lib/forge-std/src/\",\":frax-standard-solidity/=lib/frax-standard-solidity/src/\",\":frax-std/=lib/frax-standard-solidity/src/\",\":kontrol-cheatcodes/=lib/optimism/packages/contracts-bedrock/lib/kontrol-cheatcodes/src/\",\":lib-keccak/=lib/optimism/packages/contracts-bedrock/lib/lib-keccak/contracts/\",\":multicall/=lib/optimism/packages/contracts-periphery/lib/multicall/src/\",\":openzeppelin-contracts-upgradeable/=lib/optimism/packages/contracts-bedrock/lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/optimism/packages/contracts-bedrock/lib/openzeppelin-contracts/\",\":optimism/=lib/optimism/\",\":safe-contracts/=lib/optimism/packages/contracts-bedrock/lib/safe-contracts/contracts/\",\":solady/=lib/optimism/packages/contracts-bedrock/lib/solady/\",\":solidity-bytes-utils/=lib/frax-standard-solidity/lib/solidity-bytes-utils/\",\":solmate/=lib/optimism/packages/contracts-bedrock/lib/solmate/src/\",\":src/=src/\",\"lib/optimism/packages/contracts-bedrock:src/=lib/optimism/packages/contracts-bedrock/src/\"]},\"sources\":{\"node_modules/@openzeppelin/contracts/security/ReentrancyGuard.sol\":{\"keccak256\":\"0x0e9621f60b2faabe65549f7ed0f24e8853a45c1b7990d47e8160e523683f3935\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://287a2f8d5814dd0f05f22b740f18ca8321acc21c9bd03a6cb2203ea626e2f3f2\",\"dweb:/ipfs/QmZRQv9iuwU817VuqkA2WweiaibKii69x9QxYBBEfbNEud\"]},\"node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0x24b04b8aacaaf1a4a0719117b29c9c3647b1f479c5ac2a60f5ff1bb6d839c238\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://43e46da9d9f49741ecd876a269e71bc7494058d7a8e9478429998adb5bc3eaa0\",\"dweb:/ipfs/QmUtp4cqzf22C5rJ76AabKADquGWcjsc33yjYXxXC4sDvy\"]},\"node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x9750c6b834f7b43000631af5cc30001c5f547b3ceb3635488f140f60e897ea6b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5a7d5b1ef5d8d5889ad2ed89d8619c09383b80b72ab226e0fe7bde1636481e34\",\"dweb:/ipfs/QmebXWgtEfumQGBdVeM6c71McLixYXQP5Bk6kKXuoY4Bmr\"]},\"node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol\":{\"keccak256\":\"0x8de418a5503946cabe331f35fe242d3201a73f67f77aaeb7110acb1f30423aca\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5a376d3dda2cb70536c0a45c208b29b34ac560c4cb4f513a42079f96ba47d2dd\",\"dweb:/ipfs/QmZQg6gn1sUpM8wHzwNvSnihumUCAhxD119MpXeKp8B9s8\"]},\"node_modules/@openzeppelin/contracts/token/ERC20/extensions/draft-IERC20Permit.sol\":{\"keccak256\":\"0xf41ca991f30855bf80ffd11e9347856a517b977f0a6c2d52e6421a99b7840329\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b2717fd2bdac99daa960a6de500754ea1b932093c946388c381da48658234b95\",\"dweb:/ipfs/QmP6QVMn6UeA3ByahyJbYQr5M6coHKBKsf3ySZSfbyA8R7\"]},\"node_modules/@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol\":{\"keccak256\":\"0x032807210d1d7d218963d7355d62e021a84bf1b3339f4f50be2f63b53cccaf29\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://11756f42121f6541a35a8339ea899ee7514cfaa2e6d740625fcc844419296aa6\",\"dweb:/ipfs/QmekMuk6BY4DAjzeXr4MSbKdgoqqsZnA8JPtuyWc6CwXHf\"]},\"node_modules/@openzeppelin/contracts/utils/Address.sol\":{\"keccak256\":\"0xd6153ce99bcdcce22b124f755e72553295be6abcd63804cfdffceb188b8bef10\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://35c47bece3c03caaa07fab37dd2bb3413bfbca20db7bd9895024390e0a469487\",\"dweb:/ipfs/QmPGWT2x3QHcKxqe6gRmAkdakhbaRgx3DLzcakHz5M4eXG\"]},\"node_modules/@openzeppelin/contracts/utils/Context.sol\":{\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92\",\"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3\"]},\"src/contracts/VestedPMX-and-Flox/FPISLocker/FPISLockerUtils.sol\":{\"keccak256\":\"0x31ae6e18d94cb9741e843db2b040f37dab8bf7eac684f50636d5a28c9933f9fe\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://fb89f63eb4ab81af3fca56c121190ab992d3032df1f52f6c26d15c840762526f\",\"dweb:/ipfs/QmPwiptVsM8RPfLomAz7A68qjsK6bk5k1PcKvY9pnd1os2\"]},\"src/contracts/VestedPMX-and-Flox/FPISLocker/IlFPISStructs.sol\":{\"keccak256\":\"0x8c5ea9521b52c263e505143889fb8677f9421f429a068a47fcd04820ab14733c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8c6204eee033528b11c4dbfcd49eaedf560532b9943578e18a67aa45dd5e941a\",\"dweb:/ipfs/QmcShwEkC6X8C9buDWCyDCrUdTyv2QGUDJAo6spSjvy2jk\"]},\"src/contracts/VestedPMX-and-Flox/Flox/TransferHelper.sol\":{\"keccak256\":\"0x6159728582aaeeeea5a094cd96f6c9d5f9384294d6ccf4635ab93356064ff9fc\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9b1708039a89670142c711a13a7ca223bcbaede13ac812fcbc6f95d1150f0c64\",\"dweb:/ipfs/QmaTaCGgMzjvR3m9fqFsZRsqS2CvraGQJoiuThtrHK2PY2\"]},\"src/contracts/VestedPMX-and-Flox/VestedPMX/IvePMXStructs.sol\":{\"keccak256\":\"0x3fa1793887f16513a1975cd63d75fde129e9ea3a11b71c14a516147a985255c5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4cec71156d13925be8247914d13af58afa5b6a6419236f02ce946a9ba48af34b\",\"dweb:/ipfs/QmenE7oD6AwVZW6x9Gc3bLSXJiMHNoJwzgzHug1TJT4Wng\"]},\"src/contracts/VestedPMX-and-Flox/VestedPMX/L1VePMXTotalSupplyOracle.sol\":{\"keccak256\":\"0xee6f00129122c4feb532693165002deee3b4204826b03e2ee886d40c40a3fe0f\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://8c04dac8b3fb0fc5c7cbf5be04f2c415af45a871a3444639893d489f0dd644b9\",\"dweb:/ipfs/QmfSsReWHi3DRHBFEsA71LMeSNwVmgtvRB4P7ULXVJAi7M\"]},\"src/contracts/VestedPMX-and-Flox/VestedPMX/OwnedV2.sol\":{\"keccak256\":\"0x90182700fe009d6a656c7f1923a94d993805d1195b24c7128b75329d2f2dbc51\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://c0eb43a3dd945c4acd1cf1b050e65c63e7c8ad4fbe578b4c4164a84675eccf88\",\"dweb:/ipfs/QmSTN35oVbtDpPdhTa39w5TChQf7K9mDnYre1HYNTnNSf8\"]},\"src/contracts/VestedPMX-and-Flox/VestedPMX/OwnedV2AutoMsgSender.sol\":{\"keccak256\":\"0x206e8e61500e628a2910a64ec2a211f2d33a91df3f44e3cb6abaccf54efdc699\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://90542b7504c4f973d84640896fcc05398c0b28fdda8999a744219c4384cbd42f\",\"dweb:/ipfs/Qma4DjuMbLmJs5BfFWDBeSgfHwiVGsdXCnfeKdAxw4499r\"]},\"src/contracts/VestedPMX-and-Flox/VestedPMX/VePMXAggregator.sol\":{\"keccak256\":\"0x7d55df0c4550f91aedadec0f2277881af86f55515401dc3e27f2e277e6308775\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://1ab85fab7cb0c81cf227fd3eb0ccd78bfdebd5fc43402440313bbf489aba5312\",\"dweb:/ipfs/QmWUdea18a4psUnRe7Fo375WkYPZ63nf6NQy1Z4a2Cu8iU\"]},\"src/contracts/VestedPMX-and-Flox/VestedPMX/YieldDistributor.sol\":{\"keccak256\":\"0xc7412c733ba5169e63160d0c9fefc23a8b0537bcc5cc3fe9b4d3cd91fabb7aad\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://c26cffe8c5c0eabeb1c057e1dfd6ed5f11c73b07f2fb93a75aeecdd3a8257b53\",\"dweb:/ipfs/QmU6HpQA8geLoKAMJf817vtaCc1WMk3dsa496UhpDYmBNq\"]},\"src/contracts/VestedPMX-and-Flox/interfaces/IFPISLocker.sol\":{\"keccak256\":\"0xc7fd091164417468f6e0e5b4a0f4ac3957ef136a70b23236bdc2c17cafa9cab2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9e4aa08ca9de2d32edfd49162a2b12795c24d26fc12a6b9e1cbb62086d12537b\",\"dweb:/ipfs/QmcT375zxesgJdrBuBPA6vjvZGnbZyiFTadzyecNF26Ppe\"]},\"src/contracts/VestedPMX-and-Flox/interfaces/IL1VePMX.sol\":{\"keccak256\":\"0x1a7e7b9bfc67b62fd41b2df0f43327bd294b9f903c800266e52a1dc031f12436\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8d6d51709b946f4f52bbfff96536e8e466f328d2550f7218a99ac8a480a22c0c\",\"dweb:/ipfs/QmUFzXfwvsCvk6Lv4Wmk4d5QnNCVVVq69e1zCykCLiAeoU\"]},\"src/contracts/VestedPMX-and-Flox/interfaces/IVestedPMX.sol\":{\"keccak256\":\"0x71f93e309c043628939af05883a5193fbd8b531ec78479e78515f9aebea4e29d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d02c949f5cbd552d462b0669b14cc5208174ec26e810f3f98a90f340891a3ec2\",\"dweb:/ipfs/QmZc26gbMwXBxZhXp1hS8NLztQhG7eKoqy3ojxxC6PqNai\"]},\"src/contracts/VestedPMX-and-Flox/interfaces/IVestedPMXUtils.sol\":{\"keccak256\":\"0x1234e32cce37fbe0b788b6a4aa347d72ff9c9ed841fcc2e4a577249685ebf1fc\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b1183ed0f561fa2ae79610ded7cdf8dc96dcb5b3b9ed151f5b7c068f13565a31\",\"dweb:/ipfs/QmYsC9R2tEKtH4VqZgyZQLkyJu2jsLKhT7iCMJVW1QcJTE\"]}},\"version\":1}",
+    "metadata": {
+        "compiler": {
+            "version": "0.8.26+commit.8a97fa7a"
+        },
+        "language": "Solidity",
+        "output": {
+            "abi": [
+                {
+                    "inputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "constructor"
+                },
+                {
+                    "inputs": [],
+                    "type": "error",
+                    "name": "AddressGreylisted"
+                },
+                {
+                    "inputs": [],
+                    "type": "error",
+                    "name": "InitializeFailed"
+                },
+                {
+                    "inputs": [],
+                    "type": "error",
+                    "name": "InvalidOwnershipAcceptance"
+                },
+                {
+                    "inputs": [],
+                    "type": "error",
+                    "name": "NotOwnerOrTimelock"
+                },
+                {
+                    "inputs": [],
+                    "type": "error",
+                    "name": "OnlyOwner"
+                },
+                {
+                    "inputs": [],
+                    "type": "error",
+                    "name": "OwnerCannotBeZero"
+                },
+                {
+                    "inputs": [],
+                    "type": "error",
+                    "name": "SenderNotAuthorizedClaimer"
+                },
+                {
+                    "inputs": [],
+                    "type": "error",
+                    "name": "SenderNotRewarder"
+                },
+                {
+                    "inputs": [],
+                    "type": "error",
+                    "name": "TransferHelperTransferFailed"
+                },
+                {
+                    "inputs": [],
+                    "type": "error",
+                    "name": "YieldCollectionPaused"
+                },
+                {
+                    "inputs": [],
+                    "type": "error",
+                    "name": "YieldPeriodMustCompleteBeforeChangingToNewPeriod"
+                },
+                {
+                    "inputs": [],
+                    "type": "event",
+                    "name": "DefaultInitialization",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "oldOwner",
+                            "type": "address",
+                            "indexed": false
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "newOwner",
+                            "type": "address",
+                            "indexed": false
+                        }
+                    ],
+                    "type": "event",
+                    "name": "OwnerChanged",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "newOwner",
+                            "type": "address",
+                            "indexed": false
+                        }
+                    ],
+                    "type": "event",
+                    "name": "OwnerNominated",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "token",
+                            "type": "address",
+                            "indexed": false
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amount",
+                            "type": "uint256",
+                            "indexed": false
+                        }
+                    ],
+                    "type": "event",
+                    "name": "RecoveredERC20",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "reward",
+                            "type": "uint256",
+                            "indexed": false
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "yieldRate",
+                            "type": "uint256",
+                            "indexed": false
+                        }
+                    ],
+                    "type": "event",
+                    "name": "RewardAdded",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "timelock_address",
+                            "type": "address",
+                            "indexed": false
+                        }
+                    ],
+                    "type": "event",
+                    "name": "TimelockChanged",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "staker",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "recipient",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "yield",
+                            "type": "uint256",
+                            "indexed": false
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "tokenAddress",
+                            "type": "address",
+                            "indexed": false
+                        }
+                    ],
+                    "type": "event",
+                    "name": "YieldCollected",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "newDuration",
+                            "type": "uint256",
+                            "indexed": false
+                        }
+                    ],
+                    "type": "event",
+                    "name": "YieldDurationUpdated",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "acceptOwnership"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address[]",
+                            "name": "_accounts",
+                            "type": "address[]"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "bulkCheckpointOtherUsers"
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "checkpoint"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "_account",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "checkpointOtherUser"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "_account",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "earned",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_earned",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "_user",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "eligibleCurrentVePMX",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_eligibleVepmxBal",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "_storedEndingTimestamp",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "emittedToken",
+                    "outputs": [
+                        {
+                            "internalType": "contract ERC20",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "emittedTokenAddress",
+                    "outputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "fractionParticipating",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_fraction",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "getYield",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_yield0",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "getYieldForDuration",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_yield",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "_staker",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "getYieldThirdParty",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_yield0",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "greylist",
+                    "outputs": [
+                        {
+                            "internalType": "bool",
+                            "name": "",
+                            "type": "bool"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "_address",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "greylistAddress"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "_owner",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "_timelockAddress",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "_emittedToken",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "_vePMXAggregator",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "initialize"
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "lastTimeYieldApplicable",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_ts",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "lastUpdateTime",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "_owner",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "nominateNewOwner"
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "nominatedOwner",
+                    "outputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_amount",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "notifyRewardAmount"
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "owner",
+                    "outputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "periodFinish",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "_tokenAddress",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "_tokenAmount",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "recoverERC20"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "rewardNotifiers",
+                    "outputs": [
+                        {
+                            "internalType": "bool",
+                            "name": "",
+                            "type": "bool"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "bool",
+                            "name": "_yieldCollectionPaused",
+                            "type": "bool"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "setPauses"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "_staker",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "_claimer",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "setThirdPartyClaimer"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "_newTimelock",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "setTimelock"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "_vePMXAggregator",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "setVePMXAggregator"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_yieldDuration",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "setYieldDuration"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_newRate",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "_syncToo",
+                            "type": "bool"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "setYieldRate"
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "sync"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "staker",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "thirdPartyClaimers",
+                    "outputs": [
+                        {
+                            "internalType": "address",
+                            "name": "claimer",
+                            "type": "address"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "timelockAddress",
+                    "outputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "_notifierAddr",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "toggleRewardNotifier"
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "totalComboVePMXSupplyStored",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "totalVePMXParticipating",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "userIsInitialized",
+                    "outputs": [
+                        {
+                            "internalType": "bool",
+                            "name": "",
+                            "type": "bool"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "userVePMXCheckpointed",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "userVePMXEndpointCheckpointed",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "userYieldPerTokenPaid",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "vePMXAggregator",
+                    "outputs": [
+                        {
+                            "internalType": "contract VePMXAggregator",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "yieldCollectionPaused",
+                    "outputs": [
+                        {
+                            "internalType": "bool",
+                            "name": "",
+                            "type": "bool"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "yieldDuration",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "yieldPerVePMX",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_yield",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "yieldPerVePMXStored",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "yieldRate",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "yields",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                }
+            ],
+            "devdoc": {
+                "kind": "dev",
+                "methods": {
+                    "bulkCheckpointOtherUsers(address[])": {
+                        "params": {
+                            "_accounts": "The users to sync"
+                        }
+                    },
+                    "checkpointOtherUser(address)": {
+                        "params": {
+                            "_account": "The user to sync"
+                        }
+                    },
+                    "earned(address)": {
+                        "params": {
+                            "_account": "The user to check"
+                        },
+                        "returns": {
+                            "_earned": "The amount of yield"
+                        }
+                    },
+                    "eligibleCurrentVePMX(address)": {
+                        "params": {
+                            "_user": "The user to check"
+                        },
+                        "returns": {
+                            "_eligibleVepmxBal": "Eligible vePMX",
+                            "_storedEndingTimestamp": "The stored ending timestamp"
+                        }
+                    },
+                    "fractionParticipating()": {
+                        "returns": {
+                            "_fraction": "The Fraction"
+                        }
+                    },
+                    "getYield()": {
+                        "returns": {
+                            "_yield0": "The amount collected"
+                        }
+                    },
+                    "getYieldForDuration()": {
+                        "returns": {
+                            "_yield": "The amount of yield"
+                        }
+                    },
+                    "getYieldThirdParty(address)": {
+                        "details": "Only specific addresses allowed by the admin can do this, and only 1:1 (i.e. the third party can only collect one specified address's rewards)",
+                        "params": {
+                            "_staker": "Address whose rewards to collect"
+                        },
+                        "returns": {
+                            "_yield0": "The amount collected"
+                        }
+                    },
+                    "greylistAddress(address)": {
+                        "details": "This is a toggle, so it can re-enable to user as well",
+                        "params": {
+                            "_address": "The address to greylist"
+                        }
+                    },
+                    "initialize(address,address,address,address)": {
+                        "params": {
+                            "_emittedToken": "Address of the token being emitted as yield",
+                            "_owner": "The owner of this contract",
+                            "_timelockAddress": "Address of the timelock",
+                            "_vePMXAggregator": "Address of the vePMX aggregator"
+                        }
+                    },
+                    "lastTimeYieldApplicable()": {
+                        "returns": {
+                            "_ts": "The timestamp"
+                        }
+                    },
+                    "notifyRewardAmount(uint256)": {
+                        "params": {
+                            "_amount": "The amount to deposit"
+                        }
+                    },
+                    "recoverERC20(address,uint256)": {
+                        "params": {
+                            "_tokenAddress": "The token to recover",
+                            "_tokenAmount": "The amount to recover"
+                        }
+                    },
+                    "setPauses(bool)": {
+                        "params": {
+                            "_yieldCollectionPaused": "The new status"
+                        }
+                    },
+                    "setThirdPartyClaimer(address,address)": {
+                        "details": "For Convex, StakeDAO, etc whose contract addresses cannot claim for themselves. Admin set on a case-by-case basis",
+                        "params": {
+                            "_claimer": "The address of the claimer",
+                            "_staker": "The address of the staker"
+                        }
+                    },
+                    "setTimelock(address)": {
+                        "params": {
+                            "_newTimelock": "The address of the timelock"
+                        }
+                    },
+                    "setVePMXAggregator(address)": {
+                        "params": {
+                            "_vePMXAggregator": "The new address of the vePMX Aggregator"
+                        }
+                    },
+                    "setYieldDuration(uint256)": {
+                        "params": {
+                            "_yieldDuration": "New duration in seconds"
+                        }
+                    },
+                    "setYieldRate(uint256,bool)": {
+                        "params": {
+                            "_newRate": "The new rate",
+                            "_syncToo": "Whether to sync or not"
+                        }
+                    },
+                    "toggleRewardNotifier(address)": {
+                        "params": {
+                            "_notifierAddr": "The address to toggle"
+                        }
+                    },
+                    "yieldPerVePMX()": {
+                        "returns": {
+                            "_yield": "The amount of yield"
+                        }
+                    }
+                },
+                "version": 1
+            },
+            "userdoc": {
+                "kind": "user",
+                "methods": {
+                    "bulkCheckpointOtherUsers(address[])": {
+                        "notice": "Anyone can checkpoint other users"
+                    },
+                    "checkpoint()": {
+                        "notice": "Checkpoint yourself"
+                    },
+                    "checkpointOtherUser(address)": {
+                        "notice": "Anyone can checkpoint another user"
+                    },
+                    "earned(address)": {
+                        "notice": "Amount of tokens claimaible as yield"
+                    },
+                    "eligibleCurrentVePMX(address)": {
+                        "notice": "Eligible vePMX for a given user. Only positions with locked vePMX can accrue yield, not expired positions"
+                    },
+                    "emittedToken()": {
+                        "notice": "ERC20 instance of the token being emitted"
+                    },
+                    "emittedTokenAddress()": {
+                        "notice": "Address of the token being emitted"
+                    },
+                    "fractionParticipating()": {
+                        "notice": "Fraction of the total Fraxtal-visible vePMX collecting yield"
+                    },
+                    "getYield()": {
+                        "notice": "Retrieve own yield"
+                    },
+                    "getYieldForDuration()": {
+                        "notice": "Total amount of yield for the duration (normally a week)"
+                    },
+                    "getYieldThirdParty(address)": {
+                        "notice": "Retrieve another address's yield. Only for specific cases (e.g. Convex, etc) where the mainnet contract cannot claim for itself"
+                    },
+                    "greylist(address)": {
+                        "notice": "A graylist for questionable users"
+                    },
+                    "greylistAddress(address)": {
+                        "notice": "Greylist an address that is misbehaving"
+                    },
+                    "initialize(address,address,address,address)": {
+                        "notice": "Initialize contract"
+                    },
+                    "lastTimeYieldApplicable()": {
+                        "notice": "Last time the yield was accruing"
+                    },
+                    "lastUpdateTime()": {
+                        "notice": "Timestamp when the contract was last synced or had rewards deposited"
+                    },
+                    "notifyRewardAmount(uint256)": {
+                        "notice": "Deposit rewards. Only callable by privileged users"
+                    },
+                    "periodFinish()": {
+                        "notice": "Timestamp when the reward period ends"
+                    },
+                    "recoverERC20(address,uint256)": {
+                        "notice": "Added to support recovering LP Yield and other mistaken tokens from other systems to be distributed to holders"
+                    },
+                    "rewardNotifiers(address)": {
+                        "notice": "Mapping of addresses that are allowed to deposit reward tokens"
+                    },
+                    "setPauses(bool)": {
+                        "notice": "Pause / unpause yield collecting"
+                    },
+                    "setThirdPartyClaimer(address,address)": {
+                        "notice": "Allow a 3rd party address to claim the rewards of a specific staker"
+                    },
+                    "setTimelock(address)": {
+                        "notice": "Set the timelock address"
+                    },
+                    "setVePMXAggregator(address)": {
+                        "notice": "Set the vePMX Aggregator contract"
+                    },
+                    "setYieldDuration(uint256)": {
+                        "notice": "Set the duration of the yield"
+                    },
+                    "setYieldRate(uint256,bool)": {
+                        "notice": "Used for manual reward rates. Only valid until the next notifyRewardAmount() or setYieldRate()"
+                    },
+                    "sync()": {
+                        "notice": "Sync contract-wide variables"
+                    },
+                    "thirdPartyClaimers(address)": {
+                        "notice": "For Convex, StakeDAO, etc whose contract addresses cannot claim for themselves. Admin set on a case-by-case basis"
+                    },
+                    "timelockAddress()": {
+                        "notice": "Address of the timelock"
+                    },
+                    "toggleRewardNotifier(address)": {
+                        "notice": "Toggle an address as being able to be a reward notifier"
+                    },
+                    "totalComboVePMXSupplyStored()": {
+                        "notice": "Stored version of the total vePMX supply"
+                    },
+                    "totalVePMXParticipating()": {
+                        "notice": "Total amount of vePMX that was checkpointed and is earning"
+                    },
+                    "userIsInitialized(address)": {
+                        "notice": "If the user was initialized or not"
+                    },
+                    "userVePMXCheckpointed(address)": {
+                        "notice": "Last stored vePMX balance for the user"
+                    },
+                    "userVePMXEndpointCheckpointed(address)": {
+                        "notice": "The stored shortest endpoint of any of the user's vePMX positions. You will need to re-checkpoint after any lock expires if you want to keep earning."
+                    },
+                    "userYieldPerTokenPaid(address)": {
+                        "notice": "Accumulator for tracking user-specific rewards paid"
+                    },
+                    "vePMXAggregator()": {
+                        "notice": "Aggregator contract that sums a user's vePMX from multiple sources"
+                    },
+                    "yieldCollectionPaused()": {
+                        "notice": "A graylist for questionable users"
+                    },
+                    "yieldDuration()": {
+                        "notice": "Duration of the period, in seconds"
+                    },
+                    "yieldPerVePMX()": {
+                        "notice": "Amount of yield per vePMX"
+                    },
+                    "yieldPerVePMXStored()": {
+                        "notice": "Accumulator for tracking contract-wide rewards paid"
+                    },
+                    "yieldRate()": {
+                        "notice": "Emission rate of tokens, in tokens per second"
+                    },
+                    "yields(address)": {
+                        "notice": "Last stored version of earned(). Set to 0 on yield claim and to earned() on a checkpoint."
+                    }
+                },
+                "version": 1
+            }
+        },
+        "settings": {
+            "remappings": [
+                "@eth-optimism/=lib/optimism/packages/",
+                "@openzeppelin-4/=node_modules/@openzeppelin-4/",
+                "@openzeppelin-5/=node_modules/@openzeppelin-5/",
+                "@openzeppelin/=node_modules/@openzeppelin/",
+                "@rari-capital/=node_modules/@rari-capital/",
+                "clones-with-immutable-args/=lib/optimism/packages/contracts-bedrock/lib/clones-with-immutable-args/src/",
+                "ds-test/=lib/frax-standard-solidity/lib/forge-std/lib/ds-test/src/",
+                "forge-std/=lib/frax-standard-solidity/lib/forge-std/src/",
+                "frax-standard-solidity/=lib/frax-standard-solidity/src/",
+                "frax-std/=lib/frax-standard-solidity/src/",
+                "kontrol-cheatcodes/=lib/optimism/packages/contracts-bedrock/lib/kontrol-cheatcodes/src/",
+                "lib-keccak/=lib/optimism/packages/contracts-bedrock/lib/lib-keccak/contracts/",
+                "multicall/=lib/optimism/packages/contracts-periphery/lib/multicall/src/",
+                "openzeppelin-contracts-upgradeable/=lib/optimism/packages/contracts-bedrock/lib/openzeppelin-contracts-upgradeable/",
+                "openzeppelin-contracts/=lib/optimism/packages/contracts-bedrock/lib/openzeppelin-contracts/",
+                "optimism/=lib/optimism/",
+                "safe-contracts/=lib/optimism/packages/contracts-bedrock/lib/safe-contracts/contracts/",
+                "solady/=lib/optimism/packages/contracts-bedrock/lib/solady/",
+                "solidity-bytes-utils/=lib/frax-standard-solidity/lib/solidity-bytes-utils/",
+                "solmate/=lib/optimism/packages/contracts-bedrock/lib/solmate/src/",
+                "src/=src/",
+                "lib/optimism/packages/contracts-bedrock:src/=lib/optimism/packages/contracts-bedrock/src/"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 100000
+            },
+            "metadata": {
+                "bytecodeHash": "ipfs"
+            },
+            "compilationTarget": {
+                "src/contracts/VestedPMX-and-Flox/VestedPMX/YieldDistributor.sol": "YieldDistributor"
+            },
+            "evmVersion": "cancun",
+            "libraries": {}
+        },
+        "sources": {
+            "node_modules/@openzeppelin/contracts/security/ReentrancyGuard.sol": {
+                "keccak256": "0x0e9621f60b2faabe65549f7ed0f24e8853a45c1b7990d47e8160e523683f3935",
+                "urls": [
+                    "bzz-raw://287a2f8d5814dd0f05f22b740f18ca8321acc21c9bd03a6cb2203ea626e2f3f2",
+                    "dweb:/ipfs/QmZRQv9iuwU817VuqkA2WweiaibKii69x9QxYBBEfbNEud"
+                ],
+                "license": "MIT"
+            },
+            "node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol": {
+                "keccak256": "0x24b04b8aacaaf1a4a0719117b29c9c3647b1f479c5ac2a60f5ff1bb6d839c238",
+                "urls": [
+                    "bzz-raw://43e46da9d9f49741ecd876a269e71bc7494058d7a8e9478429998adb5bc3eaa0",
+                    "dweb:/ipfs/QmUtp4cqzf22C5rJ76AabKADquGWcjsc33yjYXxXC4sDvy"
+                ],
+                "license": "MIT"
+            },
+            "node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+                "keccak256": "0x9750c6b834f7b43000631af5cc30001c5f547b3ceb3635488f140f60e897ea6b",
+                "urls": [
+                    "bzz-raw://5a7d5b1ef5d8d5889ad2ed89d8619c09383b80b72ab226e0fe7bde1636481e34",
+                    "dweb:/ipfs/QmebXWgtEfumQGBdVeM6c71McLixYXQP5Bk6kKXuoY4Bmr"
+                ],
+                "license": "MIT"
+            },
+            "node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
+                "keccak256": "0x8de418a5503946cabe331f35fe242d3201a73f67f77aaeb7110acb1f30423aca",
+                "urls": [
+                    "bzz-raw://5a376d3dda2cb70536c0a45c208b29b34ac560c4cb4f513a42079f96ba47d2dd",
+                    "dweb:/ipfs/QmZQg6gn1sUpM8wHzwNvSnihumUCAhxD119MpXeKp8B9s8"
+                ],
+                "license": "MIT"
+            },
+            "node_modules/@openzeppelin/contracts/token/ERC20/extensions/draft-IERC20Permit.sol": {
+                "keccak256": "0xf41ca991f30855bf80ffd11e9347856a517b977f0a6c2d52e6421a99b7840329",
+                "urls": [
+                    "bzz-raw://b2717fd2bdac99daa960a6de500754ea1b932093c946388c381da48658234b95",
+                    "dweb:/ipfs/QmP6QVMn6UeA3ByahyJbYQr5M6coHKBKsf3ySZSfbyA8R7"
+                ],
+                "license": "MIT"
+            },
+            "node_modules/@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol": {
+                "keccak256": "0x032807210d1d7d218963d7355d62e021a84bf1b3339f4f50be2f63b53cccaf29",
+                "urls": [
+                    "bzz-raw://11756f42121f6541a35a8339ea899ee7514cfaa2e6d740625fcc844419296aa6",
+                    "dweb:/ipfs/QmekMuk6BY4DAjzeXr4MSbKdgoqqsZnA8JPtuyWc6CwXHf"
+                ],
+                "license": "MIT"
+            },
+            "node_modules/@openzeppelin/contracts/utils/Address.sol": {
+                "keccak256": "0xd6153ce99bcdcce22b124f755e72553295be6abcd63804cfdffceb188b8bef10",
+                "urls": [
+                    "bzz-raw://35c47bece3c03caaa07fab37dd2bb3413bfbca20db7bd9895024390e0a469487",
+                    "dweb:/ipfs/QmPGWT2x3QHcKxqe6gRmAkdakhbaRgx3DLzcakHz5M4eXG"
+                ],
+                "license": "MIT"
+            },
+            "node_modules/@openzeppelin/contracts/utils/Context.sol": {
+                "keccak256": "0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7",
+                "urls": [
+                    "bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92",
+                    "dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
+                ],
+                "license": "MIT"
+            },
+            "src/contracts/VestedPMX-and-Flox/FPISLocker/FPISLockerUtils.sol": {
+                "keccak256": "0x31ae6e18d94cb9741e843db2b040f37dab8bf7eac684f50636d5a28c9933f9fe",
+                "urls": [
+                    "bzz-raw://fb89f63eb4ab81af3fca56c121190ab992d3032df1f52f6c26d15c840762526f",
+                    "dweb:/ipfs/QmPwiptVsM8RPfLomAz7A68qjsK6bk5k1PcKvY9pnd1os2"
+                ],
+                "license": "MIT"
+            },
+            "src/contracts/VestedPMX-and-Flox/FPISLocker/IlFPISStructs.sol": {
+                "keccak256": "0x8c5ea9521b52c263e505143889fb8677f9421f429a068a47fcd04820ab14733c",
+                "urls": [
+                    "bzz-raw://8c6204eee033528b11c4dbfcd49eaedf560532b9943578e18a67aa45dd5e941a",
+                    "dweb:/ipfs/QmcShwEkC6X8C9buDWCyDCrUdTyv2QGUDJAo6spSjvy2jk"
+                ],
+                "license": "MIT"
+            },
+            "src/contracts/VestedPMX-and-Flox/Flox/TransferHelper.sol": {
+                "keccak256": "0x6159728582aaeeeea5a094cd96f6c9d5f9384294d6ccf4635ab93356064ff9fc",
+                "urls": [
+                    "bzz-raw://9b1708039a89670142c711a13a7ca223bcbaede13ac812fcbc6f95d1150f0c64",
+                    "dweb:/ipfs/QmaTaCGgMzjvR3m9fqFsZRsqS2CvraGQJoiuThtrHK2PY2"
+                ],
+                "license": "MIT"
+            },
+            "src/contracts/VestedPMX-and-Flox/VestedPMX/IvePMXStructs.sol": {
+                "keccak256": "0x3fa1793887f16513a1975cd63d75fde129e9ea3a11b71c14a516147a985255c5",
+                "urls": [
+                    "bzz-raw://4cec71156d13925be8247914d13af58afa5b6a6419236f02ce946a9ba48af34b",
+                    "dweb:/ipfs/QmenE7oD6AwVZW6x9Gc3bLSXJiMHNoJwzgzHug1TJT4Wng"
+                ],
+                "license": "MIT"
+            },
+            "src/contracts/VestedPMX-and-Flox/VestedPMX/L1VePMXTotalSupplyOracle.sol": {
+                "keccak256": "0xee6f00129122c4feb532693165002deee3b4204826b03e2ee886d40c40a3fe0f",
+                "urls": [
+                    "bzz-raw://8c04dac8b3fb0fc5c7cbf5be04f2c415af45a871a3444639893d489f0dd644b9",
+                    "dweb:/ipfs/QmfSsReWHi3DRHBFEsA71LMeSNwVmgtvRB4P7ULXVJAi7M"
+                ],
+                "license": "GPL-2.0-or-later"
+            },
+            "src/contracts/VestedPMX-and-Flox/VestedPMX/OwnedV2.sol": {
+                "keccak256": "0x90182700fe009d6a656c7f1923a94d993805d1195b24c7128b75329d2f2dbc51",
+                "urls": [
+                    "bzz-raw://c0eb43a3dd945c4acd1cf1b050e65c63e7c8ad4fbe578b4c4164a84675eccf88",
+                    "dweb:/ipfs/QmSTN35oVbtDpPdhTa39w5TChQf7K9mDnYre1HYNTnNSf8"
+                ],
+                "license": "GPL-2.0-or-later"
+            },
+            "src/contracts/VestedPMX-and-Flox/VestedPMX/OwnedV2AutoMsgSender.sol": {
+                "keccak256": "0x206e8e61500e628a2910a64ec2a211f2d33a91df3f44e3cb6abaccf54efdc699",
+                "urls": [
+                    "bzz-raw://90542b7504c4f973d84640896fcc05398c0b28fdda8999a744219c4384cbd42f",
+                    "dweb:/ipfs/Qma4DjuMbLmJs5BfFWDBeSgfHwiVGsdXCnfeKdAxw4499r"
+                ],
+                "license": "GPL-2.0-or-later"
+            },
+            "src/contracts/VestedPMX-and-Flox/VestedPMX/VePMXAggregator.sol": {
+                "keccak256": "0x7d55df0c4550f91aedadec0f2277881af86f55515401dc3e27f2e277e6308775",
+                "urls": [
+                    "bzz-raw://1ab85fab7cb0c81cf227fd3eb0ccd78bfdebd5fc43402440313bbf489aba5312",
+                    "dweb:/ipfs/QmWUdea18a4psUnRe7Fo375WkYPZ63nf6NQy1Z4a2Cu8iU"
+                ],
+                "license": "GPL-2.0-or-later"
+            },
+            "src/contracts/VestedPMX-and-Flox/VestedPMX/YieldDistributor.sol": {
+                "keccak256": "0xc7412c733ba5169e63160d0c9fefc23a8b0537bcc5cc3fe9b4d3cd91fabb7aad",
+                "urls": [
+                    "bzz-raw://c26cffe8c5c0eabeb1c057e1dfd6ed5f11c73b07f2fb93a75aeecdd3a8257b53",
+                    "dweb:/ipfs/QmU6HpQA8geLoKAMJf817vtaCc1WMk3dsa496UhpDYmBNq"
+                ],
+                "license": "GPL-2.0-or-later"
+            },
+            "src/contracts/VestedPMX-and-Flox/interfaces/IFPISLocker.sol": {
+                "keccak256": "0xc7fd091164417468f6e0e5b4a0f4ac3957ef136a70b23236bdc2c17cafa9cab2",
+                "urls": [
+                    "bzz-raw://9e4aa08ca9de2d32edfd49162a2b12795c24d26fc12a6b9e1cbb62086d12537b",
+                    "dweb:/ipfs/QmcT375zxesgJdrBuBPA6vjvZGnbZyiFTadzyecNF26Ppe"
+                ],
+                "license": "MIT"
+            },
+            "src/contracts/VestedPMX-and-Flox/interfaces/IL1VePMX.sol": {
+                "keccak256": "0x1a7e7b9bfc67b62fd41b2df0f43327bd294b9f903c800266e52a1dc031f12436",
+                "urls": [
+                    "bzz-raw://8d6d51709b946f4f52bbfff96536e8e466f328d2550f7218a99ac8a480a22c0c",
+                    "dweb:/ipfs/QmUFzXfwvsCvk6Lv4Wmk4d5QnNCVVVq69e1zCykCLiAeoU"
+                ],
+                "license": "MIT"
+            },
+            "src/contracts/VestedPMX-and-Flox/interfaces/IVestedPMX.sol": {
+                "keccak256": "0x71f93e309c043628939af05883a5193fbd8b531ec78479e78515f9aebea4e29d",
+                "urls": [
+                    "bzz-raw://d02c949f5cbd552d462b0669b14cc5208174ec26e810f3f98a90f340891a3ec2",
+                    "dweb:/ipfs/QmZc26gbMwXBxZhXp1hS8NLztQhG7eKoqy3ojxxC6PqNai"
+                ],
+                "license": "MIT"
+            },
+            "src/contracts/VestedPMX-and-Flox/interfaces/IVestedPMXUtils.sol": {
+                "keccak256": "0x1234e32cce37fbe0b788b6a4aa347d72ff9c9ed841fcc2e4a577249685ebf1fc",
+                "urls": [
+                    "bzz-raw://b1183ed0f561fa2ae79610ded7cdf8dc96dcb5b3b9ed151f5b7c068f13565a31",
+                    "dweb:/ipfs/QmYsC9R2tEKtH4VqZgyZQLkyJu2jsLKhT7iCMJVW1QcJTE"
+                ],
+                "license": "MIT"
+            }
+        },
+        "version": 1
+    },
+    "id": 71
+}

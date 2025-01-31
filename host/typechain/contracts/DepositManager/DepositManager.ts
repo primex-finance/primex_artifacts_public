@@ -30,7 +30,6 @@ export declare namespace IDepositManager {
     duration: BigNumberish;
     isPToken: boolean;
     depositReceiver: AddressLike;
-    rewardReceiver: AddressLike;
     rewardToken: AddressLike;
     pullOracleData: BytesLike[][];
     pullOracleTypes: BigNumberish[];
@@ -43,7 +42,6 @@ export declare namespace IDepositManager {
     duration: bigint,
     isPToken: boolean,
     depositReceiver: string,
-    rewardReceiver: string,
     rewardToken: string,
     pullOracleData: string[][],
     pullOracleTypes: bigint[],
@@ -54,11 +52,47 @@ export declare namespace IDepositManager {
     duration: bigint;
     isPToken: boolean;
     depositReceiver: string;
-    rewardReceiver: string;
     rewardToken: string;
     pullOracleData: string[][];
     pullOracleTypes: bigint[];
     borrowedRewardAssetOracleData: string;
+  };
+
+  export type DepositInfoStruct = {
+    depositId: BigNumberish;
+    owner: AddressLike;
+    bucket: AddressLike;
+    scaledAmount: BigNumberish;
+    entryLiquidityIndex: BigNumberish;
+    deadline: BigNumberish;
+    depositStart: BigNumberish;
+    rewardAmount: BigNumberish;
+    claimedReward: BigNumberish;
+    rewardToken: AddressLike;
+  };
+
+  export type DepositInfoStructOutput = [
+    depositId: bigint,
+    owner: string,
+    bucket: string,
+    scaledAmount: bigint,
+    entryLiquidityIndex: bigint,
+    deadline: bigint,
+    depositStart: bigint,
+    rewardAmount: bigint,
+    claimedReward: bigint,
+    rewardToken: string
+  ] & {
+    depositId: bigint;
+    owner: string;
+    bucket: string;
+    scaledAmount: bigint;
+    entryLiquidityIndex: bigint;
+    deadline: bigint;
+    depositStart: bigint;
+    rewardAmount: bigint;
+    claimedReward: bigint;
+    rewardToken: string;
   };
 
   export type RewardParametersStruct = {
@@ -115,6 +149,8 @@ export interface DepositManagerInterface extends Interface {
   getFunction(
     nameOrSignature:
       | "bucketRewardTokens"
+      | "claimRewardTokens"
+      | "computeClaimableAmount"
       | "deposit"
       | "depositIdCounter"
       | "getAllDepositsLength"
@@ -122,10 +158,12 @@ export interface DepositManagerInterface extends Interface {
       | "getBucketPosibleDurations"
       | "getBucketRewardTokens"
       | "getDepositById"
+      | "getDepositInfoById"
       | "getDeposits"
       | "getDepositsByBucket"
       | "getDepositsByUser"
       | "getUserDepositIds"
+      | "getWithdrawableAmount"
       | "initialize"
       | "interestRates"
       | "isPossibleDurationInBucket"
@@ -165,6 +203,14 @@ export interface DepositManagerInterface extends Interface {
     values: [AddressLike, BigNumberish]
   ): string;
   encodeFunctionData(
+    functionFragment: "claimRewardTokens",
+    values: [BigNumberish[], AddressLike[]]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "computeClaimableAmount",
+    values: [BigNumberish]
+  ): string;
+  encodeFunctionData(
     functionFragment: "deposit",
     values: [IDepositManager.DepositParamsStruct]
   ): string;
@@ -193,6 +239,10 @@ export interface DepositManagerInterface extends Interface {
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
+    functionFragment: "getDepositInfoById",
+    values: [BigNumberish]
+  ): string;
+  encodeFunctionData(
     functionFragment: "getDeposits",
     values: [BigNumberish, BigNumberish]
   ): string;
@@ -206,6 +256,10 @@ export interface DepositManagerInterface extends Interface {
   ): string;
   encodeFunctionData(
     functionFragment: "getUserDepositIds",
+    values: [AddressLike]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "getWithdrawableAmount",
     values: [AddressLike]
   ): string;
   encodeFunctionData(
@@ -274,6 +328,14 @@ export interface DepositManagerInterface extends Interface {
     functionFragment: "bucketRewardTokens",
     data: BytesLike
   ): Result;
+  decodeFunctionResult(
+    functionFragment: "claimRewardTokens",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "computeClaimableAmount",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(functionFragment: "deposit", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "depositIdCounter",
@@ -300,6 +362,10 @@ export interface DepositManagerInterface extends Interface {
     data: BytesLike
   ): Result;
   decodeFunctionResult(
+    functionFragment: "getDepositInfoById",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
     functionFragment: "getDeposits",
     data: BytesLike
   ): Result;
@@ -313,6 +379,10 @@ export interface DepositManagerInterface extends Interface {
   ): Result;
   decodeFunctionResult(
     functionFragment: "getUserDepositIds",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "getWithdrawableAmount",
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "initialize", data: BytesLike): Result;
@@ -586,6 +656,18 @@ export interface DepositManager extends BaseContract {
     "view"
   >;
 
+  claimRewardTokens: TypedContractMethod<
+    [_depositIds: BigNumberish[], _receivers: AddressLike[]],
+    [void],
+    "nonpayable"
+  >;
+
+  computeClaimableAmount: TypedContractMethod<
+    [_depositId: BigNumberish],
+    [bigint],
+    "view"
+  >;
+
   deposit: TypedContractMethod<
     [_params: IDepositManager.DepositParamsStruct],
     [void],
@@ -620,6 +702,12 @@ export interface DepositManager extends BaseContract {
     "view"
   >;
 
+  getDepositInfoById: TypedContractMethod<
+    [_depositId: BigNumberish],
+    [IDepositManager.DepositInfoStructOutput],
+    "view"
+  >;
+
   getDeposits: TypedContractMethod<
     [_cursor: BigNumberish, _count: BigNumberish],
     [
@@ -634,8 +722,8 @@ export interface DepositManager extends BaseContract {
   getDepositsByBucket: TypedContractMethod<
     [_bucket: AddressLike, _cursor: BigNumberish, _count: BigNumberish],
     [
-      [IDepositManagerStorage.DepositStructOutput[], bigint] & {
-        bucketDepositsData: IDepositManagerStorage.DepositStructOutput[];
+      [IDepositManager.DepositInfoStructOutput[], bigint] & {
+        bucketDepositsData: IDepositManager.DepositInfoStructOutput[];
         newCursor: bigint;
       }
     ],
@@ -645,8 +733,8 @@ export interface DepositManager extends BaseContract {
   getDepositsByUser: TypedContractMethod<
     [_user: AddressLike, _cursor: BigNumberish, _count: BigNumberish],
     [
-      [IDepositManagerStorage.DepositStructOutput[], bigint] & {
-        userDepositsData: IDepositManagerStorage.DepositStructOutput[];
+      [IDepositManager.DepositInfoStructOutput[], bigint] & {
+        userDepositsData: IDepositManager.DepositInfoStructOutput[];
         newCursor: bigint;
       }
     ],
@@ -656,6 +744,12 @@ export interface DepositManager extends BaseContract {
   getUserDepositIds: TypedContractMethod<
     [_user: AddressLike],
     [bigint[]],
+    "view"
+  >;
+
+  getWithdrawableAmount: TypedContractMethod<
+    [_rewardToken: AddressLike],
+    [bigint],
     "view"
   >;
 
@@ -758,6 +852,16 @@ export interface DepositManager extends BaseContract {
     "view"
   >;
   getFunction(
+    nameOrSignature: "claimRewardTokens"
+  ): TypedContractMethod<
+    [_depositIds: BigNumberish[], _receivers: AddressLike[]],
+    [void],
+    "nonpayable"
+  >;
+  getFunction(
+    nameOrSignature: "computeClaimableAmount"
+  ): TypedContractMethod<[_depositId: BigNumberish], [bigint], "view">;
+  getFunction(
     nameOrSignature: "deposit"
   ): TypedContractMethod<
     [_params: IDepositManager.DepositParamsStruct],
@@ -791,6 +895,13 @@ export interface DepositManager extends BaseContract {
     "view"
   >;
   getFunction(
+    nameOrSignature: "getDepositInfoById"
+  ): TypedContractMethod<
+    [_depositId: BigNumberish],
+    [IDepositManager.DepositInfoStructOutput],
+    "view"
+  >;
+  getFunction(
     nameOrSignature: "getDeposits"
   ): TypedContractMethod<
     [_cursor: BigNumberish, _count: BigNumberish],
@@ -807,8 +918,8 @@ export interface DepositManager extends BaseContract {
   ): TypedContractMethod<
     [_bucket: AddressLike, _cursor: BigNumberish, _count: BigNumberish],
     [
-      [IDepositManagerStorage.DepositStructOutput[], bigint] & {
-        bucketDepositsData: IDepositManagerStorage.DepositStructOutput[];
+      [IDepositManager.DepositInfoStructOutput[], bigint] & {
+        bucketDepositsData: IDepositManager.DepositInfoStructOutput[];
         newCursor: bigint;
       }
     ],
@@ -819,8 +930,8 @@ export interface DepositManager extends BaseContract {
   ): TypedContractMethod<
     [_user: AddressLike, _cursor: BigNumberish, _count: BigNumberish],
     [
-      [IDepositManagerStorage.DepositStructOutput[], bigint] & {
-        userDepositsData: IDepositManagerStorage.DepositStructOutput[];
+      [IDepositManager.DepositInfoStructOutput[], bigint] & {
+        userDepositsData: IDepositManager.DepositInfoStructOutput[];
         newCursor: bigint;
       }
     ],
@@ -829,6 +940,9 @@ export interface DepositManager extends BaseContract {
   getFunction(
     nameOrSignature: "getUserDepositIds"
   ): TypedContractMethod<[_user: AddressLike], [bigint[]], "view">;
+  getFunction(
+    nameOrSignature: "getWithdrawableAmount"
+  ): TypedContractMethod<[_rewardToken: AddressLike], [bigint], "view">;
   getFunction(
     nameOrSignature: "initialize"
   ): TypedContractMethod<

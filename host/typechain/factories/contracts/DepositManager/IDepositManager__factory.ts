@@ -180,6 +180,43 @@ const _abi = [
   {
     inputs: [
       {
+        internalType: "uint256[]",
+        name: "_depositIds",
+        type: "uint256[]",
+      },
+      {
+        internalType: "address[]",
+        name: "_receivers",
+        type: "address[]",
+      },
+    ],
+    name: "claimRewardTokens",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_depositId",
+        type: "uint256",
+      },
+    ],
+    name: "computeClaimableAmount",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
         components: [
           {
             internalType: "address",
@@ -204,11 +241,6 @@ const _abi = [
           {
             internalType: "address",
             name: "depositReceiver",
-            type: "address",
-          },
-          {
-            internalType: "address",
-            name: "rewardReceiver",
             type: "address",
           },
           {
@@ -385,6 +417,77 @@ const _abi = [
     inputs: [
       {
         internalType: "uint256",
+        name: "_depositId",
+        type: "uint256",
+      },
+    ],
+    name: "getDepositInfoById",
+    outputs: [
+      {
+        components: [
+          {
+            internalType: "uint256",
+            name: "depositId",
+            type: "uint256",
+          },
+          {
+            internalType: "address",
+            name: "owner",
+            type: "address",
+          },
+          {
+            internalType: "address",
+            name: "bucket",
+            type: "address",
+          },
+          {
+            internalType: "uint256",
+            name: "scaledAmount",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "entryLiquidityIndex",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "deadline",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "depositStart",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "rewardAmount",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "claimedReward",
+            type: "uint256",
+          },
+          {
+            internalType: "address",
+            name: "rewardToken",
+            type: "address",
+          },
+        ],
+        internalType: "struct IDepositManager.DepositInfo",
+        name: "",
+        type: "tuple",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
         name: "cursor",
         type: "uint256",
       },
@@ -494,8 +597,28 @@ const _abi = [
             name: "deadline",
             type: "uint256",
           },
+          {
+            internalType: "uint256",
+            name: "depositStart",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "rewardAmount",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "claimedReward",
+            type: "uint256",
+          },
+          {
+            internalType: "address",
+            name: "rewardToken",
+            type: "address",
+          },
         ],
-        internalType: "struct IDepositManagerStorage.Deposit[]",
+        internalType: "struct IDepositManager.DepositInfo[]",
         name: "bucketDepositsData",
         type: "tuple[]",
       },
@@ -560,8 +683,28 @@ const _abi = [
             name: "deadline",
             type: "uint256",
           },
+          {
+            internalType: "uint256",
+            name: "depositStart",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "rewardAmount",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "claimedReward",
+            type: "uint256",
+          },
+          {
+            internalType: "address",
+            name: "rewardToken",
+            type: "address",
+          },
         ],
-        internalType: "struct IDepositManagerStorage.Deposit[]",
+        internalType: "struct IDepositManager.DepositInfo[]",
         name: "userDepositsData",
         type: "tuple[]",
       },
@@ -588,6 +731,25 @@ const _abi = [
         internalType: "uint256[]",
         name: "",
         type: "uint256[]",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "_rewardToken",
+        type: "address",
+      },
+    ],
+    name: "getWithdrawableAmount",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "amount",
+        type: "uint256",
       },
     ],
     stateMutability: "view",

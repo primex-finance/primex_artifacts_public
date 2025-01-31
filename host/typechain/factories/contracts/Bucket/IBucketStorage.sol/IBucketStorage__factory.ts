@@ -147,7 +147,7 @@ const _abi = [
         type: "uint128",
       },
     ],
-    stateMutability: "nonpayable",
+    stateMutability: "view",
     type: "function",
   },
   {

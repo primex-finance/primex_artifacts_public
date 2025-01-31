@@ -192,6 +192,7 @@ export interface KeeperRewardDistributorV2Interface extends Interface {
       | "setNativePartInReward"
       | "setOptimisticGasCoefficient"
       | "setOracleGasPriceTolerance"
+      | "setPMX"
       | "setPmxPartInReward"
       | "setPositionSizeCoefficient"
       | "setValue"
@@ -339,6 +340,7 @@ export interface KeeperRewardDistributorV2Interface extends Interface {
     functionFragment: "setOracleGasPriceTolerance",
     values: [BigNumberish]
   ): string;
+  encodeFunctionData(functionFragment: "setPMX", values: [AddressLike]): string;
   encodeFunctionData(
     functionFragment: "setPmxPartInReward",
     values: [BigNumberish]
@@ -477,6 +479,7 @@ export interface KeeperRewardDistributorV2Interface extends Interface {
     functionFragment: "setOracleGasPriceTolerance",
     data: BytesLike
   ): Result;
+  decodeFunctionResult(functionFragment: "setPMX", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "setPmxPartInReward",
     data: BytesLike
@@ -917,6 +920,8 @@ export interface KeeperRewardDistributorV2 extends BaseContract {
     "nonpayable"
   >;
 
+  setPMX: TypedContractMethod<[_pmx: AddressLike], [void], "nonpayable">;
+
   setPmxPartInReward: TypedContractMethod<
     [_pmxPartInReward: BigNumberish],
     [void],
@@ -1121,6 +1126,9 @@ export interface KeeperRewardDistributorV2 extends BaseContract {
     [void],
     "nonpayable"
   >;
+  getFunction(
+    nameOrSignature: "setPMX"
+  ): TypedContractMethod<[_pmx: AddressLike], [void], "nonpayable">;
   getFunction(
     nameOrSignature: "setPmxPartInReward"
   ): TypedContractMethod<

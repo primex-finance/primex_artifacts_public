@@ -1,0 +1,1144 @@
+{
+    "address": "0xc2bcfe1eaf7688412334c7303ccbdc98f6c92155",
+    "abi": [
+        {
+            "type": "constructor",
+            "inputs": [
+                {
+                    "name": "_vestedPMX",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "getCrudeExpectedVePMXMultiLock",
+            "inputs": [
+                {
+                    "name": "_pmxAmounts",
+                    "type": "int128[]",
+                    "internalType": "int128[]"
+                },
+                {
+                    "name": "_lockSecsU128",
+                    "type": "uint128[]",
+                    "internalType": "uint128[]"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "_expectedVePMX",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getCrudeExpectedVePMXOneLock",
+            "inputs": [
+                {
+                    "name": "_pmxAmount",
+                    "type": "int128",
+                    "internalType": "int128"
+                },
+                {
+                    "name": "_lockSecsU128",
+                    "type": "uint128",
+                    "internalType": "uint128"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "_expectedVePMX",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getCrudeExpectedVePMXUser",
+            "inputs": [
+                {
+                    "name": "_user",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "_expectedVePMX",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getDetailedUserLockInfo",
+            "inputs": [
+                {
+                    "name": "_user",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "_userLockInfo",
+                    "type": "tuple",
+                    "internalType": "struct IvePMXStructs.DetailedUserLockInfo",
+                    "components": [
+                        {
+                            "name": "user",
+                            "type": "address",
+                            "internalType": "address"
+                        },
+                        {
+                            "name": "numberOfLocks",
+                            "type": "uint256",
+                            "internalType": "uint256"
+                        },
+                        {
+                            "name": "allLocks",
+                            "type": "tuple[]",
+                            "internalType": "struct IvePMXStructs.LockedBalanceExtended[]",
+                            "components": [
+                                {
+                                    "name": "id",
+                                    "type": "uint256",
+                                    "internalType": "uint256"
+                                },
+                                {
+                                    "name": "index",
+                                    "type": "uint128",
+                                    "internalType": "uint128"
+                                },
+                                {
+                                    "name": "amount",
+                                    "type": "int128",
+                                    "internalType": "int128"
+                                },
+                                {
+                                    "name": "end",
+                                    "type": "uint128",
+                                    "internalType": "uint128"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "activeLocks",
+                            "type": "tuple[]",
+                            "internalType": "struct IvePMXStructs.LockedBalanceExtended[]",
+                            "components": [
+                                {
+                                    "name": "id",
+                                    "type": "uint256",
+                                    "internalType": "uint256"
+                                },
+                                {
+                                    "name": "index",
+                                    "type": "uint128",
+                                    "internalType": "uint128"
+                                },
+                                {
+                                    "name": "amount",
+                                    "type": "int128",
+                                    "internalType": "int128"
+                                },
+                                {
+                                    "name": "end",
+                                    "type": "uint128",
+                                    "internalType": "uint128"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "expiredLocks",
+                            "type": "tuple[]",
+                            "internalType": "struct IvePMXStructs.LockedBalanceExtended[]",
+                            "components": [
+                                {
+                                    "name": "id",
+                                    "type": "uint256",
+                                    "internalType": "uint256"
+                                },
+                                {
+                                    "name": "index",
+                                    "type": "uint128",
+                                    "internalType": "uint128"
+                                },
+                                {
+                                    "name": "amount",
+                                    "type": "int128",
+                                    "internalType": "int128"
+                                },
+                                {
+                                    "name": "end",
+                                    "type": "uint128",
+                                    "internalType": "uint128"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "totalPmx",
+                            "type": "int128[3]",
+                            "internalType": "int128[3]"
+                        }
+                    ]
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getDetailedUserLockInfoBulk",
+            "inputs": [
+                {
+                    "name": "_users",
+                    "type": "address[]",
+                    "internalType": "address[]"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "_userLockInfos",
+                    "type": "tuple[]",
+                    "internalType": "struct IvePMXStructs.DetailedUserLockInfo[]",
+                    "components": [
+                        {
+                            "name": "user",
+                            "type": "address",
+                            "internalType": "address"
+                        },
+                        {
+                            "name": "numberOfLocks",
+                            "type": "uint256",
+                            "internalType": "uint256"
+                        },
+                        {
+                            "name": "allLocks",
+                            "type": "tuple[]",
+                            "internalType": "struct IvePMXStructs.LockedBalanceExtended[]",
+                            "components": [
+                                {
+                                    "name": "id",
+                                    "type": "uint256",
+                                    "internalType": "uint256"
+                                },
+                                {
+                                    "name": "index",
+                                    "type": "uint128",
+                                    "internalType": "uint128"
+                                },
+                                {
+                                    "name": "amount",
+                                    "type": "int128",
+                                    "internalType": "int128"
+                                },
+                                {
+                                    "name": "end",
+                                    "type": "uint128",
+                                    "internalType": "uint128"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "activeLocks",
+                            "type": "tuple[]",
+                            "internalType": "struct IvePMXStructs.LockedBalanceExtended[]",
+                            "components": [
+                                {
+                                    "name": "id",
+                                    "type": "uint256",
+                                    "internalType": "uint256"
+                                },
+                                {
+                                    "name": "index",
+                                    "type": "uint128",
+                                    "internalType": "uint128"
+                                },
+                                {
+                                    "name": "amount",
+                                    "type": "int128",
+                                    "internalType": "int128"
+                                },
+                                {
+                                    "name": "end",
+                                    "type": "uint128",
+                                    "internalType": "uint128"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "expiredLocks",
+                            "type": "tuple[]",
+                            "internalType": "struct IvePMXStructs.LockedBalanceExtended[]",
+                            "components": [
+                                {
+                                    "name": "id",
+                                    "type": "uint256",
+                                    "internalType": "uint256"
+                                },
+                                {
+                                    "name": "index",
+                                    "type": "uint128",
+                                    "internalType": "uint128"
+                                },
+                                {
+                                    "name": "amount",
+                                    "type": "int128",
+                                    "internalType": "int128"
+                                },
+                                {
+                                    "name": "end",
+                                    "type": "uint128",
+                                    "internalType": "uint128"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "totalPmx",
+                            "type": "int128[3]",
+                            "internalType": "int128[3]"
+                        }
+                    ]
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getLongestLock",
+            "inputs": [
+                {
+                    "name": "user",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "tuple",
+                    "internalType": "struct IvePMXStructs.LockedBalance",
+                    "components": [
+                        {
+                            "name": "amount",
+                            "type": "int128",
+                            "internalType": "int128"
+                        },
+                        {
+                            "name": "end",
+                            "type": "uint128",
+                            "internalType": "uint128"
+                        }
+                    ]
+                },
+                {
+                    "name": "",
+                    "type": "uint128",
+                    "internalType": "uint128"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getLongestLockBulk",
+            "inputs": [
+                {
+                    "name": "users",
+                    "type": "address[]",
+                    "internalType": "address[]"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "tuple[]",
+                    "internalType": "struct IvePMXStructs.LongestLock[]",
+                    "components": [
+                        {
+                            "name": "lock",
+                            "type": "tuple",
+                            "internalType": "struct IvePMXStructs.LockedBalance",
+                            "components": [
+                                {
+                                    "name": "amount",
+                                    "type": "int128",
+                                    "internalType": "int128"
+                                },
+                                {
+                                    "name": "end",
+                                    "type": "uint128",
+                                    "internalType": "uint128"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "lockIndex",
+                            "type": "uint128",
+                            "internalType": "uint128"
+                        },
+                        {
+                            "name": "user",
+                            "type": "address",
+                            "internalType": "address"
+                        }
+                    ]
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "token",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "contract IERC20Metadata"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "vePMX",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "contract IVestedPMX"
+                }
+            ],
+            "stateMutability": "view"
+        }
+    ],
+    "bytecode": {
+        "object": "0x60c060405234801561000f575f80fd5b5060405161220f38038061220f83398101604081905261002e916100ac565b6001600160a01b038116608081905260408051637e062a3560e11b8152905163fc0c546a916004808201926020929091908290030181865afa158015610076573d5f803e3d5ffd5b505050506040513d601f19601f8201168201806040525081019061009a91906100ac565b6001600160a01b031660a052506100d9565b5f602082840312156100bc575f80fd5b81516001600160a01b03811681146100d2575f80fd5b9392505050565b60805160a0516120ac6101635f395f6101f301525f8181610187015281816102cb01528181610490015281816106720152818161073c01528181610b5001528181610bee01528181610c7b01528181610d1e01528181610dff01528181610fd20152818161112b01528181611231015281816113750152818161145c01526115a601526120ac5ff3fe608060405234801561000f575f80fd5b506004361061009f575f3560e01c8063d8e6971611610072578063f4ebfcae11610058578063f4ebfcae14610182578063fb908ddd146101ce578063fc0c546a146101ee575f80fd5b8063d8e6971614610120578063f37461ab14610133575f80fd5b806329d71cb6146100a35780632d3c1721146100cc5780633c593312146100ed578063ba12f8781461010d575b5f80fd5b6100b66100b1366004611880565b610215565b6040516100c39190611a52565b60405180910390f35b6100df6100da366004611b6f565b6102c7565b6040519081526020016100c3565b6101006100fb366004611c34565b610441565b6040516100c39190611c54565b6100df61011b366004611c66565b610b4d565b6100df61012e366004611c34565b610def565b610146610141366004611c34565b610f76565b604080518351600f0b81526020938401516fffffffffffffffffffffffffffffffff9081169482019490945292909116908201526060016100c3565b6101a97f000000000000000000000000000000000000000000000000000000000000000081565b60405173ffffffffffffffffffffffffffffffffffffffff90911681526020016100c3565b6101e16101dc366004611880565b6112bc565b6040516100c39190611c9d565b6101a97f000000000000000000000000000000000000000000000000000000000000000081565b80516060908067ffffffffffffffff811115610233576102336117b9565b60405190808252806020026020018201604052801561026c57816020015b61025961174c565b8152602001906001900390816102515790505b5091505f5b818110156102c05761029b84828151811061028e5761028e611d49565b6020026020010151610441565b8382815181106102ad576102ad611d49565b6020908102919091010152600101610271565b5050919050565b5f807f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff1663f89464856040518163ffffffff1660e01b8152600401602060405180830381865afa158015610332573d5f803e3d5ffd5b505050506040513d601f19601f820116820180604052508101906103569190611d76565b90505f5b8451816fffffffffffffffffffffffffffffffff1610156104395781156103bc5784816fffffffffffffffffffffffffffffffff168151811061039f5761039f611d49565b6020026020010151600f0b836103b59190611dc2565b9250610429565b61041c85826fffffffffffffffffffffffffffffffff16815181106103e3576103e3611d49565b602002602001015185836fffffffffffffffffffffffffffffffff168151811061040f5761040f611d49565b6020026020010151610b4d565b6104269084611dc2565b92505b61043281611dd5565b905061035a565b505092915050565b61044961174c565b6040517fb9ef083000000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff83811660048301525f917f00000000000000000000000000000000000000000000000000000000000000009091169063b9ef083090602401602060405180830381865afa1580156104d7573d5f803e3d5ffd5b505050506040513d601f19601f820116820180604052508101906104fb9190611e11565b6fffffffffffffffffffffffffffffffff166020830181905273ffffffffffffffffffffffffffffffffffffffff8416835290505f8167ffffffffffffffff811115610549576105496117b9565b6040519080825280602002602001820160405280156105b857816020015b604080516080810182525f8082526020808301829052928201819052606082015282527fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff9092019101816105675790505b5060408401525f8267ffffffffffffffff8111156105d8576105d86117b9565b604051908082528060200260200182016040528015610601578160200160208202803683370190505b5090505f5b846040015151811015610924576040517f21c984e900000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff87811660048301526fffffffffffffffffffffffffffffffff831660248301525f917f0000000000000000000000000000000000000000000000000000000000000000909116906321c984e9906044016040805180830381865afa1580156106b8573d5f803e3d5ffd5b505050506040513d601f19601f820116820180604052508101906106dc9190611e2c565b6040517f5f96d4e700000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff89811660048301526fffffffffffffffffffffffffffffffff851660248301529192507f000000000000000000000000000000000000000000000000000000000000000090911690635f96d4e790604401602060405180830381865afa158015610783573d5f803e3d5ffd5b505050506040513d601f19601f820116820180604052508101906107a79190611e8b565b866040015183815181106107bd576107bd611d49565b60200260200101515f01818152505081866040015183815181106107e3576107e3611d49565b6020908102919091018101516fffffffffffffffffffffffffffffffff9092169101528051604087015180518490811061081f5761081f611d49565b602002602001015160400190600f0b9081600f0b8152505080602001518660400151838151811061085257610852611d49565b60209081029190910101516fffffffffffffffffffffffffffffffff91909116606090910152805160a0870151805161088c908390611ea2565b600f0b9052506020810151426fffffffffffffffffffffffffffffffff90911611156108fd5760018383815181106108c6576108c6611d49565b911515602092830291909101820152815160a088015190910180516108ec908390611ea2565b600f0b90525060019093019261091b565b805160a08701516040018051610914908390611ea2565b600f0b9052505b50600101610606565b50816fffffffffffffffffffffffffffffffff1667ffffffffffffffff811115610950576109506117b9565b6040519080825280602002602001820160405280156109bf57816020015b604080516080810182525f8082526020808301829052928201819052606082015282527fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff90920191018161096e5790505b5060608501526109e16fffffffffffffffffffffffffffffffff831684611ef0565b67ffffffffffffffff8111156109f9576109f96117b9565b604051908082528060200260200182016040528015610a6857816020015b604080516080810182525f8082526020808301829052928201819052606082015282527fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff909201910181610a175790505b5060808501525f80805b866040015151811015610b42575f87604001518281518110610a9657610a96611d49565b60200260200101519050848281518110610ab257610ab2611d49565b602002602001015115610afe57808860600151856fffffffffffffffffffffffffffffffff1681518110610ae857610ae8611d49565b6020026020010181905250836001019350610b39565b808860800151846fffffffffffffffffffffffffffffffff1681518110610b2757610b27611d49565b60200260200101819052508260010192505b50600101610a72565b505050505050919050565b5f7f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff1663f89464856040518163ffffffff1660e01b8152600401602060405180830381865afa158015610bb7573d5f803e3d5ffd5b505050506040513d601f19601f82011682018060405250810190610bdb9190611d76565b15610beb5782600f0b9050610de9565b5f7f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff16637c10d93a6040518163ffffffff1660e01b8152600401602060405180830381865afa158015610c55573d5f803e3d5ffd5b505050506040513d601f19601f82011682018060405250810190610c799190611e11565b7f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff16637c10d93a6040518163ffffffff1660e01b8152600401602060405180830381865afa158015610ce2573d5f803e3d5ffd5b505050506040513d601f19601f82011682018060405250810190610d069190611e11565b610d109085611f30565b610d1a9190611f6f565b90507f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff16637aa9b5566040518163ffffffff1660e01b8152600401602060405180830381865afa158015610d85573d5f803e3d5ffd5b505050506040513d601f19601f82011682018060405250810190610da99190611fa1565b81610db5866003611fbc565b610dbf9190611fbc565b610dc99190611fdb565b610dd39085611ea2565b6fffffffffffffffffffffffffffffffff169150505b92915050565b5f80610dfa83610441565b90505f7f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff1663f89464856040518163ffffffff1660e01b8152600401602060405180830381865afa158015610e66573d5f803e3d5ffd5b505050506040513d601f19601f82011682018060405250810190610e8a9190611d76565b90505f5b8260200151816fffffffffffffffffffffffffffffffff161015610f6e575f8360400151826fffffffffffffffffffffffffffffffff1681518110610ed557610ed5611d49565b602002602001015190508215610efe576040810151610ef790600f0b86611dc2565b9450610f65565b5f426fffffffffffffffffffffffffffffffff1682606001516fffffffffffffffffffffffffffffffff161015610f3657505f610f49565b428260600151610f46919061204e565b90505b610f57826040015182610b4d565b610f619087611dc2565b9550505b50600101610e8e565b505050919050565b604080518082019091525f80825260208201526040517fb9ef083000000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff83811660048301525f9182917f0000000000000000000000000000000000000000000000000000000000000000169063b9ef083090602401602060405180830381865afa158015611017573d5f803e3d5ffd5b505050506040513d601f19601f8201168201806040525081019061103b9190611e11565b6fffffffffffffffffffffffffffffffff1667ffffffffffffffff811115611065576110656117b9565b6040519080825280602002602001820160405280156110a957816020015b604080518082019091525f80825260208201528152602001906001900390816110835790505b50604080518082019091525f80825260208201529091505f805b83518110156112b0576040517f21c984e900000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff88811660048301526fffffffffffffffffffffffffffffffff831660248301525f917f0000000000000000000000000000000000000000000000000000000000000000909116906321c984e9906044016040805180830381865afa158015611171573d5f803e3d5ffd5b505050506040513d601f19601f820116820180604052508101906111959190611e2c565b60200151905083602001516fffffffffffffffffffffffffffffffff16816fffffffffffffffffffffffffffffffff1611156112a7576fffffffffffffffffffffffffffffffff81811660208601526040517f21c984e900000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8a8116600483015291841660248201527f0000000000000000000000000000000000000000000000000000000000000000909116906321c984e9906044016040805180830381865afa158015611277573d5f803e3d5ffd5b505050506040513d601f19601f8201168201806040525081019061129b9190611e2c565b51600f0b845290915081905b506001016110c3565b50909590945092505050565b60605f825167ffffffffffffffff8111156112d9576112d96117b9565b60405190808252806020026020018201604052801561134e57816020015b6040805160a0810182525f6060820181815260808301829052825260208083018290529282015282527fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff9092019101816112f75790505b50604080518082019091525f80825260208201529091505f805b8551811015611742575f5b7f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff1663b9ef08308884815181106113c1576113c1611d49565b60200260200101516040518263ffffffff1660e01b8152600401611401919073ffffffffffffffffffffffffffffffffffffffff91909116815260200190565b602060405180830381865afa15801561141c573d5f803e3d5ffd5b505050506040513d601f19601f820116820180604052508101906114409190611e11565b6fffffffffffffffffffffffffffffffff1681101561168b575f7f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff166321c984e98985815181106114a8576114a8611d49565b6020026020010151846040518363ffffffff1660e01b815260040161150192919073ffffffffffffffffffffffffffffffffffffffff9290921682526fffffffffffffffffffffffffffffffff16602082015260400190565b6040805180830381865afa15801561151b573d5f803e3d5ffd5b505050506040513d601f19601f8201168201806040525081019061153f9190611e2c565b60200151905084602001516fffffffffffffffffffffffffffffffff16816fffffffffffffffffffffffffffffffff161115611682576fffffffffffffffffffffffffffffffff81166020860152875173ffffffffffffffffffffffffffffffffffffffff7f000000000000000000000000000000000000000000000000000000000000000016906321c984e9908a90869081106115df576115df611d49565b6020026020010151846040518363ffffffff1660e01b815260040161163892919073ffffffffffffffffffffffffffffffffffffffff9290921682526fffffffffffffffffffffffffffffffff16602082015260400190565b6040805180830381865afa158015611652573d5f803e3d5ffd5b505050506040513d601f19601f820116820180604052508101906116769190611e2c565b51600f0b855290925082905b50600101611373565b506040518060600160405280848152602001836fffffffffffffffffffffffffffffffff1681526020018783815181106116c7576116c7611d49565b602002602001015173ffffffffffffffffffffffffffffffffffffffff168152508482815181106116fa576116fa611d49565b602002602001018190525061173560405180604001604052805f600f0b81526020015f6fffffffffffffffffffffffffffffffff1681525090565b92505f9150600101611368565b5091949350505050565b6040518060c001604052805f73ffffffffffffffffffffffffffffffffffffffff1681526020015f815260200160608152602001606081526020016060815260200161179661179b565b905290565b60405180606001604052806003906020820280368337509192915050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52604160045260245ffd5b604051601f82017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe016810167ffffffffffffffff8111828210171561182d5761182d6117b9565b604052919050565b5f67ffffffffffffffff82111561184e5761184e6117b9565b5060051b60200190565b803573ffffffffffffffffffffffffffffffffffffffff8116811461187b575f80fd5b919050565b5f60208284031215611890575f80fd5b813567ffffffffffffffff8111156118a6575f80fd5b8201601f810184136118b6575f80fd5b80356118c96118c482611835565b6117e6565b8082825260208201915060208360051b8501019250868311156118ea575f80fd5b6020840193505b828410156119135761190284611858565b8252602093840193909101906118f1565b9695505050505050565b5f8151808452602084019350602083015f5b8281101561199a578151805187526fffffffffffffffffffffffffffffffff60208201511660208801526040810151600f0b60408801526fffffffffffffffffffffffffffffffff60608201511660608801525060808601955060208201915060018101905061192f565b5093949350505050565b73ffffffffffffffffffffffffffffffffffffffff8151168252602081015160208301525f604082015161010060408501526119e461010085018261191d565b9050606083015184820360608601526119fd828261191d565b91505060808301518482036080860152611a17828261191d565b91505060a083015160a085015f5b6003811015611a47578251600f0b825260209283019290910190600101611a25565b509195945050505050565b5f602082016020835280845180835260408501915060408160051b8601019250602086015f5b82811015611ac7577fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc0878603018452611ab28583516119a4565b94506020938401939190910190600101611a78565b50929695505050505050565b80600f0b8114611ae1575f80fd5b50565b6fffffffffffffffffffffffffffffffff81168114611ae1575f80fd5b5f82601f830112611b10575f80fd5b8135611b1e6118c482611835565b8082825260208201915060208360051b860101925085831115611b3f575f80fd5b602085015b83811015611b65578035611b5781611ae4565b835260209283019201611b44565b5095945050505050565b5f8060408385031215611b80575f80fd5b823567ffffffffffffffff811115611b96575f80fd5b8301601f81018513611ba6575f80fd5b8035611bb46118c482611835565b8082825260208201915060208360051b850101925087831115611bd5575f80fd5b6020840193505b82841015611c00578335611bef81611ad3565b825260209384019390910190611bdc565b9450505050602083013567ffffffffffffffff811115611c1e575f80fd5b611c2a85828601611b01565b9150509250929050565b5f60208284031215611c44575f80fd5b611c4d82611858565b9392505050565b602081525f611c4d60208301846119a4565b5f8060408385031215611c77575f80fd5b8235611c8281611ad3565b91506020830135611c9281611ae4565b809150509250929050565b602080825282518282018190525f918401906040840190835b81811015611d3e578351611cea8482518051600f0b82526020908101516fffffffffffffffffffffffffffffffff16910152565b6fffffffffffffffffffffffffffffffff602082015116604085015273ffffffffffffffffffffffffffffffffffffffff604082015116606085015250608083019250602084019350600181019050611cb6565b509095945050505050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52603260045260245ffd5b5f60208284031215611d86575f80fd5b81518015158114611c4d575f80fd5b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601160045260245ffd5b80820180821115610de957610de9611d95565b5f6fffffffffffffffffffffffffffffffff82166fffffffffffffffffffffffffffffffff8103611e0857611e08611d95565b60010192915050565b5f60208284031215611e21575f80fd5b8151611c4d81611ae4565b5f6040828403128015611e3d575f80fd5b506040805190810167ffffffffffffffff81118282101715611e6157611e616117b9565b6040528251611e6f81611ad3565b81526020830151611e7f81611ae4565b60208201529392505050565b5f60208284031215611e9b575f80fd5b5051919050565b600f81810b9083900b016f7fffffffffffffffffffffffffffffff81137fffffffffffffffffffffffffffffffff8000000000000000000000000000000082121715610de957610de9611d95565b81810381811115610de957610de9611d95565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601260045260245ffd5b5f6fffffffffffffffffffffffffffffffff831680611f5157611f51611f03565b806fffffffffffffffffffffffffffffffff84160491505092915050565b6fffffffffffffffffffffffffffffffff8181168382160290811690818114611f9a57611f9a611d95565b5092915050565b5f60208284031215611fb1575f80fd5b8151611c4d81611ad3565b5f82600f0b82600f0b0280600f0b9150808214611f9a57611f9a611d95565b5f81600f0b83600f0b80611ff157611ff1611f03565b7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff81147fffffffffffffffffffffffffffffffff800000000000000000000000000000008314161561204557612045611d95565b90059392505050565b6fffffffffffffffffffffffffffffffff8281168282160390811115610de957610de9611d9556fea2646970667358221220bd2de1bce35aaa11355f15a74294dac8e4010a7e856949deef10a2e3bcb0314264736f6c634300081a0033",
+        "sourceMap": "1928:11502:70:-:0;;;2169:126;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;-1:-1:-1;;;;;2211:30:70;;;;;;2274:13;;;-1:-1:-1;;;2274:13:70;;;;:11;;:13;;;;;;;;;;;;;;;2211:30;2274:13;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;-1:-1:-1;;;;;2251:37:70;;;-1:-1:-1;1928:11502:70;;14:290:113;84:6;137:2;125:9;116:7;112:23;108:32;105:52;;;153:1;150;143:12;105:52;179:16;;-1:-1:-1;;;;;224:31:113;;214:42;;204:70;;270:1;267;260:12;204:70;293:5;14:290;-1:-1:-1;;;14:290:113:o;:::-;1928:11502:70;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
+        "linkReferences": {}
+    },
+    "deployedBytecode": {
+        "object": "0x608060405234801561000f575f80fd5b506004361061009f575f3560e01c8063d8e6971611610072578063f4ebfcae11610058578063f4ebfcae14610182578063fb908ddd146101ce578063fc0c546a146101ee575f80fd5b8063d8e6971614610120578063f37461ab14610133575f80fd5b806329d71cb6146100a35780632d3c1721146100cc5780633c593312146100ed578063ba12f8781461010d575b5f80fd5b6100b66100b1366004611880565b610215565b6040516100c39190611a52565b60405180910390f35b6100df6100da366004611b6f565b6102c7565b6040519081526020016100c3565b6101006100fb366004611c34565b610441565b6040516100c39190611c54565b6100df61011b366004611c66565b610b4d565b6100df61012e366004611c34565b610def565b610146610141366004611c34565b610f76565b604080518351600f0b81526020938401516fffffffffffffffffffffffffffffffff9081169482019490945292909116908201526060016100c3565b6101a97f000000000000000000000000000000000000000000000000000000000000000081565b60405173ffffffffffffffffffffffffffffffffffffffff90911681526020016100c3565b6101e16101dc366004611880565b6112bc565b6040516100c39190611c9d565b6101a97f000000000000000000000000000000000000000000000000000000000000000081565b80516060908067ffffffffffffffff811115610233576102336117b9565b60405190808252806020026020018201604052801561026c57816020015b61025961174c565b8152602001906001900390816102515790505b5091505f5b818110156102c05761029b84828151811061028e5761028e611d49565b6020026020010151610441565b8382815181106102ad576102ad611d49565b6020908102919091010152600101610271565b5050919050565b5f807f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff1663f89464856040518163ffffffff1660e01b8152600401602060405180830381865afa158015610332573d5f803e3d5ffd5b505050506040513d601f19601f820116820180604052508101906103569190611d76565b90505f5b8451816fffffffffffffffffffffffffffffffff1610156104395781156103bc5784816fffffffffffffffffffffffffffffffff168151811061039f5761039f611d49565b6020026020010151600f0b836103b59190611dc2565b9250610429565b61041c85826fffffffffffffffffffffffffffffffff16815181106103e3576103e3611d49565b602002602001015185836fffffffffffffffffffffffffffffffff168151811061040f5761040f611d49565b6020026020010151610b4d565b6104269084611dc2565b92505b61043281611dd5565b905061035a565b505092915050565b61044961174c565b6040517fb9ef083000000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff83811660048301525f917f00000000000000000000000000000000000000000000000000000000000000009091169063b9ef083090602401602060405180830381865afa1580156104d7573d5f803e3d5ffd5b505050506040513d601f19601f820116820180604052508101906104fb9190611e11565b6fffffffffffffffffffffffffffffffff166020830181905273ffffffffffffffffffffffffffffffffffffffff8416835290505f8167ffffffffffffffff811115610549576105496117b9565b6040519080825280602002602001820160405280156105b857816020015b604080516080810182525f8082526020808301829052928201819052606082015282527fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff9092019101816105675790505b5060408401525f8267ffffffffffffffff8111156105d8576105d86117b9565b604051908082528060200260200182016040528015610601578160200160208202803683370190505b5090505f5b846040015151811015610924576040517f21c984e900000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff87811660048301526fffffffffffffffffffffffffffffffff831660248301525f917f0000000000000000000000000000000000000000000000000000000000000000909116906321c984e9906044016040805180830381865afa1580156106b8573d5f803e3d5ffd5b505050506040513d601f19601f820116820180604052508101906106dc9190611e2c565b6040517f5f96d4e700000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff89811660048301526fffffffffffffffffffffffffffffffff851660248301529192507f000000000000000000000000000000000000000000000000000000000000000090911690635f96d4e790604401602060405180830381865afa158015610783573d5f803e3d5ffd5b505050506040513d601f19601f820116820180604052508101906107a79190611e8b565b866040015183815181106107bd576107bd611d49565b60200260200101515f01818152505081866040015183815181106107e3576107e3611d49565b6020908102919091018101516fffffffffffffffffffffffffffffffff9092169101528051604087015180518490811061081f5761081f611d49565b602002602001015160400190600f0b9081600f0b8152505080602001518660400151838151811061085257610852611d49565b60209081029190910101516fffffffffffffffffffffffffffffffff91909116606090910152805160a0870151805161088c908390611ea2565b600f0b9052506020810151426fffffffffffffffffffffffffffffffff90911611156108fd5760018383815181106108c6576108c6611d49565b911515602092830291909101820152815160a088015190910180516108ec908390611ea2565b600f0b90525060019093019261091b565b805160a08701516040018051610914908390611ea2565b600f0b9052505b50600101610606565b50816fffffffffffffffffffffffffffffffff1667ffffffffffffffff811115610950576109506117b9565b6040519080825280602002602001820160405280156109bf57816020015b604080516080810182525f8082526020808301829052928201819052606082015282527fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff90920191018161096e5790505b5060608501526109e16fffffffffffffffffffffffffffffffff831684611ef0565b67ffffffffffffffff8111156109f9576109f96117b9565b604051908082528060200260200182016040528015610a6857816020015b604080516080810182525f8082526020808301829052928201819052606082015282527fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff909201910181610a175790505b5060808501525f80805b866040015151811015610b42575f87604001518281518110610a9657610a96611d49565b60200260200101519050848281518110610ab257610ab2611d49565b602002602001015115610afe57808860600151856fffffffffffffffffffffffffffffffff1681518110610ae857610ae8611d49565b6020026020010181905250836001019350610b39565b808860800151846fffffffffffffffffffffffffffffffff1681518110610b2757610b27611d49565b60200260200101819052508260010192505b50600101610a72565b505050505050919050565b5f7f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff1663f89464856040518163ffffffff1660e01b8152600401602060405180830381865afa158015610bb7573d5f803e3d5ffd5b505050506040513d601f19601f82011682018060405250810190610bdb9190611d76565b15610beb5782600f0b9050610de9565b5f7f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff16637c10d93a6040518163ffffffff1660e01b8152600401602060405180830381865afa158015610c55573d5f803e3d5ffd5b505050506040513d601f19601f82011682018060405250810190610c799190611e11565b7f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff16637c10d93a6040518163ffffffff1660e01b8152600401602060405180830381865afa158015610ce2573d5f803e3d5ffd5b505050506040513d601f19601f82011682018060405250810190610d069190611e11565b610d109085611f30565b610d1a9190611f6f565b90507f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff16637aa9b5566040518163ffffffff1660e01b8152600401602060405180830381865afa158015610d85573d5f803e3d5ffd5b505050506040513d601f19601f82011682018060405250810190610da99190611fa1565b81610db5866003611fbc565b610dbf9190611fbc565b610dc99190611fdb565b610dd39085611ea2565b6fffffffffffffffffffffffffffffffff169150505b92915050565b5f80610dfa83610441565b90505f7f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff1663f89464856040518163ffffffff1660e01b8152600401602060405180830381865afa158015610e66573d5f803e3d5ffd5b505050506040513d601f19601f82011682018060405250810190610e8a9190611d76565b90505f5b8260200151816fffffffffffffffffffffffffffffffff161015610f6e575f8360400151826fffffffffffffffffffffffffffffffff1681518110610ed557610ed5611d49565b602002602001015190508215610efe576040810151610ef790600f0b86611dc2565b9450610f65565b5f426fffffffffffffffffffffffffffffffff1682606001516fffffffffffffffffffffffffffffffff161015610f3657505f610f49565b428260600151610f46919061204e565b90505b610f57826040015182610b4d565b610f619087611dc2565b9550505b50600101610e8e565b505050919050565b604080518082019091525f80825260208201526040517fb9ef083000000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff83811660048301525f9182917f0000000000000000000000000000000000000000000000000000000000000000169063b9ef083090602401602060405180830381865afa158015611017573d5f803e3d5ffd5b505050506040513d601f19601f8201168201806040525081019061103b9190611e11565b6fffffffffffffffffffffffffffffffff1667ffffffffffffffff811115611065576110656117b9565b6040519080825280602002602001820160405280156110a957816020015b604080518082019091525f80825260208201528152602001906001900390816110835790505b50604080518082019091525f80825260208201529091505f805b83518110156112b0576040517f21c984e900000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff88811660048301526fffffffffffffffffffffffffffffffff831660248301525f917f0000000000000000000000000000000000000000000000000000000000000000909116906321c984e9906044016040805180830381865afa158015611171573d5f803e3d5ffd5b505050506040513d601f19601f820116820180604052508101906111959190611e2c565b60200151905083602001516fffffffffffffffffffffffffffffffff16816fffffffffffffffffffffffffffffffff1611156112a7576fffffffffffffffffffffffffffffffff81811660208601526040517f21c984e900000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8a8116600483015291841660248201527f0000000000000000000000000000000000000000000000000000000000000000909116906321c984e9906044016040805180830381865afa158015611277573d5f803e3d5ffd5b505050506040513d601f19601f8201168201806040525081019061129b9190611e2c565b51600f0b845290915081905b506001016110c3565b50909590945092505050565b60605f825167ffffffffffffffff8111156112d9576112d96117b9565b60405190808252806020026020018201604052801561134e57816020015b6040805160a0810182525f6060820181815260808301829052825260208083018290529282015282527fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff9092019101816112f75790505b50604080518082019091525f80825260208201529091505f805b8551811015611742575f5b7f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff1663b9ef08308884815181106113c1576113c1611d49565b60200260200101516040518263ffffffff1660e01b8152600401611401919073ffffffffffffffffffffffffffffffffffffffff91909116815260200190565b602060405180830381865afa15801561141c573d5f803e3d5ffd5b505050506040513d601f19601f820116820180604052508101906114409190611e11565b6fffffffffffffffffffffffffffffffff1681101561168b575f7f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff166321c984e98985815181106114a8576114a8611d49565b6020026020010151846040518363ffffffff1660e01b815260040161150192919073ffffffffffffffffffffffffffffffffffffffff9290921682526fffffffffffffffffffffffffffffffff16602082015260400190565b6040805180830381865afa15801561151b573d5f803e3d5ffd5b505050506040513d601f19601f8201168201806040525081019061153f9190611e2c565b60200151905084602001516fffffffffffffffffffffffffffffffff16816fffffffffffffffffffffffffffffffff161115611682576fffffffffffffffffffffffffffffffff81166020860152875173ffffffffffffffffffffffffffffffffffffffff7f000000000000000000000000000000000000000000000000000000000000000016906321c984e9908a90869081106115df576115df611d49565b6020026020010151846040518363ffffffff1660e01b815260040161163892919073ffffffffffffffffffffffffffffffffffffffff9290921682526fffffffffffffffffffffffffffffffff16602082015260400190565b6040805180830381865afa158015611652573d5f803e3d5ffd5b505050506040513d601f19601f820116820180604052508101906116769190611e2c565b51600f0b855290925082905b50600101611373565b506040518060600160405280848152602001836fffffffffffffffffffffffffffffffff1681526020018783815181106116c7576116c7611d49565b602002602001015173ffffffffffffffffffffffffffffffffffffffff168152508482815181106116fa576116fa611d49565b602002602001018190525061173560405180604001604052805f600f0b81526020015f6fffffffffffffffffffffffffffffffff1681525090565b92505f9150600101611368565b5091949350505050565b6040518060c001604052805f73ffffffffffffffffffffffffffffffffffffffff1681526020015f815260200160608152602001606081526020016060815260200161179661179b565b905290565b60405180606001604052806003906020820280368337509192915050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52604160045260245ffd5b604051601f82017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe016810167ffffffffffffffff8111828210171561182d5761182d6117b9565b604052919050565b5f67ffffffffffffffff82111561184e5761184e6117b9565b5060051b60200190565b803573ffffffffffffffffffffffffffffffffffffffff8116811461187b575f80fd5b919050565b5f60208284031215611890575f80fd5b813567ffffffffffffffff8111156118a6575f80fd5b8201601f810184136118b6575f80fd5b80356118c96118c482611835565b6117e6565b8082825260208201915060208360051b8501019250868311156118ea575f80fd5b6020840193505b828410156119135761190284611858565b8252602093840193909101906118f1565b9695505050505050565b5f8151808452602084019350602083015f5b8281101561199a578151805187526fffffffffffffffffffffffffffffffff60208201511660208801526040810151600f0b60408801526fffffffffffffffffffffffffffffffff60608201511660608801525060808601955060208201915060018101905061192f565b5093949350505050565b73ffffffffffffffffffffffffffffffffffffffff8151168252602081015160208301525f604082015161010060408501526119e461010085018261191d565b9050606083015184820360608601526119fd828261191d565b91505060808301518482036080860152611a17828261191d565b91505060a083015160a085015f5b6003811015611a47578251600f0b825260209283019290910190600101611a25565b509195945050505050565b5f602082016020835280845180835260408501915060408160051b8601019250602086015f5b82811015611ac7577fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc0878603018452611ab28583516119a4565b94506020938401939190910190600101611a78565b50929695505050505050565b80600f0b8114611ae1575f80fd5b50565b6fffffffffffffffffffffffffffffffff81168114611ae1575f80fd5b5f82601f830112611b10575f80fd5b8135611b1e6118c482611835565b8082825260208201915060208360051b860101925085831115611b3f575f80fd5b602085015b83811015611b65578035611b5781611ae4565b835260209283019201611b44565b5095945050505050565b5f8060408385031215611b80575f80fd5b823567ffffffffffffffff811115611b96575f80fd5b8301601f81018513611ba6575f80fd5b8035611bb46118c482611835565b8082825260208201915060208360051b850101925087831115611bd5575f80fd5b6020840193505b82841015611c00578335611bef81611ad3565b825260209384019390910190611bdc565b9450505050602083013567ffffffffffffffff811115611c1e575f80fd5b611c2a85828601611b01565b9150509250929050565b5f60208284031215611c44575f80fd5b611c4d82611858565b9392505050565b602081525f611c4d60208301846119a4565b5f8060408385031215611c77575f80fd5b8235611c8281611ad3565b91506020830135611c9281611ae4565b809150509250929050565b602080825282518282018190525f918401906040840190835b81811015611d3e578351611cea8482518051600f0b82526020908101516fffffffffffffffffffffffffffffffff16910152565b6fffffffffffffffffffffffffffffffff602082015116604085015273ffffffffffffffffffffffffffffffffffffffff604082015116606085015250608083019250602084019350600181019050611cb6565b509095945050505050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52603260045260245ffd5b5f60208284031215611d86575f80fd5b81518015158114611c4d575f80fd5b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601160045260245ffd5b80820180821115610de957610de9611d95565b5f6fffffffffffffffffffffffffffffffff82166fffffffffffffffffffffffffffffffff8103611e0857611e08611d95565b60010192915050565b5f60208284031215611e21575f80fd5b8151611c4d81611ae4565b5f6040828403128015611e3d575f80fd5b506040805190810167ffffffffffffffff81118282101715611e6157611e616117b9565b6040528251611e6f81611ad3565b81526020830151611e7f81611ae4565b60208201529392505050565b5f60208284031215611e9b575f80fd5b5051919050565b600f81810b9083900b016f7fffffffffffffffffffffffffffffff81137fffffffffffffffffffffffffffffffff8000000000000000000000000000000082121715610de957610de9611d95565b81810381811115610de957610de9611d95565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601260045260245ffd5b5f6fffffffffffffffffffffffffffffffff831680611f5157611f51611f03565b806fffffffffffffffffffffffffffffffff84160491505092915050565b6fffffffffffffffffffffffffffffffff8181168382160290811690818114611f9a57611f9a611d95565b5092915050565b5f60208284031215611fb1575f80fd5b8151611c4d81611ad3565b5f82600f0b82600f0b0280600f0b9150808214611f9a57611f9a611d95565b5f81600f0b83600f0b80611ff157611ff1611f03565b7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff81147fffffffffffffffffffffffffffffffff800000000000000000000000000000008314161561204557612045611d95565b90059392505050565b6fffffffffffffffffffffffffffffffff8281168282160390811115610de957610de9611d9556fea2646970667358221220bd2de1bce35aaa11355f15a74294dac8e4010a7e856949deef10a2e3bcb0314264736f6c634300081a0033",
+        "sourceMap": "1928:11502:70:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;6301:602;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;11034:658;;;;;;:::i;:::-;;:::i;:::-;;;7091:25:113;;;7079:2;7064:18;11034:658:70;6945:177:113;2778:2981:70;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;9954:602::-;;;;;;:::i;:::-;;:::i;12109:1319::-;;;;;;:::i;:::-;;:::i;7253:739::-;;;;;;:::i;:::-;;:::i;:::-;;;;8107:12:113;;8103:2;8092:28;8080:41;;8174:4;8163:16;;;8157:23;8182:34;8153:64;;;8137:14;;;8130:88;;;;8553:47;;;;8533:18;;;8526:75;8455:2;8440:18;7253:739:70;8229:378:113;1975:33:70;;;;;;;;8808:42:113;8796:55;;;8778:74;;8766:2;8751:18;1975:33:70;8612:246:113;8403:1082:70;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;2014:37::-;;;;;6301:602;6519:13;;6398:44;;6519:13;6599:37;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;6582:54;;6726:9;6721:176;6745:9;6741:1;:13;6721:176;;;6792:34;6816:6;6823:1;6816:9;;;;;;;;:::i;:::-;;;;;;;6792:23;:34::i;:::-;6772:14;6787:1;6772:17;;;;;;;;:::i;:::-;;;;;;;;;;:54;6869:3;;6721:176;;;;6444:459;6301:602;;;:::o;11034:658::-;11178:22;11271:29;11303:5;:27;;;:29;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;11271:61;;11382:9;11377:309;11401:11;:18;11397:1;:22;;;11377:309;;;11501:24;11497:178;;;11560:11;11572:1;11560:14;;;;;;;;;;:::i;:::-;;;;;;;11553:22;;11527:49;;;;;:::i;:::-;;;11497:178;;;11613:62;11642:11;11654:1;11642:14;;;;;;;;;;:::i;:::-;;;;;;;11658:13;11672:1;11658:16;;;;;;;;;;:::i;:::-;;;;;;;11613:28;:62::i;:::-;11595:80;;;;:::i;:::-;;;11497:178;11421:3;;;:::i;:::-;;;11377:309;;;;11202:490;11034:658;;;;:::o;2778:2981::-;2847:41;;:::i;:::-;2963:21;;;;;:14;8796:55:113;;;2963:21:70;;;8778:74:113;2941:19:70;;2963:5;:14;;;;;;8751:18:113;;2963:21:70;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;2941:43;;3078:27;;;:41;;;3154:26;;;;;2941:43;-1:-1:-1;2994:28:70;2941:43;3248:40;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3248:40:70;;;;;;;;;;;;;;-1:-1:-1;3223:22:70;;;:65;3369:23;3406:11;3395:23;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;3395:23:70;;3369:49;;3475:9;3470:1129;3490:13;:22;;;:29;3486:1;:33;3470:1129;;;3618:38;;;;;:19;11762:55:113;;;3618:38:70;;;11744:74:113;11866:34;11854:47;;11834:18;;;11827:75;3585:30:70;;3618:5;:19;;;;;;11717:18:113;;3618:38:70;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;3701:37;;;;;:18;11762:55:113;;;3701:37:70;;;11744:74:113;11866:34;11854:47;;11834:18;;;11827:75;3585:71:70;;-1:-1:-1;3701:5:70;:18;;;;;;11717::113;;3701:37:70;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;3670:13;:22;;;3693:1;3670:25;;;;;;;;:::i;:::-;;;;;;;:28;;:68;;;;;3794:1;3752:13;:22;;;3775:1;3752:25;;;;;;;;:::i;:::-;;;;;;;;;;;;:44;;;;:31;;:44;3845:16;;3810:22;;;;:25;;3833:1;;3810:25;;;;;;:::i;:::-;;;;;;;:32;;:51;;;;;;;;;;;3907:9;:13;;;3875;:22;;;3898:1;3875:25;;;;;;;;:::i;:::-;;;;;;;;;;;:45;;;;;:29;;;;:45;3963:16;;3934:22;;;;:45;;;;3963:16;;3934:45;:::i;:::-;;;;;-1:-1:-1;4055:13:70;;;;4071:15;4055:31;;;;;4051:479;;;4165:4;4150:9;4160:1;4150:12;;;;;;;;:::i;:::-;:19;;;:12;;;;;;;;;;:19;4270:16;;4241:22;;;;:25;;;:45;;;;4270:16;;4241:45;:::i;:::-;;;;;-1:-1:-1;4337:22:70;;;;;4051:479;;;4499:16;;4470:22;;;;:25;;:45;;;;4499:16;;4470:45;:::i;:::-;;;;;-1:-1:-1;4051:479:70;-1:-1:-1;4571:3:70;;3470:1129;;;;4718:20;4690:49;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4690:49:70;;;;;;;;;;;;;;-1:-1:-1;4662:25:70;;;:77;4806:34;;;;:11;:34;:::i;:::-;4778:63;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4778:63:70;;;;;;;;;;;;;;-1:-1:-1;4749:26:70;;;:92;4958:22;;;5023:730;5043:13;:22;;;:29;5039:1;:33;5023:730;;;5123:38;5164:13;:22;;;5187:1;5164:25;;;;;;;;:::i;:::-;;;;;;;5123:66;;5265:9;5275:1;5265:12;;;;;;;;:::i;:::-;;;;;;;5261:422;;;5367:9;5323:13;:25;;;5349:14;5323:41;;;;;;;;;;:::i;:::-;;;;;;:53;;;;5427:16;;;;;5261:422;;;5573:9;5527:13;:26;;;5554:15;5527:43;;;;;;;;;;:::i;:::-;;;;;;:55;;;;5633:17;;;;;5261:422;-1:-1:-1;5725:3:70;;5023:730;;;;2890:2869;;;;;2778:2981;;;:::o;9954:602::-;10077:22;10168:5;:27;;;:29;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;10164:69;;;10221:10;10214:18;;10199:34;;;;10164:69;10299:20;10370:5;:18;;;:20;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;10346:5;:18;;;:20;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;10330:36;;:13;:36;:::i;:::-;10329:61;;;;:::i;:::-;10299:92;;10524:5;:20;;;:22;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;10507:13;10490:14;10494:10;10490:1;:14;:::i;:::-;:30;;;;:::i;:::-;10489:57;;;;:::i;:::-;10475:72;;:10;:72;:::i;:::-;10459:90;;10442:107;;10101:455;9954:602;;;;;:::o;12109:1319::-;12180:22;12253:41;12297:30;12321:5;12297:23;:30::i;:::-;12253:74;;12397:29;12429:5;:27;;;:29;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;12397:61;;12522:9;12517:905;12541:13;:27;;;12537:1;:31;;;12517:905;;;12619:38;12660:13;:22;;;12683:1;12660:25;;;;;;;;;;:::i;:::-;;;;;;;12619:66;;12767:24;12763:589;;;12844:16;;;;12811:51;;12837:24;;12811:51;;:::i;:::-;;;12763:589;;;12945:22;13013:15;12989:40;;:9;:13;;;:40;;;12985:209;;;-1:-1:-1;13070:1:70;12985:209;;;13159:15;13135:9;:13;;;:40;;;;:::i;:::-;13118:57;;12985:209;13275:62;13304:9;:16;;;13322:14;13275:28;:62::i;:::-;13257:80;;;;:::i;:::-;;;12883:469;12763:589;-1:-1:-1;13394:3:70;;12517:905;;;;12204:1224;;12109:1319;;;:::o;7253:739::-;-1:-1:-1;;;;;;;;;;;;;;;;;7404:20:70;;;;;:14;8796:55:113;;;7404:20:70;;;8778:74:113;7334:7:70;;;;7404:5;:14;;;;8751:18:113;;7404:20:70;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;7384:41;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;;;;;;;;;;;;;7384:41:70;;;;;;;;;;;;;;;-1:-1:-1;;;;;;;;;;;;;;;;;;7353:72:70;;-1:-1:-1;7477:24:70;;7512:425;7536:5;:12;7532:1;:16;7512:425;;;7587:37;;;;;:19;11762:55:113;;;7587:37:70;;;11744:74:113;11866:34;11854:47;;11834:18;;;11827:75;7566:18:70;;7587:5;:19;;;;;;11717:18:113;;7587:37:70;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;:41;;;7566:62;;7659:11;:15;;;7646:28;;:10;:28;;;7642:225;;;7694:28;;;;:15;;;:28;7761:37;;;;;:19;11762:55:113;;;7761:37:70;;;11744:74:113;11854:47;;;11834:18;;;11827:75;7761:5:70;:19;;;;;;11717:18:113;;7761:37:70;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;:44;7740:65;;;;7850:1;;-1:-1:-1;7850:1:70;;7642:225;-1:-1:-1;7909:3:70;;7512:425;;;-1:-1:-1;7955:11:70;;7968:16;;-1:-1:-1;7253:739:70;-1:-1:-1;;;7253:739:70:o;8403:1082::-;8476:20;8508:33;8562:5;:12;8544:31;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8544:31:70;;;;;;;;;;;;;;-1:-1:-1;;;;;;;;;;;;;;;;;;8508:67:70;;-1:-1:-1;8627:24:70;;8662:787;8686:5;:12;8682:1;:16;8662:787;;;8721:9;8716:481;8736:5;:14;;;8751:5;8757:1;8751:8;;;;;;;;:::i;:::-;;;;;;;8736:24;;;;;;;;;;;;;;8808:42:113;8796:55;;;;8778:74;;8766:2;8751:18;;8612:246;8736:24:70;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;8732:28;;:1;:28;8716:481;;;8782:18;8803:5;:19;;;8823:5;8829:1;8823:8;;;;;;;;:::i;:::-;;;;;;;8841:1;8803:41;;;;;;;;;;;;;;;11774:42:113;11762:55;;;;11744:74;;11866:34;11854:47;11849:2;11834:18;;11827:75;11732:2;11717:18;;11570:338;8803:41:70;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;:45;;;8782:66;;8883:11;:15;;;8870:28;;:10;:28;;;8866:245;;;8922:28;;;:15;;;:28;9013:8;;8993:19;:5;:19;;;;9013:5;;9019:1;;9013:8;;;;;;:::i;:::-;;;;;;;9031:1;8993:41;;;;;;;;;;;;;;;11774:42:113;11762:55;;;;11744:74;;11866:34;11854:47;11849:2;11834:18;;11827:75;11732:2;11717:18;;11570:338;8993:41:70;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;:48;8972:69;;;;9090:1;;-1:-1:-1;9090:1:70;;8866:245;-1:-1:-1;9161:3:70;;8716:481;;;;9229:79;;;;;;;;9249:11;9229:79;;;;9273:16;9229:79;;;;;;9297:5;9303:1;9297:8;;;;;;;;:::i;:::-;;;;;;;9229:79;;;;;9211:12;9224:1;9211:15;;;;;;;;:::i;:::-;;;;;;:97;;;;9323:18;-1:-1:-1;;;;;;;;;;;;;;;;;;;;;;;9323:18:70;;-1:-1:-1;9355:23:70;;-1:-1:-1;9421:3:70;;8662:787;;;-1:-1:-1;9466:12:70;;8403:1082;-1:-1:-1;;;;8403:1082:70:o;-1:-1:-1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;:::o;14:184:113:-;66:77;63:1;56:88;163:4;160:1;153:15;187:4;184:1;177:15;203:334;274:2;268:9;330:2;320:13;;335:66;316:86;304:99;;433:18;418:34;;454:22;;;415:62;412:88;;;480:18;;:::i;:::-;516:2;509:22;203:334;;-1:-1:-1;203:334:113:o;542:183::-;602:4;635:18;627:6;624:30;621:56;;;657:18;;:::i;:::-;-1:-1:-1;702:1:113;698:14;714:4;694:25;;542:183::o;730:196::-;798:20;;858:42;847:54;;837:65;;827:93;;916:1;913;906:12;827:93;730:196;;;:::o;931:892::-;1015:6;1068:2;1056:9;1047:7;1043:23;1039:32;1036:52;;;1084:1;1081;1074:12;1036:52;1124:9;1111:23;1157:18;1149:6;1146:30;1143:50;;;1189:1;1186;1179:12;1143:50;1212:22;;1265:4;1257:13;;1253:27;-1:-1:-1;1243:55:113;;1294:1;1291;1284:12;1243:55;1334:2;1321:16;1357:64;1373:47;1413:6;1373:47;:::i;:::-;1357:64;:::i;:::-;1443:3;1467:6;1462:3;1455:19;1499:2;1494:3;1490:12;1483:19;;1554:2;1544:6;1541:1;1537:14;1533:2;1529:23;1525:32;1511:46;;1580:7;1572:6;1569:19;1566:39;;;1601:1;1598;1591:12;1566:39;1633:2;1629;1625:11;1614:22;;1645:148;1661:6;1656:3;1653:15;1645:148;;;1727:23;1746:3;1727:23;:::i;:::-;1715:36;;1780:2;1678:12;;;;1771;;;;1645:148;;;1812:5;931:892;-1:-1:-1;;;;;;931:892:113:o;1828:742::-;1902:3;1940:5;1934:12;1967:6;1962:3;1955:19;1999:4;1994:3;1990:14;1983:21;;2038:4;2031:5;2027:16;2061:1;2071:474;2085:6;2082:1;2079:13;2071:474;;;2150:6;2144:13;2188:2;2182:9;2177:3;2170:22;2254:34;2246:4;2242:2;2238:13;2232:20;2228:61;2221:4;2216:3;2212:14;2205:85;2355:4;2351:2;2347:13;2341:20;2337:2;2326:36;2319:4;2314:3;2310:14;2303:60;2425:34;2417:4;2413:2;2409:13;2403:20;2399:61;2392:4;2387:3;2383:14;2376:85;;2490:4;2485:3;2481:14;2474:21;;2530:4;2522:6;2518:17;2508:27;;2107:1;2104;2100:9;2095:14;;2071:474;;;-1:-1:-1;2561:3:113;;1828:742;-1:-1:-1;;;;1828:742:113:o;2575:1197::-;2686:42;2678:5;2672:12;2668:61;2663:3;2656:74;2779:4;2772:5;2768:16;2762:23;2755:4;2750:3;2746:14;2739:47;2638:3;2832:4;2825:5;2821:16;2815:23;2870:6;2863:4;2858:3;2854:14;2847:30;2898:81;2971:6;2966:3;2962:16;2948:12;2898:81;:::i;:::-;2886:93;;3027:4;3020:5;3016:16;3010:23;3075:3;3069:4;3065:14;3058:4;3053:3;3049:14;3042:38;3103:71;3169:4;3153:14;3103:71;:::i;:::-;3089:85;;;3222:4;3215:5;3211:16;3205:23;3272:3;3264:6;3260:16;3253:4;3248:3;3244:14;3237:40;3300:73;3366:6;3350:14;3300:73;:::i;:::-;3286:87;;;3421:4;3414:5;3410:16;3404:23;3458:4;3453:3;3449:14;3541:1;3551:193;3565:4;3562:1;3559:11;3551:193;;;3641:13;;3637:2;3626:29;3612:44;;3689:4;3717:17;;;;3678:16;;;;3585:1;3578:9;3551:193;;;-1:-1:-1;3760:6:113;;2575:1197;-1:-1:-1;;;;;2575:1197:113:o;3777:920::-;3997:4;4045:2;4034:9;4030:18;4075:2;4064:9;4057:21;4098:6;4133;4127:13;4164:6;4156;4149:22;4202:2;4191:9;4187:18;4180:25;;4264:2;4254:6;4251:1;4247:14;4236:9;4232:30;4228:39;4214:53;;4302:2;4294:6;4290:15;4323:1;4333:335;4347:6;4344:1;4341:13;4333:335;;;4436:66;4424:9;4416:6;4412:22;4408:95;4403:3;4396:108;4527:61;4581:6;4572;4566:13;4527:61;:::i;:::-;4517:71;-1:-1:-1;4623:2:113;4646:12;;;;4611:15;;;;;4369:1;4362:9;4333:335;;;-1:-1:-1;4685:6:113;;3777:920;-1:-1:-1;;;;;;3777:920:113:o;4702:120::-;4791:5;4787:2;4776:21;4769:5;4766:32;4756:60;;4812:1;4809;4802:12;4756:60;4702:120;:::o;4827:146::-;4913:34;4906:5;4902:46;4895:5;4892:57;4882:85;;4963:1;4960;4953:12;4978:744;5032:5;5085:3;5078:4;5070:6;5066:17;5062:27;5052:55;;5103:1;5100;5093:12;5052:55;5143:6;5130:20;5170:64;5186:47;5226:6;5186:47;:::i;5170:64::-;5258:3;5282:6;5277:3;5270:19;5314:4;5309:3;5305:14;5298:21;;5375:4;5365:6;5362:1;5358:14;5350:6;5346:27;5342:38;5328:52;;5403:3;5395:6;5392:15;5389:35;;;5420:1;5417;5410:12;5389:35;5456:4;5448:6;5444:17;5470:221;5486:6;5481:3;5478:15;5470:221;;;5568:3;5555:17;5585:31;5610:5;5585:31;:::i;:::-;5629:18;;5676:4;5667:14;;;;5503;5470:221;;;-1:-1:-1;5709:7:113;4978:744;-1:-1:-1;;;;;4978:744:113:o;5727:1213::-;5844:6;5852;5905:2;5893:9;5884:7;5880:23;5876:32;5873:52;;;5921:1;5918;5911:12;5873:52;5961:9;5948:23;5994:18;5986:6;5983:30;5980:50;;;6026:1;6023;6016:12;5980:50;6049:22;;6102:4;6094:13;;6090:27;-1:-1:-1;6080:55:113;;6131:1;6128;6121:12;6080:55;6171:2;6158:16;6194:64;6210:47;6250:6;6210:47;:::i;6194:64::-;6280:3;6304:6;6299:3;6292:19;6336:4;6331:3;6327:14;6320:21;;6393:4;6383:6;6380:1;6376:14;6372:2;6368:23;6364:34;6350:48;;6421:7;6413:6;6410:19;6407:39;;;6442:1;6439;6432:12;6407:39;6474:4;6470:2;6466:13;6455:24;;6488:220;6504:6;6499:3;6496:15;6488:220;;;6586:3;6573:17;6603:30;6627:5;6603:30;:::i;:::-;6646:18;;6693:4;6521:14;;;;6684;;;;6488:220;;;6727:5;-1:-1:-1;;;;6785:4:113;6770:20;;6757:34;6816:18;6803:32;;6800:52;;;6848:1;6845;6838:12;6800:52;6871:63;6926:7;6915:8;6904:9;6900:24;6871:63;:::i;:::-;6861:73;;;5727:1213;;;;;:::o;7127:186::-;7186:6;7239:2;7227:9;7218:7;7214:23;7210:32;7207:52;;;7255:1;7252;7245:12;7207:52;7278:29;7297:9;7278:29;:::i;:::-;7268:39;7127:186;-1:-1:-1;;;7127:186:113:o;7318:299::-;7525:2;7514:9;7507:21;7488:4;7545:66;7607:2;7596:9;7592:18;7584:6;7545:66;:::i;7622:386::-;7689:6;7697;7750:2;7738:9;7729:7;7725:23;7721:32;7718:52;;;7766:1;7763;7756:12;7718:52;7805:9;7792:23;7824:30;7848:5;7824:30;:::i;:::-;7873:5;-1:-1:-1;7930:2:113;7915:18;;7902:32;7943:33;7902:32;7943:33;:::i;:::-;7995:7;7985:17;;;7622:386;;;;;:::o;8863:928::-;9113:2;9125:21;;;9195:13;;9098:18;;;9217:22;;;9065:4;;9296:15;;;9270:2;9255:18;;;9065:4;9339:426;9353:6;9350:1;9347:13;9339:426;;;9418:6;9412:13;9438:47;9481:3;9476:2;9470:9;8107:12;;8103:2;8092:28;8080:41;;8174:4;8163:16;;;8157:23;8182:34;8153:64;8137:14;;8130:88;8013:211;9438:47;9543:34;9537:2;9533;9529:11;9523:18;9519:59;9514:2;9509:3;9505:12;9498:81;9639:42;9633:2;9629;9625:11;9619:18;9615:67;9608:4;9603:3;9599:14;9592:91;;9712:4;9707:3;9703:14;9696:21;;9752:2;9744:6;9740:15;9730:25;;9375:1;9372;9368:9;9363:14;;9339:426;;;-1:-1:-1;9782:3:113;;8863:928;-1:-1:-1;;;;;8863:928:113:o;10051:184::-;10103:77;10100:1;10093:88;10200:4;10197:1;10190:15;10224:4;10221:1;10214:15;10240:277;10307:6;10360:2;10348:9;10339:7;10335:23;10331:32;10328:52;;;10376:1;10373;10366:12;10328:52;10408:9;10402:16;10461:5;10454:13;10447:21;10440:5;10437:32;10427:60;;10483:1;10480;10473:12;10522:184;10574:77;10571:1;10564:88;10671:4;10668:1;10661:15;10695:4;10692:1;10685:15;10711:125;10776:9;;;10797:10;;;10794:36;;;10810:18;;:::i;10841:237::-;10880:3;10924:34;10917:5;10913:46;10983:34;10974:7;10971:47;10968:73;;11021:18;;:::i;:::-;11070:1;11057:15;;10841:237;-1:-1:-1;;10841:237:113:o;11314:251::-;11384:6;11437:2;11425:9;11416:7;11412:23;11408:32;11405:52;;;11453:1;11450;11443:12;11405:52;11485:9;11479:16;11504:31;11529:5;11504:31;:::i;11913:704::-;12015:6;12075:2;12063:9;12054:7;12050:23;12046:32;12090:2;12087:22;;;12105:1;12102;12095:12;12087:22;-1:-1:-1;12174:2:113;12168:9;;;12204:15;;12249:18;12234:34;;12270:22;;;12231:62;12228:88;;;12296:18;;:::i;:::-;12332:2;12325:22;12369:16;;12394:30;12369:16;12394:30;:::i;:::-;12433:21;;12499:2;12484:18;;12478:25;12512:33;12478:25;12512:33;:::i;:::-;12573:2;12561:15;;12554:32;12565:6;11913:704;-1:-1:-1;;;11913:704:113:o;12622:184::-;12692:6;12745:2;12733:9;12724:7;12720:23;12716:32;12713:52;;;12761:1;12758;12751:12;12713:52;-1:-1:-1;12784:16:113;;12622:184;-1:-1:-1;12622:184:113:o;12811:272::-;12909:2;12879:17;;;12898;;;;12875:41;12940:34;12931:44;;12986:66;12977:76;;12928:126;12925:152;;;13057:18;;:::i;13088:128::-;13155:9;;;13176:11;;;13173:37;;;13190:18;;:::i;13221:184::-;13273:77;13270:1;13263:88;13370:4;13367:1;13360:15;13394:4;13391:1;13384:15;13410:227;13450:1;13484:34;13481:1;13477:42;13538:3;13528:37;;13545:18;;:::i;:::-;13627:3;13590:34;13587:1;13583:42;13579:52;13574:57;;;13410:227;;;;:::o;13642:317::-;13778:34;13727:42;;;13771;;;13723:91;13834:52;;;;13905:24;;;13895:58;;13933:18;;:::i;:::-;13895:58;13642:317;;;;:::o;13964:249::-;14033:6;14086:2;14074:9;14065:7;14061:23;14057:32;14054:52;;;14102:1;14099;14092:12;14054:52;14134:9;14128:16;14153:30;14177:5;14153:30;:::i;14218:241::-;14257:7;14336:1;14332:2;14321:17;14317:1;14313:2;14302:17;14298:41;14374:11;14370:2;14359:27;14348:38;;14417:11;14408:7;14405:24;14395:58;;14433:18;;:::i;14464:392::-;14503:1;14545;14541:2;14530:17;14582:1;14578:2;14567:17;14603:3;14593:37;;14610:18;;:::i;:::-;14731:66;14726:3;14723:75;14654:66;14649:3;14646:75;14642:157;14639:183;;;14802:18;;:::i;:::-;14836:14;;;14464:392;-1:-1:-1;;;14464:392:113:o;14861:243::-;14983:34;14976:42;;;14932;;;14928:91;;15031:44;;15028:70;;;15078:18;;:::i",
+        "linkReferences": {},
+        "immutableReferences": {
+            "67811": [
+                {
+                    "start": 391,
+                    "length": 32
+                },
+                {
+                    "start": 715,
+                    "length": 32
+                },
+                {
+                    "start": 1168,
+                    "length": 32
+                },
+                {
+                    "start": 1650,
+                    "length": 32
+                },
+                {
+                    "start": 1852,
+                    "length": 32
+                },
+                {
+                    "start": 2896,
+                    "length": 32
+                },
+                {
+                    "start": 3054,
+                    "length": 32
+                },
+                {
+                    "start": 3195,
+                    "length": 32
+                },
+                {
+                    "start": 3358,
+                    "length": 32
+                },
+                {
+                    "start": 3583,
+                    "length": 32
+                },
+                {
+                    "start": 4050,
+                    "length": 32
+                },
+                {
+                    "start": 4395,
+                    "length": 32
+                },
+                {
+                    "start": 4657,
+                    "length": 32
+                },
+                {
+                    "start": 4981,
+                    "length": 32
+                },
+                {
+                    "start": 5212,
+                    "length": 32
+                },
+                {
+                    "start": 5542,
+                    "length": 32
+                }
+            ],
+            "67814": [
+                {
+                    "start": 499,
+                    "length": 32
+                }
+            ]
+        }
+    },
+    "methodIdentifiers": {
+        "getCrudeExpectedVePMXMultiLock(int128[],uint128[])": "2d3c1721",
+        "getCrudeExpectedVePMXOneLock(int128,uint128)": "ba12f878",
+        "getCrudeExpectedVePMXUser(address)": "d8e69716",
+        "getDetailedUserLockInfo(address)": "3c593312",
+        "getDetailedUserLockInfoBulk(address[])": "29d71cb6",
+        "getLongestLock(address)": "f37461ab",
+        "getLongestLockBulk(address[])": "fb908ddd",
+        "token()": "fc0c546a",
+        "vePMX()": "f4ebfcae"
+    },
+    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.26+commit.8a97fa7a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_vestedPMX\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"int128[]\",\"name\":\"_pmxAmounts\",\"type\":\"int128[]\"},{\"internalType\":\"uint128[]\",\"name\":\"_lockSecsU128\",\"type\":\"uint128[]\"}],\"name\":\"getCrudeExpectedVePMXMultiLock\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_expectedVePMX\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"int128\",\"name\":\"_pmxAmount\",\"type\":\"int128\"},{\"internalType\":\"uint128\",\"name\":\"_lockSecsU128\",\"type\":\"uint128\"}],\"name\":\"getCrudeExpectedVePMXOneLock\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_expectedVePMX\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"getCrudeExpectedVePMXUser\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_expectedVePMX\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"getDetailedUserLockInfo\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"numberOfLocks\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint128\",\"name\":\"index\",\"type\":\"uint128\"},{\"internalType\":\"int128\",\"name\":\"amount\",\"type\":\"int128\"},{\"internalType\":\"uint128\",\"name\":\"end\",\"type\":\"uint128\"}],\"internalType\":\"struct IvePMXStructs.LockedBalanceExtended[]\",\"name\":\"allLocks\",\"type\":\"tuple[]\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint128\",\"name\":\"index\",\"type\":\"uint128\"},{\"internalType\":\"int128\",\"name\":\"amount\",\"type\":\"int128\"},{\"internalType\":\"uint128\",\"name\":\"end\",\"type\":\"uint128\"}],\"internalType\":\"struct IvePMXStructs.LockedBalanceExtended[]\",\"name\":\"activeLocks\",\"type\":\"tuple[]\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint128\",\"name\":\"index\",\"type\":\"uint128\"},{\"internalType\":\"int128\",\"name\":\"amount\",\"type\":\"int128\"},{\"internalType\":\"uint128\",\"name\":\"end\",\"type\":\"uint128\"}],\"internalType\":\"struct IvePMXStructs.LockedBalanceExtended[]\",\"name\":\"expiredLocks\",\"type\":\"tuple[]\"},{\"internalType\":\"int128[3]\",\"name\":\"totalPmx\",\"type\":\"int128[3]\"}],\"internalType\":\"struct IvePMXStructs.DetailedUserLockInfo\",\"name\":\"_userLockInfo\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_users\",\"type\":\"address[]\"}],\"name\":\"getDetailedUserLockInfoBulk\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"numberOfLocks\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint128\",\"name\":\"index\",\"type\":\"uint128\"},{\"internalType\":\"int128\",\"name\":\"amount\",\"type\":\"int128\"},{\"internalType\":\"uint128\",\"name\":\"end\",\"type\":\"uint128\"}],\"internalType\":\"struct IvePMXStructs.LockedBalanceExtended[]\",\"name\":\"allLocks\",\"type\":\"tuple[]\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint128\",\"name\":\"index\",\"type\":\"uint128\"},{\"internalType\":\"int128\",\"name\":\"amount\",\"type\":\"int128\"},{\"internalType\":\"uint128\",\"name\":\"end\",\"type\":\"uint128\"}],\"internalType\":\"struct IvePMXStructs.LockedBalanceExtended[]\",\"name\":\"activeLocks\",\"type\":\"tuple[]\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint128\",\"name\":\"index\",\"type\":\"uint128\"},{\"internalType\":\"int128\",\"name\":\"amount\",\"type\":\"int128\"},{\"internalType\":\"uint128\",\"name\":\"end\",\"type\":\"uint128\"}],\"internalType\":\"struct IvePMXStructs.LockedBalanceExtended[]\",\"name\":\"expiredLocks\",\"type\":\"tuple[]\"},{\"internalType\":\"int128[3]\",\"name\":\"totalPmx\",\"type\":\"int128[3]\"}],\"internalType\":\"struct IvePMXStructs.DetailedUserLockInfo[]\",\"name\":\"_userLockInfos\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"getLongestLock\",\"outputs\":[{\"components\":[{\"internalType\":\"int128\",\"name\":\"amount\",\"type\":\"int128\"},{\"internalType\":\"uint128\",\"name\":\"end\",\"type\":\"uint128\"}],\"internalType\":\"struct IvePMXStructs.LockedBalance\",\"name\":\"\",\"type\":\"tuple\"},{\"internalType\":\"uint128\",\"name\":\"\",\"type\":\"uint128\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"users\",\"type\":\"address[]\"}],\"name\":\"getLongestLockBulk\",\"outputs\":[{\"components\":[{\"components\":[{\"internalType\":\"int128\",\"name\":\"amount\",\"type\":\"int128\"},{\"internalType\":\"uint128\",\"name\":\"end\",\"type\":\"uint128\"}],\"internalType\":\"struct IvePMXStructs.LockedBalance\",\"name\":\"lock\",\"type\":\"tuple\"},{\"internalType\":\"uint128\",\"name\":\"lockIndex\",\"type\":\"uint128\"},{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"internalType\":\"struct IvePMXStructs.LongestLock[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"token\",\"outputs\":[{\"internalType\":\"contract IERC20Metadata\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"vePMX\",\"outputs\":[{\"internalType\":\"contract IVestedPMX\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Frax Finance\",\"kind\":\"dev\",\"methods\":{\"constructor\":{\"params\":{\"_vestedPMX\":\"Address of the VestedPMX contract\"}},\"getCrudeExpectedVePMXMultiLock(int128[],uint128[])\":{\"details\":\"Useful to compare to the slope/bias-based balancedOf to make sure the math is working\",\"params\":{\"_lockSecsU128\":\"The length of the locks\",\"_pmxAmounts\":\"The amounts of PMX\"},\"returns\":{\"_expectedVePMX\":\"The expected amount of vePMX (summed). May be slightly off from actual (~1%)\"}},\"getCrudeExpectedVePMXOneLock(int128,uint128)\":{\"details\":\"Useful to compare to the slope/bias-based balancedOf to make sure the math is working\",\"params\":{\"_lockSecsU128\":\"The length of the lock\",\"_pmxAmount\":\"The amount of PMX\"},\"returns\":{\"_expectedVePMX\":\"The expected amount of vePMX. May be slightly off from actual (~1%)\"}},\"getCrudeExpectedVePMXUser(address)\":{\"details\":\"Useful to compare to the slope/bias-based balancedOf to make sure the math is working\",\"params\":{\"_user\":\"The address of the user\"},\"returns\":{\"_expectedVePMX\":\"The expected amount of vePMX (summed). May be slightly off from actual (~1%)\"}},\"getDetailedUserLockInfo(address)\":{\"details\":\"The locks are retrieved indiscriminately, regardless of whether they are active or expired.This lives on Fraxtal and will mostly be read-called in UIs, so gas not really an issue here\",\"params\":{\"_user\":\"Address of the user\"},\"returns\":{\"_userLockInfo\":\"DetailedUserLockInfo for the user. Includes _allLocks, _activeLocks, _expiredLocks, and PMX totals for these respectively\"}},\"getDetailedUserLockInfoBulk(address[])\":{\"details\":\"The locks are retrieved indiscriminately, regardless of whether they are active or expired.This lives on Fraxtal and will mostly be read-called in UIs, so gas not really an issue here\",\"params\":{\"_users\":\"Addresses of the users\"},\"returns\":{\"_userLockInfos\":\"DetailedUserLockInfo[] for the users. Includes _allLocks, _activeLocks, _expiredLocks, and PMX totals for these respectively\"}},\"getLongestLock(address)\":{\"details\":\"The longest lock is the lock with the timestamp furthest in the future (can also be in the past if there are no active locks).\",\"params\":{\"user\":\"Address of the user\"},\"returns\":{\"_0\":\"The longest lock of the user\",\"_1\":\"The index of the longest lock\"}},\"getLongestLockBulk(address[])\":{\"details\":\"This returns the longest lock indiscriminately, regardless of whether it is active or expired.The return value is an array of LongestLock structs, which contain the lock, the index of the lock, and the user.\",\"params\":{\"users\":\"Array of addresses of the users\"},\"returns\":{\"_0\":\"The LongestLocks of the users\"}}},\"title\":\"VestedPMXUtils\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"constructor\":{\"notice\":\"Contract constructor\"},\"getCrudeExpectedVePMXMultiLock(int128[],uint128[])\":{\"notice\":\"Calculate the APPROXIMATE amount of vePMX, given PMX amounts and lock lengths. Cruder version of balanceOf math. Useful for sanity checks.\"},\"getCrudeExpectedVePMXOneLock(int128,uint128)\":{\"notice\":\"Calculate the APPROXIMATE amount of vePMX, given an PMX amount and a lock length. Cruder version of balanceOf math. Useful for sanity checks.\"},\"getCrudeExpectedVePMXUser(address)\":{\"notice\":\"Calculate the APPROXIMATE amount of vePMX a specific user should have. Cruder version of balanceOf math. Useful for sanity checks.\"},\"getDetailedUserLockInfo(address)\":{\"notice\":\"Used to get all of the locks of a given user.\"},\"getDetailedUserLockInfoBulk(address[])\":{\"notice\":\"Used to get all of the locks of the given users. Same underlying code as getDetailedUserLockInfo\"},\"getLongestLock(address)\":{\"notice\":\"Used to get the longest lock of a given user.\"},\"getLongestLockBulk(address[])\":{\"notice\":\"Used to get longest locks of muliple users.\"}},\"notice\":\"This utility smart contract provides functions to get extended information from the VestedPMX contract.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/contracts/VestedPMX-and-Flox/VestedPMX/VestedPMXUtils.sol\":\"VestedPMXUtils\"},\"evmVersion\":\"cancun\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":100000},\"remappings\":[\":@eth-optimism/=lib/optimism/packages/\",\":@openzeppelin-4/=node_modules/@openzeppelin-4/\",\":@openzeppelin-5/=node_modules/@openzeppelin-5/\",\":@openzeppelin/=node_modules/@openzeppelin/\",\":@rari-capital/=node_modules/@rari-capital/\",\":clones-with-immutable-args/=lib/optimism/packages/contracts-bedrock/lib/clones-with-immutable-args/src/\",\":ds-test/=lib/frax-standard-solidity/lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/frax-standard-solidity/lib/forge-std/src/\",\":frax-standard-solidity/=lib/frax-standard-solidity/src/\",\":frax-std/=lib/frax-standard-solidity/src/\",\":kontrol-cheatcodes/=lib/optimism/packages/contracts-bedrock/lib/kontrol-cheatcodes/src/\",\":lib-keccak/=lib/optimism/packages/contracts-bedrock/lib/lib-keccak/contracts/\",\":multicall/=lib/optimism/packages/contracts-periphery/lib/multicall/src/\",\":openzeppelin-contracts-upgradeable/=lib/optimism/packages/contracts-bedrock/lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/optimism/packages/contracts-bedrock/lib/openzeppelin-contracts/\",\":optimism/=lib/optimism/\",\":safe-contracts/=lib/optimism/packages/contracts-bedrock/lib/safe-contracts/contracts/\",\":solady/=lib/optimism/packages/contracts-bedrock/lib/solady/\",\":solidity-bytes-utils/=lib/frax-standard-solidity/lib/solidity-bytes-utils/\",\":solmate/=lib/optimism/packages/contracts-bedrock/lib/solmate/src/\",\":src/=src/\",\"lib/optimism/packages/contracts-bedrock:src/=lib/optimism/packages/contracts-bedrock/src/\"]},\"sources\":{\"node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x9750c6b834f7b43000631af5cc30001c5f547b3ceb3635488f140f60e897ea6b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5a7d5b1ef5d8d5889ad2ed89d8619c09383b80b72ab226e0fe7bde1636481e34\",\"dweb:/ipfs/QmebXWgtEfumQGBdVeM6c71McLixYXQP5Bk6kKXuoY4Bmr\"]},\"node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol\":{\"keccak256\":\"0x8de418a5503946cabe331f35fe242d3201a73f67f77aaeb7110acb1f30423aca\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5a376d3dda2cb70536c0a45c208b29b34ac560c4cb4f513a42079f96ba47d2dd\",\"dweb:/ipfs/QmZQg6gn1sUpM8wHzwNvSnihumUCAhxD119MpXeKp8B9s8\"]},\"src/contracts/VestedPMX-and-Flox/VestedPMX/IvePMXStructs.sol\":{\"keccak256\":\"0x3fa1793887f16513a1975cd63d75fde129e9ea3a11b71c14a516147a985255c5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4cec71156d13925be8247914d13af58afa5b6a6419236f02ce946a9ba48af34b\",\"dweb:/ipfs/QmenE7oD6AwVZW6x9Gc3bLSXJiMHNoJwzgzHug1TJT4Wng\"]},\"src/contracts/VestedPMX-and-Flox/VestedPMX/VestedPMXUtils.sol\":{\"keccak256\":\"0xca78f0d2b84392c5332bb3963ded8d3046ef9f4b59e407f390f62d7f22c27e39\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://609eb025287c15bfe831dbbecf87d490df2a8b4b3e3caafa4f0553aae598a3b9\",\"dweb:/ipfs/QmS8SoMwPgrbDetNykbdA26fKCXunPLXLwRyiBLmYnCD5a\"]},\"src/contracts/VestedPMX-and-Flox/interfaces/IVestedPMX.sol\":{\"keccak256\":\"0x71f93e309c043628939af05883a5193fbd8b531ec78479e78515f9aebea4e29d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d02c949f5cbd552d462b0669b14cc5208174ec26e810f3f98a90f340891a3ec2\",\"dweb:/ipfs/QmZc26gbMwXBxZhXp1hS8NLztQhG7eKoqy3ojxxC6PqNai\"]}},\"version\":1}",
+    "metadata": {
+        "compiler": {
+            "version": "0.8.26+commit.8a97fa7a"
+        },
+        "language": "Solidity",
+        "output": {
+            "abi": [
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "_vestedPMX",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "constructor"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "int128[]",
+                            "name": "_pmxAmounts",
+                            "type": "int128[]"
+                        },
+                        {
+                            "internalType": "uint128[]",
+                            "name": "_lockSecsU128",
+                            "type": "uint128[]"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "getCrudeExpectedVePMXMultiLock",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_expectedVePMX",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "int128",
+                            "name": "_pmxAmount",
+                            "type": "int128"
+                        },
+                        {
+                            "internalType": "uint128",
+                            "name": "_lockSecsU128",
+                            "type": "uint128"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "getCrudeExpectedVePMXOneLock",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_expectedVePMX",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "_user",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "getCrudeExpectedVePMXUser",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_expectedVePMX",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "_user",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "getDetailedUserLockInfo",
+                    "outputs": [
+                        {
+                            "internalType": "struct IvePMXStructs.DetailedUserLockInfo",
+                            "name": "_userLockInfo",
+                            "type": "tuple",
+                            "components": [
+                                {
+                                    "internalType": "address",
+                                    "name": "user",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "numberOfLocks",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "struct IvePMXStructs.LockedBalanceExtended[]",
+                                    "name": "allLocks",
+                                    "type": "tuple[]",
+                                    "components": [
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "id",
+                                            "type": "uint256"
+                                        },
+                                        {
+                                            "internalType": "uint128",
+                                            "name": "index",
+                                            "type": "uint128"
+                                        },
+                                        {
+                                            "internalType": "int128",
+                                            "name": "amount",
+                                            "type": "int128"
+                                        },
+                                        {
+                                            "internalType": "uint128",
+                                            "name": "end",
+                                            "type": "uint128"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "internalType": "struct IvePMXStructs.LockedBalanceExtended[]",
+                                    "name": "activeLocks",
+                                    "type": "tuple[]",
+                                    "components": [
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "id",
+                                            "type": "uint256"
+                                        },
+                                        {
+                                            "internalType": "uint128",
+                                            "name": "index",
+                                            "type": "uint128"
+                                        },
+                                        {
+                                            "internalType": "int128",
+                                            "name": "amount",
+                                            "type": "int128"
+                                        },
+                                        {
+                                            "internalType": "uint128",
+                                            "name": "end",
+                                            "type": "uint128"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "internalType": "struct IvePMXStructs.LockedBalanceExtended[]",
+                                    "name": "expiredLocks",
+                                    "type": "tuple[]",
+                                    "components": [
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "id",
+                                            "type": "uint256"
+                                        },
+                                        {
+                                            "internalType": "uint128",
+                                            "name": "index",
+                                            "type": "uint128"
+                                        },
+                                        {
+                                            "internalType": "int128",
+                                            "name": "amount",
+                                            "type": "int128"
+                                        },
+                                        {
+                                            "internalType": "uint128",
+                                            "name": "end",
+                                            "type": "uint128"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "internalType": "int128[3]",
+                                    "name": "totalPmx",
+                                    "type": "int128[3]"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address[]",
+                            "name": "_users",
+                            "type": "address[]"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "getDetailedUserLockInfoBulk",
+                    "outputs": [
+                        {
+                            "internalType": "struct IvePMXStructs.DetailedUserLockInfo[]",
+                            "name": "_userLockInfos",
+                            "type": "tuple[]",
+                            "components": [
+                                {
+                                    "internalType": "address",
+                                    "name": "user",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "numberOfLocks",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "struct IvePMXStructs.LockedBalanceExtended[]",
+                                    "name": "allLocks",
+                                    "type": "tuple[]",
+                                    "components": [
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "id",
+                                            "type": "uint256"
+                                        },
+                                        {
+                                            "internalType": "uint128",
+                                            "name": "index",
+                                            "type": "uint128"
+                                        },
+                                        {
+                                            "internalType": "int128",
+                                            "name": "amount",
+                                            "type": "int128"
+                                        },
+                                        {
+                                            "internalType": "uint128",
+                                            "name": "end",
+                                            "type": "uint128"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "internalType": "struct IvePMXStructs.LockedBalanceExtended[]",
+                                    "name": "activeLocks",
+                                    "type": "tuple[]",
+                                    "components": [
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "id",
+                                            "type": "uint256"
+                                        },
+                                        {
+                                            "internalType": "uint128",
+                                            "name": "index",
+                                            "type": "uint128"
+                                        },
+                                        {
+                                            "internalType": "int128",
+                                            "name": "amount",
+                                            "type": "int128"
+                                        },
+                                        {
+                                            "internalType": "uint128",
+                                            "name": "end",
+                                            "type": "uint128"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "internalType": "struct IvePMXStructs.LockedBalanceExtended[]",
+                                    "name": "expiredLocks",
+                                    "type": "tuple[]",
+                                    "components": [
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "id",
+                                            "type": "uint256"
+                                        },
+                                        {
+                                            "internalType": "uint128",
+                                            "name": "index",
+                                            "type": "uint128"
+                                        },
+                                        {
+                                            "internalType": "int128",
+                                            "name": "amount",
+                                            "type": "int128"
+                                        },
+                                        {
+                                            "internalType": "uint128",
+                                            "name": "end",
+                                            "type": "uint128"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "internalType": "int128[3]",
+                                    "name": "totalPmx",
+                                    "type": "int128[3]"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "user",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "getLongestLock",
+                    "outputs": [
+                        {
+                            "internalType": "struct IvePMXStructs.LockedBalance",
+                            "name": "",
+                            "type": "tuple",
+                            "components": [
+                                {
+                                    "internalType": "int128",
+                                    "name": "amount",
+                                    "type": "int128"
+                                },
+                                {
+                                    "internalType": "uint128",
+                                    "name": "end",
+                                    "type": "uint128"
+                                }
+                            ]
+                        },
+                        {
+                            "internalType": "uint128",
+                            "name": "",
+                            "type": "uint128"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address[]",
+                            "name": "users",
+                            "type": "address[]"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "getLongestLockBulk",
+                    "outputs": [
+                        {
+                            "internalType": "struct IvePMXStructs.LongestLock[]",
+                            "name": "",
+                            "type": "tuple[]",
+                            "components": [
+                                {
+                                    "internalType": "struct IvePMXStructs.LockedBalance",
+                                    "name": "lock",
+                                    "type": "tuple",
+                                    "components": [
+                                        {
+                                            "internalType": "int128",
+                                            "name": "amount",
+                                            "type": "int128"
+                                        },
+                                        {
+                                            "internalType": "uint128",
+                                            "name": "end",
+                                            "type": "uint128"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "internalType": "uint128",
+                                    "name": "lockIndex",
+                                    "type": "uint128"
+                                },
+                                {
+                                    "internalType": "address",
+                                    "name": "user",
+                                    "type": "address"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "token",
+                    "outputs": [
+                        {
+                            "internalType": "contract IERC20Metadata",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "vePMX",
+                    "outputs": [
+                        {
+                            "internalType": "contract IVestedPMX",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ]
+                }
+            ],
+            "devdoc": {
+                "kind": "dev",
+                "methods": {
+                    "constructor": {
+                        "params": {
+                            "_vestedPMX": "Address of the VestedPMX contract"
+                        }
+                    },
+                    "getCrudeExpectedVePMXMultiLock(int128[],uint128[])": {
+                        "details": "Useful to compare to the slope/bias-based balancedOf to make sure the math is working",
+                        "params": {
+                            "_lockSecsU128": "The length of the locks",
+                            "_pmxAmounts": "The amounts of PMX"
+                        },
+                        "returns": {
+                            "_expectedVePMX": "The expected amount of vePMX (summed). May be slightly off from actual (~1%)"
+                        }
+                    },
+                    "getCrudeExpectedVePMXOneLock(int128,uint128)": {
+                        "details": "Useful to compare to the slope/bias-based balancedOf to make sure the math is working",
+                        "params": {
+                            "_lockSecsU128": "The length of the lock",
+                            "_pmxAmount": "The amount of PMX"
+                        },
+                        "returns": {
+                            "_expectedVePMX": "The expected amount of vePMX. May be slightly off from actual (~1%)"
+                        }
+                    },
+                    "getCrudeExpectedVePMXUser(address)": {
+                        "details": "Useful to compare to the slope/bias-based balancedOf to make sure the math is working",
+                        "params": {
+                            "_user": "The address of the user"
+                        },
+                        "returns": {
+                            "_expectedVePMX": "The expected amount of vePMX (summed). May be slightly off from actual (~1%)"
+                        }
+                    },
+                    "getDetailedUserLockInfo(address)": {
+                        "details": "The locks are retrieved indiscriminately, regardless of whether they are active or expired.This lives on Fraxtal and will mostly be read-called in UIs, so gas not really an issue here",
+                        "params": {
+                            "_user": "Address of the user"
+                        },
+                        "returns": {
+                            "_userLockInfo": "DetailedUserLockInfo for the user. Includes _allLocks, _activeLocks, _expiredLocks, and PMX totals for these respectively"
+                        }
+                    },
+                    "getDetailedUserLockInfoBulk(address[])": {
+                        "details": "The locks are retrieved indiscriminately, regardless of whether they are active or expired.This lives on Fraxtal and will mostly be read-called in UIs, so gas not really an issue here",
+                        "params": {
+                            "_users": "Addresses of the users"
+                        },
+                        "returns": {
+                            "_userLockInfos": "DetailedUserLockInfo[] for the users. Includes _allLocks, _activeLocks, _expiredLocks, and PMX totals for these respectively"
+                        }
+                    },
+                    "getLongestLock(address)": {
+                        "details": "The longest lock is the lock with the timestamp furthest in the future (can also be in the past if there are no active locks).",
+                        "params": {
+                            "user": "Address of the user"
+                        },
+                        "returns": {
+                            "_0": "The longest lock of the user",
+                            "_1": "The index of the longest lock"
+                        }
+                    },
+                    "getLongestLockBulk(address[])": {
+                        "details": "This returns the longest lock indiscriminately, regardless of whether it is active or expired.The return value is an array of LongestLock structs, which contain the lock, the index of the lock, and the user.",
+                        "params": {
+                            "users": "Array of addresses of the users"
+                        },
+                        "returns": {
+                            "_0": "The LongestLocks of the users"
+                        }
+                    }
+                },
+                "version": 1
+            },
+            "userdoc": {
+                "kind": "user",
+                "methods": {
+                    "constructor": {
+                        "notice": "Contract constructor"
+                    },
+                    "getCrudeExpectedVePMXMultiLock(int128[],uint128[])": {
+                        "notice": "Calculate the APPROXIMATE amount of vePMX, given PMX amounts and lock lengths. Cruder version of balanceOf math. Useful for sanity checks."
+                    },
+                    "getCrudeExpectedVePMXOneLock(int128,uint128)": {
+                        "notice": "Calculate the APPROXIMATE amount of vePMX, given an PMX amount and a lock length. Cruder version of balanceOf math. Useful for sanity checks."
+                    },
+                    "getCrudeExpectedVePMXUser(address)": {
+                        "notice": "Calculate the APPROXIMATE amount of vePMX a specific user should have. Cruder version of balanceOf math. Useful for sanity checks."
+                    },
+                    "getDetailedUserLockInfo(address)": {
+                        "notice": "Used to get all of the locks of a given user."
+                    },
+                    "getDetailedUserLockInfoBulk(address[])": {
+                        "notice": "Used to get all of the locks of the given users. Same underlying code as getDetailedUserLockInfo"
+                    },
+                    "getLongestLock(address)": {
+                        "notice": "Used to get the longest lock of a given user."
+                    },
+                    "getLongestLockBulk(address[])": {
+                        "notice": "Used to get longest locks of muliple users."
+                    }
+                },
+                "version": 1
+            }
+        },
+        "settings": {
+            "remappings": [
+                "@eth-optimism/=lib/optimism/packages/",
+                "@openzeppelin-4/=node_modules/@openzeppelin-4/",
+                "@openzeppelin-5/=node_modules/@openzeppelin-5/",
+                "@openzeppelin/=node_modules/@openzeppelin/",
+                "@rari-capital/=node_modules/@rari-capital/",
+                "clones-with-immutable-args/=lib/optimism/packages/contracts-bedrock/lib/clones-with-immutable-args/src/",
+                "ds-test/=lib/frax-standard-solidity/lib/forge-std/lib/ds-test/src/",
+                "forge-std/=lib/frax-standard-solidity/lib/forge-std/src/",
+                "frax-standard-solidity/=lib/frax-standard-solidity/src/",
+                "frax-std/=lib/frax-standard-solidity/src/",
+                "kontrol-cheatcodes/=lib/optimism/packages/contracts-bedrock/lib/kontrol-cheatcodes/src/",
+                "lib-keccak/=lib/optimism/packages/contracts-bedrock/lib/lib-keccak/contracts/",
+                "multicall/=lib/optimism/packages/contracts-periphery/lib/multicall/src/",
+                "openzeppelin-contracts-upgradeable/=lib/optimism/packages/contracts-bedrock/lib/openzeppelin-contracts-upgradeable/",
+                "openzeppelin-contracts/=lib/optimism/packages/contracts-bedrock/lib/openzeppelin-contracts/",
+                "optimism/=lib/optimism/",
+                "safe-contracts/=lib/optimism/packages/contracts-bedrock/lib/safe-contracts/contracts/",
+                "solady/=lib/optimism/packages/contracts-bedrock/lib/solady/",
+                "solidity-bytes-utils/=lib/frax-standard-solidity/lib/solidity-bytes-utils/",
+                "solmate/=lib/optimism/packages/contracts-bedrock/lib/solmate/src/",
+                "src/=src/",
+                "lib/optimism/packages/contracts-bedrock:src/=lib/optimism/packages/contracts-bedrock/src/"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 100000
+            },
+            "metadata": {
+                "bytecodeHash": "ipfs"
+            },
+            "compilationTarget": {
+                "src/contracts/VestedPMX-and-Flox/VestedPMX/VestedPMXUtils.sol": "VestedPMXUtils"
+            },
+            "evmVersion": "cancun",
+            "libraries": {}
+        },
+        "sources": {
+            "node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+                "keccak256": "0x9750c6b834f7b43000631af5cc30001c5f547b3ceb3635488f140f60e897ea6b",
+                "urls": [
+                    "bzz-raw://5a7d5b1ef5d8d5889ad2ed89d8619c09383b80b72ab226e0fe7bde1636481e34",
+                    "dweb:/ipfs/QmebXWgtEfumQGBdVeM6c71McLixYXQP5Bk6kKXuoY4Bmr"
+                ],
+                "license": "MIT"
+            },
+            "node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
+                "keccak256": "0x8de418a5503946cabe331f35fe242d3201a73f67f77aaeb7110acb1f30423aca",
+                "urls": [
+                    "bzz-raw://5a376d3dda2cb70536c0a45c208b29b34ac560c4cb4f513a42079f96ba47d2dd",
+                    "dweb:/ipfs/QmZQg6gn1sUpM8wHzwNvSnihumUCAhxD119MpXeKp8B9s8"
+                ],
+                "license": "MIT"
+            },
+            "src/contracts/VestedPMX-and-Flox/VestedPMX/IvePMXStructs.sol": {
+                "keccak256": "0x3fa1793887f16513a1975cd63d75fde129e9ea3a11b71c14a516147a985255c5",
+                "urls": [
+                    "bzz-raw://4cec71156d13925be8247914d13af58afa5b6a6419236f02ce946a9ba48af34b",
+                    "dweb:/ipfs/QmenE7oD6AwVZW6x9Gc3bLSXJiMHNoJwzgzHug1TJT4Wng"
+                ],
+                "license": "MIT"
+            },
+            "src/contracts/VestedPMX-and-Flox/VestedPMX/VestedPMXUtils.sol": {
+                "keccak256": "0xca78f0d2b84392c5332bb3963ded8d3046ef9f4b59e407f390f62d7f22c27e39",
+                "urls": [
+                    "bzz-raw://609eb025287c15bfe831dbbecf87d490df2a8b4b3e3caafa4f0553aae598a3b9",
+                    "dweb:/ipfs/QmS8SoMwPgrbDetNykbdA26fKCXunPLXLwRyiBLmYnCD5a"
+                ],
+                "license": "MIT"
+            },
+            "src/contracts/VestedPMX-and-Flox/interfaces/IVestedPMX.sol": {
+                "keccak256": "0x71f93e309c043628939af05883a5193fbd8b531ec78479e78515f9aebea4e29d",
+                "urls": [
+                    "bzz-raw://d02c949f5cbd552d462b0669b14cc5208174ec26e810f3f98a90f340891a3ec2",
+                    "dweb:/ipfs/QmZc26gbMwXBxZhXp1hS8NLztQhG7eKoqy3ojxxC6PqNai"
+                ],
+                "license": "MIT"
+            }
+        },
+        "version": 1
+    },
+    "id": 70
+}

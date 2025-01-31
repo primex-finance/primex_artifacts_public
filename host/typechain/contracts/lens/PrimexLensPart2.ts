@@ -21,7 +21,241 @@ import type {
   TypedContractMethod,
 } from "../../common";
 
+export declare namespace IPrimexLens {
+  export type TokenMetadataStruct = {
+    tokenAddress: AddressLike;
+    symbol: string;
+    name: string;
+    decimals: BigNumberish;
+    balance: BigNumberish;
+  };
+
+  export type TokenMetadataStructOutput = [
+    tokenAddress: string,
+    symbol: string,
+    name: string,
+    decimals: bigint,
+    balance: bigint
+  ] & {
+    tokenAddress: string;
+    symbol: string;
+    name: string;
+    decimals: bigint;
+    balance: bigint;
+  };
+
+  export type BucketTokenMetadataStruct = {
+    id: BigNumberish;
+    isSupported: boolean;
+    pairPriceDrop: BigNumberish;
+    maxLeverage: BigNumberish;
+  };
+
+  export type BucketTokenMetadataStructOutput = [
+    id: bigint,
+    isSupported: boolean,
+    pairPriceDrop: bigint,
+    maxLeverage: bigint
+  ] & {
+    id: bigint;
+    isSupported: boolean;
+    pairPriceDrop: bigint;
+    maxLeverage: bigint;
+  };
+
+  export type SupportedAssetStruct = {
+    asset: IPrimexLens.TokenMetadataStruct;
+    properties: IPrimexLens.BucketTokenMetadataStruct;
+  };
+
+  export type SupportedAssetStructOutput = [
+    asset: IPrimexLens.TokenMetadataStructOutput,
+    properties: IPrimexLens.BucketTokenMetadataStructOutput
+  ] & {
+    asset: IPrimexLens.TokenMetadataStructOutput;
+    properties: IPrimexLens.BucketTokenMetadataStructOutput;
+  };
+
+  export type LenderInfoStruct = {
+    amountInMining: BigNumberish;
+    currentPercent: BigNumberish;
+    rewardsInPMX: ILiquidityMiningRewardDistributor.RewardsInPMXStruct;
+  };
+
+  export type LenderInfoStructOutput = [
+    amountInMining: bigint,
+    currentPercent: bigint,
+    rewardsInPMX: ILiquidityMiningRewardDistributor.RewardsInPMXStructOutput
+  ] & {
+    amountInMining: bigint;
+    currentPercent: bigint;
+    rewardsInPMX: ILiquidityMiningRewardDistributor.RewardsInPMXStructOutput;
+  };
+
+  export type LiquidityMiningBucketInfoStruct = {
+    pmxAmount: BigNumberish;
+    withdrawnRewards: BigNumberish;
+    totalPoints: BigNumberish;
+  };
+
+  export type LiquidityMiningBucketInfoStructOutput = [
+    pmxAmount: bigint,
+    withdrawnRewards: bigint,
+    totalPoints: bigint
+  ] & { pmxAmount: bigint; withdrawnRewards: bigint; totalPoints: bigint };
+}
+
+export declare namespace IBucketStorage {
+  export type LiquidityMiningParamsStruct = {
+    liquidityMiningRewardDistributor: AddressLike;
+    isBucketLaunched: boolean;
+    accumulatingAmount: BigNumberish;
+    deadlineTimestamp: BigNumberish;
+    stabilizationDuration: BigNumberish;
+    stabilizationEndTimestamp: BigNumberish;
+    maxAmountPerUser: BigNumberish;
+    maxDuration: BigNumberish;
+    maxStabilizationEndTimestamp: BigNumberish;
+  };
+
+  export type LiquidityMiningParamsStructOutput = [
+    liquidityMiningRewardDistributor: string,
+    isBucketLaunched: boolean,
+    accumulatingAmount: bigint,
+    deadlineTimestamp: bigint,
+    stabilizationDuration: bigint,
+    stabilizationEndTimestamp: bigint,
+    maxAmountPerUser: bigint,
+    maxDuration: bigint,
+    maxStabilizationEndTimestamp: bigint
+  ] & {
+    liquidityMiningRewardDistributor: string;
+    isBucketLaunched: boolean;
+    accumulatingAmount: bigint;
+    deadlineTimestamp: bigint;
+    stabilizationDuration: bigint;
+    stabilizationEndTimestamp: bigint;
+    maxAmountPerUser: bigint;
+    maxDuration: bigint;
+    maxStabilizationEndTimestamp: bigint;
+  };
+}
+
+export declare namespace ILiquidityMiningRewardDistributor {
+  export type RewardsInPMXStruct = {
+    minReward: BigNumberish;
+    maxReward: BigNumberish;
+    extraReward: BigNumberish;
+  };
+
+  export type RewardsInPMXStructOutput = [
+    minReward: bigint,
+    maxReward: bigint,
+    extraReward: bigint
+  ] & { minReward: bigint; maxReward: bigint; extraReward: bigint };
+}
+
+export declare namespace IInterestRateStrategy {
+  export type BarCalculationParamsStruct = {
+    urOptimal: BigNumberish;
+    k0: BigNumberish;
+    k1: BigNumberish;
+    b0: BigNumberish;
+    b1: BigNumberish;
+  };
+
+  export type BarCalculationParamsStructOutput = [
+    urOptimal: bigint,
+    k0: bigint,
+    k1: bigint,
+    b0: bigint,
+    b1: bigint
+  ] & { urOptimal: bigint; k0: bigint; k1: bigint; b0: bigint; b1: bigint };
+}
+
 export declare namespace IPrimexLensPart2 {
+  export type BucketMetaDataPart2Struct = {
+    bucketAddress: AddressLike;
+    name: string;
+    asset: IPrimexLens.TokenMetadataStruct;
+    bar: BigNumberish;
+    lar: BigNumberish;
+    supply: BigNumberish;
+    demand: BigNumberish;
+    availableLiquidity: BigNumberish;
+    utilizationRatio: BigNumberish;
+    supportedAssets: IPrimexLens.SupportedAssetStruct[];
+    pToken: IPrimexLens.TokenMetadataStruct;
+    debtToken: IPrimexLens.TokenMetadataStruct;
+    feeBuffer: BigNumberish;
+    withdrawalFeeRate: BigNumberish;
+    miningParams: IBucketStorage.LiquidityMiningParamsStruct;
+    lenderInfo: IPrimexLens.LenderInfoStruct;
+    lmBucketInfo: IPrimexLens.LiquidityMiningBucketInfoStruct;
+    estimatedBar: BigNumberish;
+    estimatedLar: BigNumberish;
+    isDeprecated: boolean;
+    isDelisted: boolean;
+    barCalcParams: IInterestRateStrategy.BarCalculationParamsStruct;
+    maxTotalDeposit: BigNumberish;
+    liquidityIndex: BigNumberish;
+    currentStatus: BigNumberish;
+  };
+
+  export type BucketMetaDataPart2StructOutput = [
+    bucketAddress: string,
+    name: string,
+    asset: IPrimexLens.TokenMetadataStructOutput,
+    bar: bigint,
+    lar: bigint,
+    supply: bigint,
+    demand: bigint,
+    availableLiquidity: bigint,
+    utilizationRatio: bigint,
+    supportedAssets: IPrimexLens.SupportedAssetStructOutput[],
+    pToken: IPrimexLens.TokenMetadataStructOutput,
+    debtToken: IPrimexLens.TokenMetadataStructOutput,
+    feeBuffer: bigint,
+    withdrawalFeeRate: bigint,
+    miningParams: IBucketStorage.LiquidityMiningParamsStructOutput,
+    lenderInfo: IPrimexLens.LenderInfoStructOutput,
+    lmBucketInfo: IPrimexLens.LiquidityMiningBucketInfoStructOutput,
+    estimatedBar: bigint,
+    estimatedLar: bigint,
+    isDeprecated: boolean,
+    isDelisted: boolean,
+    barCalcParams: IInterestRateStrategy.BarCalculationParamsStructOutput,
+    maxTotalDeposit: bigint,
+    liquidityIndex: bigint,
+    currentStatus: bigint
+  ] & {
+    bucketAddress: string;
+    name: string;
+    asset: IPrimexLens.TokenMetadataStructOutput;
+    bar: bigint;
+    lar: bigint;
+    supply: bigint;
+    demand: bigint;
+    availableLiquidity: bigint;
+    utilizationRatio: bigint;
+    supportedAssets: IPrimexLens.SupportedAssetStructOutput[];
+    pToken: IPrimexLens.TokenMetadataStructOutput;
+    debtToken: IPrimexLens.TokenMetadataStructOutput;
+    feeBuffer: bigint;
+    withdrawalFeeRate: bigint;
+    miningParams: IBucketStorage.LiquidityMiningParamsStructOutput;
+    lenderInfo: IPrimexLens.LenderInfoStructOutput;
+    lmBucketInfo: IPrimexLens.LiquidityMiningBucketInfoStructOutput;
+    estimatedBar: bigint;
+    estimatedLar: bigint;
+    isDeprecated: boolean;
+    isDelisted: boolean;
+    barCalcParams: IInterestRateStrategy.BarCalculationParamsStructOutput;
+    maxTotalDeposit: bigint;
+    liquidityIndex: bigint;
+    currentStatus: bigint;
+  };
+
   export type CheckRewardParamsStruct = {
     bucket: AddressLike;
     amount: BigNumberish;
@@ -54,11 +288,28 @@ export declare namespace IPrimexLensPart2 {
 export interface PrimexLensPart2Interface extends Interface {
   getFunction(
     nameOrSignature:
+      | "getAllBucketsFactory"
+      | "getBucketsArray"
       | "getEstimatedMinProtocolFeeLiquidation"
       | "hasEnoughRewardsInDepositManager"
       | "supportsInterface"
   ): FunctionFragment;
 
+  encodeFunctionData(
+    functionFragment: "getAllBucketsFactory",
+    values: [
+      AddressLike[],
+      AddressLike,
+      AddressLike,
+      boolean,
+      BigNumberish,
+      BigNumberish
+    ]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "getBucketsArray",
+    values: [AddressLike[], AddressLike, AddressLike, boolean]
+  ): string;
   encodeFunctionData(
     functionFragment: "getEstimatedMinProtocolFeeLiquidation",
     values: [AddressLike]
@@ -72,6 +323,14 @@ export interface PrimexLensPart2Interface extends Interface {
     values: [BytesLike]
   ): string;
 
+  decodeFunctionResult(
+    functionFragment: "getAllBucketsFactory",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "getBucketsArray",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(
     functionFragment: "getEstimatedMinProtocolFeeLiquidation",
     data: BytesLike
@@ -129,6 +388,30 @@ export interface PrimexLensPart2 extends BaseContract {
     event?: TCEvent
   ): Promise<this>;
 
+  getAllBucketsFactory: TypedContractMethod<
+    [
+      _bucketFactories: AddressLike[],
+      _user: AddressLike,
+      _positionManager: AddressLike,
+      _showDeprecated: boolean,
+      _cursor: BigNumberish,
+      _count: BigNumberish
+    ],
+    [[IPrimexLensPart2.BucketMetaDataPart2StructOutput[], bigint]],
+    "view"
+  >;
+
+  getBucketsArray: TypedContractMethod<
+    [
+      _buckets: AddressLike[],
+      _user: AddressLike,
+      _positionManager: AddressLike,
+      _showDeprecated: boolean
+    ],
+    [IPrimexLensPart2.BucketMetaDataPart2StructOutput[]],
+    "view"
+  >;
+
   getEstimatedMinProtocolFeeLiquidation: TypedContractMethod<
     [_pm: AddressLike],
     [bigint],
@@ -161,6 +444,32 @@ export interface PrimexLensPart2 extends BaseContract {
     key: string | FunctionFragment
   ): T;
 
+  getFunction(
+    nameOrSignature: "getAllBucketsFactory"
+  ): TypedContractMethod<
+    [
+      _bucketFactories: AddressLike[],
+      _user: AddressLike,
+      _positionManager: AddressLike,
+      _showDeprecated: boolean,
+      _cursor: BigNumberish,
+      _count: BigNumberish
+    ],
+    [[IPrimexLensPart2.BucketMetaDataPart2StructOutput[], bigint]],
+    "view"
+  >;
+  getFunction(
+    nameOrSignature: "getBucketsArray"
+  ): TypedContractMethod<
+    [
+      _buckets: AddressLike[],
+      _user: AddressLike,
+      _positionManager: AddressLike,
+      _showDeprecated: boolean
+    ],
+    [IPrimexLensPart2.BucketMetaDataPart2StructOutput[]],
+    "view"
+  >;
   getFunction(
     nameOrSignature: "getEstimatedMinProtocolFeeLiquidation"
   ): TypedContractMethod<[_pm: AddressLike], [bigint], "view">;

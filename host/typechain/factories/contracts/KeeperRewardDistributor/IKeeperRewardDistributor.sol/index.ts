@@ -2,3 +2,4 @@
 /* tslint:disable */
 /* eslint-disable */
 export { IKeeperRewardDistributorV3__factory } from "./IKeeperRewardDistributorV3__factory";
+export { IKeeperRewardDistributorV4__factory } from "./IKeeperRewardDistributorV4__factory";

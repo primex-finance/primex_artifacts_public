@@ -519,19 +519,6 @@ const _abi = [
     inputs: [
       {
         internalType: "address",
-        name: "_orally",
-        type: "address",
-      },
-    ],
-    name: "setOrallyOracle",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
         name: "_assetA",
         type: "address",
       },

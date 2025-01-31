@@ -225,7 +225,7 @@ export interface IBucketStorage extends BaseContract {
 
   lar: TypedContractMethod<[], [bigint], "view">;
 
-  liquidityIndex: TypedContractMethod<[], [bigint], "nonpayable">;
+  liquidityIndex: TypedContractMethod<[], [bigint], "view">;
 
   maxTotalDeposit: TypedContractMethod<[], [bigint], "view">;
 
@@ -280,7 +280,7 @@ export interface IBucketStorage extends BaseContract {
   ): TypedContractMethod<[], [bigint], "view">;
   getFunction(
     nameOrSignature: "liquidityIndex"
-  ): TypedContractMethod<[], [bigint], "nonpayable">;
+  ): TypedContractMethod<[], [bigint], "view">;
   getFunction(
     nameOrSignature: "maxTotalDeposit"
   ): TypedContractMethod<[], [bigint], "view">;
