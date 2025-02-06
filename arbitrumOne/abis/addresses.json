@@ -52,6 +52,17 @@
     "frxeth": "0x178412e79c25968a32e89b11f63b33f733770c2a",
     "sfrxeth": "0x95ab45875cffdba1e5f451b950bc2e42c0053f39"
   },
+  "curveLP" : {
+    "wstETHCRV": {         
+      "oracleType": 0,
+      "lpTokenAddress": "0xdbcd16e622c95acb2650b38ec799f76bfc557a0b",
+      "pool": "0x6eb2dc694eb516b16dc9fbc678c60052bbdd7d80",
+      "assets": ["curve_eth", "wsteth"],
+      "alternativeName": "Curve LP (ETH / wstETH)",
+      "registry": "0x445FE580eF8d70FF569aB36e80c647af338db351",
+      "registryIndex": 0
+    }
+  },
   "wrappedNativeToken": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
   "aave": "0x794a61358D6845594F94dc1DB02A252b5b4814aD",
   "pyth": "0xff1a0f4744e8582DF1aE09D5611b887B6a12925C",
