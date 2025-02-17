@@ -94,30 +94,9 @@
       "epmx-usd": "0xBD5683Bf190a01Dd6375C6Fa96ac34B5Ba989238",
       "pmx-usd": "0xf1A0b7D26ca09def8675e3282f01F822c61E4580"
     },
-    "wbtc-usd": "0xDE31F8bFBD8c84b5360CFACCa3539B938dd78ae6",
-    "usdc.e-usd": "0xfE4A8cc5b5B2366C1B58Bea3858e81843581b2F7",
-    "usdt-usd": "0x0A6513e40db6EB1b165753AD52E80663aeA50545",
-    "weth-usd": "0xF9680D99D6C9589e2a93a78A04A279e509205945",
-    "wmatic-usd": "0xAB594600376Ec9fD91F8e885dADF0CE036862dE0",
-    "native-usd": "0xAB594600376Ec9fD91F8e885dADF0CE036862dE0",
-    "aave-usd": "0x72484b12719e23115761d5da1646945632979bb6",
-    "usdc-usd": "0xfE4A8cc5b5B2366C1B58Bea3858e81843581b2F7",
-    "dai-usd": "0x4746DeC9e833A82EC7C2C1356372CcF2cfcD2F3D",
-    "gns-usd": "0x9cb43aa3D036Cb035a694Ba0AAa91f8875B16cE1",
-    "link-usd": "0xd9FFdb71EbE7496cC440152d43986Aae0AB76665",
     "om-usd": "0xc86105dccf9bd629cea7fd41f94c6050bf96d57f",
-    "sand-usd": "0x3d49406edd4d52fb7ffd25485f32e073b529c924",
-    "quick-usd": "0x2251169d32e7538652a9a8c86bf0c43bfcd956f1",
-    "uni-usd": "0xdf0fb4e4f928d2dcb76f438575fdd8682386e13c",
-    "mana-usd": "0xa1cbf3fe43bc3501e3fc4b573e822c70e76a7512",
-    "bal-usd": "0xd106b538f2a868c28ca1ec7e298c3325e0251d66",
-    "grt-usd": "0x3fabbfb300b1e2d7c9b84512fe9d30aedf24c410",
-    "snx-usd": "0xbf90a5d9b6ee9019028dbfc2a9e50056d5252894",
     "ghst-usd": "0xdd229ce42f11d8ee7fff29bdb71c7b81352e11be",
-    "avax-usd": "0xe01ea2fbd8d76ee323fbed03eb9a8625ec981a10",
-    "crv-usd": "0x336584c8e6dc19637a5b36206b1c79923111b405",
-    "sushi-usd": "0x49B0c695039243BBfEb8EcD054EB70061fd54aa0",
-    "sol-usd": "0x10c8264c0935b3b9870013e057f330ff3e9c56dc",
-    "paxg-usd": "0x0f6914d8e7e1214cdb3a4c6fbf729b75c69df608"
+    "wmatic-usd": "0xAB594600376Ec9fD91F8e885dADF0CE036862dE0",
+    "native-usd": "0xAB594600376Ec9fD91F8e885dADF0CE036862dE0"
   }
 }

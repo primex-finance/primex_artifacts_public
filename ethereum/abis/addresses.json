@@ -55,6 +55,17 @@
     "elon": "0x761d38e5ddf6ccf6cf7c55759d5210750b5d60f3",
     "axl": "0x467719ad09025fcc6cf6f8311755809d45a5e5f3"
   },
+  "curveLP": {
+    "MtEthena": {
+      "oracleType": 0,
+      "lpTokenAddress": "0x167478921b907422f8e88b43c4af2b8bea278d3a",
+      "pool": "0x167478921b907422f8e88b43c4af2b8bea278d3a",
+      "assets": ["dai", "usde"],
+      "alternativeName": "Curve LP (sDAI / sUSDe)",
+      "registry": "0xe06EBA9ceA16cc71d4498CdBA7240BB20d475890",
+      "registryIndex": 7
+    }
+  },
   "aave": "0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2",
   "pyth": "0x4305FB66699C3B2702D4d05CF36551390A4c69C6",
   "supraPullOracle": "0x2FA6DbFe4291136Cf272E1A3294362b6651e8517",
@@ -121,23 +132,9 @@
   "pricefeeds": {
     "selfDeployed": {
       "epmx-usd": "0x4A0Bb087F62Cf599118C2A048a72648FeBE46Ec5",
-      "pmx-usd": "0xE97e1933B41d4fFD893FDC9dF70152BF9653136D"
-    },
-    "native-usd": "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
-    "weth-usd": "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
-    "wbtc-usd": "0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
-    "usdc-usd": "0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
-    "usdt-usd": "0x3E7d1eAB13ad0104d2750B8863b489D65364e32D",
-    "link-usd": "0x2c1d072e956AFFC0D435Cb7AC38EF18d24d9127c",
-    "uni-usd": "0x553303d460EE0afB37EdFf9bE42922D8FF63220e",
-    "dai-usd": "0xAed0c38402a5d19df6E4c03F4E2DceD6e29c1ee9",
-    "sol-usd": "0x4ffC43a60e009B551865A93d232E33Fce9f01507",
-    "mkr-usd": "0xec1D1B3b0443256cc3860e24a46F108e699484Aa",
-    "snx-usd": "0xDC3EA94CD0AC27d9A86C180091e7f78C683d3699",
-    "matic-usd": "0x7bAC85A8a13A4BcD8abb3eB7d6b4d632c5a57676",
-    "aave-usd": "0x547a514d5e3769680ce22b2361c10ea13619e8a9",
-    "comp-usd": "0xdbd020caef83efd542f4de03e3cf0c28a4428bd5",
-    "crv-usd": "0xcd627aa160a6fa45eb793d19ef54f5062f20f33f",
-    "1inch-usd": "0xc929ad75b72593967de83e7f7cda0493458261d9"
+      "pmx-usd": "0xE97e1933B41d4fFD893FDC9dF70152BF9653136D",
+      "native-usd": "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
+      "matic-usd": "0x7bAC85A8a13A4BcD8abb3eB7d6b4d632c5a57676"
+    }
   }
 }
